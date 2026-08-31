@@ -1,0 +1,217 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../term-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{\textcolor{red}{Correction $-$ DS n$^{\circ}$05 $-$ Primitives et équa diff $-$ 15/01/2026}}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						\textcolor{red}{Correction DS n$^{\circ}$05\\Primitives et équations différentielles}
+					}
+				\end{center}
+			\end{minipage}
+		}
+		
+	\end{center}
+%	\begin{center}\textbf{55 min - Calculatrice autorisée - Barème indicatif}\\
+%		\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}
+%	\end{center}
+%	
+%	\begin{center}
+%		On veillera à ENCADRER ses résultats et soigner sa copie.\\
+%		Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+%	\end{center}
+	
+\vspace*{-0.5cm}
+\exerciceDS{ $-$ (5 points)}
+Déterminer une primitive de la fonction $f$.
+
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item \ding{46} $f(x)=4 x^2+5 x-3$
+		\begin{corrBox}
+			$F(x)=\dfrac{4}{3}x^3+\dfrac{5}{2}x^2-3x$		
+		\end{corrBox}
+		\item $f(x)=2-3x-4 \mathrm{e}^x$
+		\begin{corrBox}
+			$F(x)=2x-\dfrac{3}{2}x^2-4e^x$		
+		\end{corrBox}
+		\item $f(x)=2 x-\dfrac{4}{x^2}$
+		\begin{corrBox}
+			$F(x)=x^2+\dfrac{4}{x}$		
+		\end{corrBox}
+		\item $f(x)=\dfrac{4}{3 x-1}$
+		\begin{corrBox}
+			$F(x)=\dfrac{4}{3}\ln(3x-1)$		
+		\end{corrBox}
+		\item $f(x)=(6x+2) \mathrm{e}^{3x^2+2 x}$
+		\begin{corrBox}
+			$F(x)=\mathrm{e}^{3x^2+2 x}$		
+		\end{corrBox}
+	\end{enumMet}
+\end{multicols}
+
+\vspace*{-1cm}
+\exerciceDS{$-$ (4,5 points)}
+
+Dans chaque cas, déterminer la primitive $F$ de la fonction $f$ vérifiant la condition proposée.
+%\begin{multicols}{2}
+	\begin{enumMet}
+		\item $f(x)=5 x-2\mathrm{e}^{-x}$, pour tout $x \in \mathbb{R}$ et $F(0)=4$.
+		\begin{corrBox}
+			$F(x)=\dfrac{5}{2}x^2+2e^{-x}+C$
+			
+			De plus $F(0)=4 \iff 4=\dfrac{5}{2}\times 0^2+2e^{0}+C\iff 4=2+C\iff C=2$
+			
+			Donc $F(x)=\dfrac{5}{2}x^2+2e^{-x}+2$
+		\end{corrBox}
+		\item $f(x)=8x \mathrm{e}^{2x^2}$, pour tout $x \in \mathbb{R}$ et $F(0)=5$.
+		\begin{corrBox}
+				$F(x)=2e^{2x^2}+C$
+				
+				De plus $F(0)=5 \iff 5=2e^{0}+C\iff 5=2+C\iff C=3$
+				
+				Donc $F(x)=2e^{2x^2}+3$
+		\end{corrBox}
+		\item $f(x)=\dfrac{10x-2}{5 x^2-2x+2}$ pour tout $x \in \mathbb{R}$ et $F(0)=\ln 6$.
+		\begin{corrBox}
+			$f(x)$ est du type $\dfrac{u'}{u}$ donc $F$ est du type $\ln(u)$
+			
+			$F(x)=\ln(5x^2-2x+2)+C$
+			
+			De plus $F(0)=\ln 6 \iff \ln 6=\ln 2+C\iff C=\ln 6 - \ln 2 = \ln 3$		
+			
+			$F(x)=\ln(5x^2-2x+2)+\ln 3$
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+
+\vspace*{-0.8cm}
+\exerciceDS{ $-$ (3,5 points)}
+
+Déterminer les solutions des équations différentielles suivantes.
+%\begin{multicols}{3}
+	\begin{enumMet}
+		\item \ding{46} $y'=2e^x$
+		\begin{corrBox}
+			Les solutions de l'équation sont les primitives de $2e^x$ donc : $f(x)=2e^x+C$ avec C une constante réelle.
+		\end{corrBox}
+		\item $y^{\prime}=4 e^{2 x}$ et $y(0)=5$
+		\begin{corrBox}
+			Les solutions de l'équation sont les primitives de $4 e^{2 x}$ donc : $f(x)=2e^{2x}+C$ avec C une constante réelle.
+			
+			De plus $y(0)=5$ donc $2e^{2\times 0}+C=5$ d'ou $C=3$.
+			
+			La solution de l'équation différentielle est donc $f(x)=2e^{2x}+3$
+		\end{corrBox}
+		\item $y'=3x+4$
+		\begin{corrBox}
+			Les solutions de l'équation sont les primitives de $3x+4$ donc : $f(x)=\dfrac{3}{2}x^2+4x+C$ avec C une constante réelle.
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+
+
+\vspace*{-0.7cm}
+\exerciceDS{ $-$ (3 points)}
+
+Déterminer les fonctions $f$ solutions des équations différentielles suivantes.
+%\begin{multicols}{3}
+	\begin{enumMet}
+		\item \ding{46} $y^{\prime}=5 y$
+		\begin{corrBox}
+			L'équation est du type $y'=ay$ avec $a=5$. 
+			
+			Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{5x}$ avec C une constante réelle.		
+		\end{corrBox}
+		\item \ding{46} $y^{\prime}+2y=0$
+		\begin{corrBox}
+			$y'=-2y$
+			
+			L'équation est du type $y'=ay$ avec $a=-2$. 
+			
+			Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{-2x}$ avec C une constante réelle.		
+		\end{corrBox}
+		\item $2y'+8 y=0$
+		\begin{corrBox}
+			$2y'=-8y$
+			
+			$y'=-4y$
+			
+			L'équation est du type $y'=ay$ avec $a=-4$. 
+			
+			Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{-4x}$ avec C une constante réelle.		
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+
+\vspace*{-0.7cm}
+\exerciceDS{ $-$ (4,5 points)}
+
+Résoudre les équations différentielles suivantes.
+%\begin{multicols}{3}
+	\begin{enumMet}
+		\item $y^{\prime}=5y$ et $y(0)=9$
+		\begin{corrBox}
+			L'équation est du type $y'=ay$ avec $a=5$. 
+			
+			Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{5x}$ avec C une constante réelle.	
+			
+			De plus $y(0)=9$ donc $Ce^{0}=9$ d'ou $C=9$.
+			
+			La solution de l'équation différentielle est donc $f(x)=9e^{5x}$	
+		\end{corrBox}
+		\item $2y^{\prime}=5 y$ et $y(0)=7$
+		\begin{corrBox}
+			$y'=\dfrac{5}{2}y$
+			
+			L'équation est du type $y'=ay$ avec $a=\dfrac{5}{2}$. 
+			
+			Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{\frac{5}{2}x}$ avec C une constante réelle.	
+			
+			De plus $y(0)=7$ donc $Ce^{0}=7$ d'ou $C=7$.
+			
+			La solution de l'équation différentielle est donc $f(x)=7e^{\frac{5}{2}x}$	
+		\end{corrBox}
+		\item $y'=-4 y$ et $y(3)=1$
+		\begin{corrBox}
+			L'équation est du type $y'=ay$ avec $a=-4$. 
+			
+			Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{-4x}$ avec C une constante réelle.	
+			
+			De plus $y(3)=1$ donc $Ce^{-12}=1$ d'ou $C=\dfrac{1}{e^{-12}}=e^{12}$.
+			
+			La solution de l'équation différentielle est donc $f(x)=e^{12}e^{-4x}=e^{12-4x}$	
+		\end{corrBox}
+	\end{enumMet}
+%\end{multicols}
+	
+\end{document}
+

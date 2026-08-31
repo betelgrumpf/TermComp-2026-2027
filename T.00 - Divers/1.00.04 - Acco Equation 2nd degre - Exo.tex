@@ -1,0 +1,167 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../1ere-preambule}
+\usepackage{mathrsfs}
+%\usepackage{tikz}
+%\usepackage{tkz-tab}
+\usepackage{pgf}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}  
+\definecolor{CyanTikz40}{cmyk}{.4,0,0,0}
+\definecolor{CyanTikz20}{cmyk}{.2,0,0,0}
+\tikzstyle{general}=[line width=0.3mm, >=stealth, x=1cm, y=1cm,line cap=round, line join=round]
+\tikzstyle{quadrillage}=[line width=0.3mm, color=CyanTikz40]
+\tikzstyle{quadrillageNIV2}=[line width=0.3mm, color=CyanTikz20]
+\tikzstyle{quadrillage55}=[line width=0.3mm, color=CyanTikz40, xstep=0.5, ystep=0.5]
+\tikzstyle{cote}=[line width=0.3mm, <->]
+\tikzstyle{epais}=[line width=0.5mm, line cap=butt]
+\tikzstyle{tres epais}=[line width=0.8mm, line cap=butt]
+\tikzstyle{axe}=[line width=0.3mm, ->, color=Noir, line cap=rect]
+\definecolor{A1}                {cmyk}{1.00, 0.00, 0.00, 0.50}
+%\definecolor{A2}                {cmyk}{0.60, 0.00, 0.00, 0.10}
+%\definecolor{A3}                {cmyk}{0.30, 0.00, 0.00, 0.05}
+%\definecolor{A4}                {cmyk}{0.10, 0.00, 0.00, 0.00}
+%\definecolor{B1}                {cmyk}{0.00, 1.00, 0.60, 0.40}
+%\definecolor{B2}                {cmyk}{0.00, 0.85, 0.60, 0.15}
+%\definecolor{B3}                {cmyk}{0.00, 0.20, 0.15, 0.05}
+\definecolor{B4}                {cmyk}{0.00, 0.05, 0.05, 0.00}
+%\definecolor{C1}                {cmyk}{0.00, 1.00, 0.00, 0.50}
+%\definecolor{C2}                {cmyk}{0.00, 0.60, 0.00, 0.20}
+%\definecolor{C3}                {cmyk}{0.00, 0.30, 0.00, 0.05}
+%\definecolor{C4}                {cmyk}{0.00, 0.10, 0.00, 0.05}
+%\definecolor{D1}                {cmyk}{0.00, 0.00, 1.00, 0.50}
+%\definecolor{D2}                {cmyk}{0.20, 0.20, 0.80, 0.00}
+%\definecolor{D3}                {cmyk}{0.00, 0.00, 0.20, 0.10}
+%\definecolor{D4}                {cmyk}{0.00, 0.00, 0.20, 0.05}
+%\definecolor{F1}                {cmyk}{0.00, 0.80, 0.50, 0.00}
+%\definecolor{F2}                {cmyk}{0.00, 0.40, 0.30, 0.00}
+%\definecolor{F3}                {cmyk}{0.00, 0.15, 0.10, 0.00}
+%\definecolor{F4}                {cmyk}{0.00, 0.07, 0.05, 0.00}
+%\definecolor{G1}                {cmyk}{1.00, 0.00, 0.50, 0.00}
+%\definecolor{G2}                {cmyk}{0.50, 0.00, 0.20, 0.00}
+%\definecolor{G3}                {cmyk}{0.20, 0.00, 0.10, 0.00}
+%\definecolor{G4}                {cmyk}{0.10, 0.00, 0.05, 0.00}
+%\definecolor{H1}                {cmyk}{0.40, 0.00, 1.00, 0.10}
+%\definecolor{H2}                {cmyk}{0.20, 0.00, 0.50, 0.05}
+%\definecolor{H3}                {cmyk}{0.10, 0.00, 0.20, 0.00}
+%\definecolor{H4}                {cmyk}{0.07, 0.00, 0.15, 0.00}
+%\definecolor{J1}                {cmyk}{0.00, 0.50, 1.00, 0.00}
+%\definecolor{J2}                {cmyk}{0.00, 0.20, 0.50, 0.00}
+\definecolor{J3}                {cmyk}{0.00, 0.10, 0.20, 0.00}
+%\definecolor{J4}                {cmyk}{0.00, 0.07, 0.15, 0.00}
+%\newcommand{\quadrillageSeyes}[2]{\draw[line width=0.3mm, color=A1!10, ystep=0.2, xstep=0.8]
+	
+\newboolean{versionprof}
+\setboolean{versionprof}{true}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{Accompagnement - Séance 7 - Equations du 2nd degré}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Accompagnement - Séance 7\\
+						08/01/2022 - Équations du 2nd degré
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+
+\exercice{- Racine évidente} 
+Factoriser les fonctions polynômes du second degré sans calculer leur discriminant.
+\begin{enumMet}
+	\item $f: x \mapsto-6 x^2+10 x-4$
+	\item $g: x \mapsto 6 x^2+2 x-20$
+	\item $h: x \mapsto 4 x^2-14 x+12$
+	\item $k: x \mapsto 2 x^2-8 x+8$
+\end{enumMet}
+
+\exercice{- Equations} 
+Resoudre dans \R les équations suivantes.
+\begin{multicols}{2}
+\begin{enumMet}
+	\item $-2 x^2+x-1=0$
+	\item $2 x^2-2 x-1=0$
+	\item $5 x^2-2 x+1=0$
+	\item $2 x^2+4=-6 x$
+	\item $x(2 x-1)=1$
+	\item $x^2=-5 x-1$
+	\item $-x+3 x^2-1=0$
+	\item $x(8-x)+1=0$
+	\item $2 x^2+6 x+\dfrac{9}{2}=0$
+	\item $x^2+2 \sqrt{3} x+3=0$
+	\item $-3 x^2+x=-\dfrac{1}{4}$
+	\item $2 x(5+2 x)=9-2 x$
+\end{enumMet}
+\end{multicols}
+
+\exercice{- Inéquations et représentations graphiques}
+
+$f$ et $g$ sont deux fonctions définies sur $\R$ par $f(x)=8 x^2-5 x+3$ et $g(x)=3 x+1$, de représentations graphiques $\mathscr{C}_f$ et $\mathscr{C}_g$
+\begin{enumMet}
+	\item Préciser la nature de $\mathscr{C}_f$ et de $\mathscr{C}_g$
+	\item Étudier la position relative de $\mathscr{C}_f$ et $\mathscr{C}_g$
+	\item Tracer $\mathscr{C}_f$ et $\mathscr{C}_g$ dans un même repère. Le graphique confirme-t-il la réponse à la question 2. ?
+\end{enumMet}
+
+\exercice{- Inéquations}
+Résoudre dans \R les inéquations suivantes.
+\begin{multicols}{2}
+\begin{enumMet}
+	\item $6 x^2+7 x+2>0$
+	\item $-5 x^2+10 x+1<0$
+	\item $49 x^2+28 x+4<0$
+	\item $-2 x^2+4 x-4>0$
+	\item $7 x^2>3 x-5$
+	\item $-x^2+x>1$
+	\item $-x^2+x>1$
+	\item $2 x \leqslant 5 x^2+4$
+	\item $8 x^2-10>7 x^2$
+	\item $\dfrac{4}{3} x^2<\dfrac{2}{7} x+3$
+	\item $(2 x-3) \times(6 x+4)>x^2-6$
+\end{enumMet}
+\end{multicols}
+
+\exercice{- Factoriser}
+Factoriser $f(x)$ par la méthode la plus adaptée.
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item $f(x)=137 x^2-x-136$
+		\item $f(x)=4 x^2-8 x+4$
+		\item $f(x)=-x^2+x+12$
+		\item $f(x)=x^2-7 x+10$
+		\item $f(x)=-x^2+9$
+		\item $f(x)=-6 x^2+25 x-14$
+	\end{enumMet}
+\end{multicols}
+
+\end{document}
+

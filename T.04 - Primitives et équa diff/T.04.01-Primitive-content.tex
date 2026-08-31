@@ -1,0 +1,446 @@
+%\vspace*{-0.4cm}
+\chapter[Thème 2 $-$ Primitives et équa diff]{Thème 2 : Modèles continus \\Primitives et équations différentielles}
+\thispagestyle{fancy}
+
+\vspace*{-0.6cm}
+\section{Primitive d'une fonction}
+\subsection{Définition et propriétés}
+
+\begin{bexemple}
+	On considère les fonctions $f$ et $F$ définies par : $f(x)=2 x+3$ et $F(x)=x^{2}+3 x-1$\\
+	Si on dérive $F$, on constate que : $F^{\prime}(x)=2 x+3=f(x)$.\\
+	Lorsque $F^{\prime}=f$, on dit que $F$ est une primitive de $f$.
+\end{bexemple}
+
+\begin{bdefi}
+	$f$ est une fonction continue sur un intervalle $I$.\\
+	On appelle primitive de $f$, une fonction $F$, telle que : $F^{\prime}=f$.
+\end{bdefi}	
+
+\begin{brmq}
+	Dans ces conditions, dire que \guillemets{$F$ est une primitive de $f$} revient à dire que  \guillemets{$f$ est la dérivée de $F$}.
+\end{brmq}
+
+\begin{bmethodet}{Vérifier qu'une fonction est une primitive d'une autre fonction}
+	\grasInMet{Enoncé : }
+	
+	Dans chaque cas, dire si $F$ est une primitive de $f$.
+		\begin{enumMet}
+		\item $F(x)=\dfrac{x^{2}}{2}$ et $f(x)=x$.
+		\item $F(x)=x e^{x}$ et $f(x)=e^{x}(x+1)$
+		\item $F(x)=\dfrac{\ln (x)}{x}$ et $f(x)=\dfrac{-\ln (x)}{x^{2}}$.
+	\end{enumMet}
+	
+	\grasInMet{Solution : }
+	
+	\begin{enumMet}
+		\item $F^{\prime}(x)=\dfrac{2 x}{2}=x=f(x)$
+		
+		Donc $F$ est une primitive de $f$.
+		\item $F^{\prime}(x)=1 \times e^{x}+x \times e^{x}=e^{x}(x+1)=f(x)$
+		
+		Donc $F$ est une primitive de $f$.\\
+		\item $F^{\prime}(x)=\dfrac{\dfrac{1}{x} \times x-\ln (x) \times 1}{x^{2}}=\dfrac{1-\ln (x)}{x^{2}} \neq f(x)$
+		
+		Donc $F$ n'est pas une primitive de $f$.
+	\end{enumMet}
+\end{bmethodet}
+
+\begin{bprop}
+	Deux primitives d'une même fonction continue sur un intervalle diffèrent d'une constante.
+\end{bprop}
+
+\begin{bdemo}
+	Soit $F$ et $G$ deux primitives de la fonction $f$ sur $I$.\\
+	Alors : $F^{\prime}(x)=f(x)$ et $G^{\prime}(x)=f(x)$.\\
+	Donc : $F^{\prime}(x)=G^{\prime}(x)$, soit $F^{\prime}(x)-G^{\prime}(x)=0$, soit encore $(F-G)^{\prime}(x)=0$.\\
+	La fonction $F-G$ possède une dérivée nulle sur $I$, elle est donc constante sur $I$.\\
+	On nomme $C$ cette constante. Ainsi : $F(x)-G(x)=C$ pour tout $x$ de $I$.\\
+	On en déduit que les deux primitives de $f$ diffèrent d'une constante.
+\end{bdemo}
+
+\begin{bprop}
+	$f$ est une fonction continue sur un intervalle $I$.\\
+	Si $F$ est une primitive de $f$ alors pour tout réel $C$, la fonction $x \longmapsto F(x)+C$ est une primitive de $f$.
+\end{bprop}
+
+
+\begin{bdemo}
+	$F$ est une primitive de $f$.\\
+	On pose $G(x)=F(x)+C$.\\
+	$G^{\prime}(x)=F^{\prime}(x)+0=F^{\prime}(x)=f(x)$.\\
+	Donc $G$ est une primitive de $f$.
+\end{bdemo}
+
+\begin{bexemple}
+	On a vu dans la méthode précédente que $F$ est une primitive de $f$ avec :\\
+	$F(x)=\dfrac{x^{2}}{2}$ et $f(x)=x$.\\
+	Donc, la fonction $G$ définie par $G(x)=\dfrac{x^{2}}{2}+5$ est également une primitive de $f$.\\
+	En effet : $G^{\prime}(x)=\dfrac{2 x}{2}+0=x=f(x)$.
+\end{bexemple}
+
+\begin{bprop}
+	Toute fonction continue sur un intervalle admet des primitives sur cet intervalle.
+\end{bprop}
+
+\begin{brmq}
+	Bien que l'existence étant assurée, la forme explicite d'une primitive n'est pas toujours connue. Par exemple, la fonction $x \mapsto e^{-x^{2}}$ ne possède pas de primitive sous forme explicite.
+\end{brmq}
+
+\begin{bmethodet}{Recherche d'une primitive particulière}
+	\grasInMet{Enoncé : }
+	
+	Soit la fonction $f$ définie sur $\mathbb{R}^{*}$ par $f(x)=\dfrac{e^{2 x}(2 x-1)}{x^{2}}$.
+	\begin{enumMet}
+		\item Démontrer que la fonction $F$ définie sur $\mathbb{R}^{*}$ par $F(x)=\dfrac{e^{2 x}}{x}$ est une primitive de $f$.\\
+		\item Déterminer la primitive $G$ de la fonction $f$ qui s' annule en $x=1$.
+	\end{enumMet}
+	
+	\grasInMet{Solution : }
+	
+	\begin{enumMet}
+		\item $F^{\prime}(x)=\dfrac{2 e^{2 x} x-e^{2 x}}{x^{2}}=\dfrac{e^{2 x}(2 x-1)}{x^{2}}=f(x)$.
+		
+		Donc $F^{\prime}=f$ et donc la fonction $F$ est une primitive $\operatorname{de} f$.\\
+		\item On cherche la primitive de la fonction $f$ qui s'annule en $x=1$, soit : $G(1)=0$.
+		
+		Si $G$ est une primitive de $f$ alors : $G(x)=F(x)+C$, où $C$ est un nombre réel.\\
+		Donc : $G(1)=F(1)+C$\\
+		Et donc : $F(1)+C=0$\\
+		Soit : $\dfrac{e^{2 \times 1}}{1}+C=0$\\
+		$e^{2}+C=0$\\
+		$C=-e^{2}$\\
+		La primitive de la fonction $f$ qui s'annule en $x=1$ est $G$ telle que :\\
+		$G(x)=F(x)-e^{2}=\dfrac{e^{2 x}}{x}-e^{2}$
+	\end{enumMet}
+\end{bmethodet}
+
+\subsection{Primitives des fonctions usuelles}
+
+\begin{center}
+	\begin{tabular}{|Xc|Xc|}
+		\hline
+		Fonction $\boldsymbol{f}$ & Une primitive $\boldsymbol{F}$ \\
+		\hline
+		$a, a \in \mathbb{R}$ & $a x$ \\
+		\hline
+		\begin{tabular}{c}
+			$x^{n}$ \\
+			avec $n \in \mathbb{N}^{*}$ \\
+		\end{tabular} & $\dfrac{1}{n+1} x^{n+1}$ \\
+		\hline
+		$\dfrac{1}{x^{2}}$ & $-\dfrac{1}{x}$ \\
+		\hline
+		$\dfrac{1}{x}$ & $\ln (x)$ \\
+		$\operatorname{Avec} x>0$ &  \\
+		\hline
+		$\dfrac{1}{\sqrt{x}}$ & $2 \sqrt{x}$ \\
+		\hline
+		$e^{x}$ & $e^{x}$ \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsection{Linéarité des primitives}
+
+\begin{bprop}
+	Si $F$ est une primitive de $f$ et $G$ est une primitive de $g$ alors :
+	\begin{itemProp}
+		\item $F+G$ est une primitive de $f+g$,
+		\item $k F$ est une primitive de $k f$, avec $k$ réel.
+	\end{itemProp}
+\end{bprop}
+
+\begin{bdemo}
+	\begin{itemMet}
+		\item $(F+G)^{\prime}=F^{\prime}+G^{\prime}=f+g$\\
+		\item $(k F)^{\prime}=k F^{\prime}=k f$
+	\end{itemMet}
+\end{bdemo}
+
+\begin{bmethodet}{Déterminer une primitive (1)}
+	\grasInMet{Enoncé : }
+	
+	Dans chaque cas, déterminer une primitive $F$ de la fonction $f$.
+	\begin{multicols}{2}
+		\begin{enumMet}
+		\item $f(x)=x^{3}-2$
+		\item $f(x)=3 x^{2}-\dfrac{3}{x^{2}}$
+		\item $f(x)=\dfrac{3}{x}$ sur $] 0 ;+\infty[$
+		\item $f(x)=\dfrac{2}{\sqrt{x}}$
+	\end{enumMet}
+	\end{multicols}
+	
+	\grasInMet{Solution : }
+	
+	\begin{enumMet}
+		\item $F(x)=\dfrac{1}{4} x^{4}-2 x$
+		\item $f(x)=3 x^{2}-\dfrac{3}{x^{2}}=3 x^{2}-3 \times \dfrac{1}{x^{2}}$ donc $F(x)=x^{3}-3 \times\left(-\dfrac{1}{x}\right)=x^{3}+\dfrac{3}{x}$
+		\item $f(x)=\dfrac{3}{x}=3 \times \dfrac{1}{x}$
+		
+		$F(x)=3 \ln (x)$
+		
+		\begin{brmq}
+			L'intervalle de recherche de la primitive est $] 0 ;+\infty[$, car la fonction $\ln$ est définie pour des valeurs strictement positives.
+		\end{brmq}
+		\item $f(x)=\dfrac{2}{\sqrt{x}}=2 \times \dfrac{1}{\sqrt{x}}$\\
+		$F(x)=2 \times 2 \sqrt{x}=4 \sqrt{x}$
+	\end{enumMet}	
+\end{bmethodet}
+
+\subsection{Primitives de fonctions composées}
+$u$ est une fonction dérivable sur un intervalle $I$.
+
+\begin{center}
+	\begin{tabular}{|Xc|Xc|}
+		\hline
+		Fonction & Une primitive \\
+		\hline
+		$2 u^{\prime} u$ & $u^{2}$ \\
+		\hline
+		$u^{\prime} e^{u}$ & $e^{u}$ \\
+		\hline
+		$\dfrac{u^{\prime}}{u}$ & $\ln (u)$ \\
+		avec $u>0$ &  \\
+		\hline
+	\end{tabular}
+\end{center}
+
+
+\begin{bmethodet}{Déterminer une primitive (2)}
+	\grasInMet{Enoncé : }
+	
+	Dans chaque cas, déterminer une primitive $F$ de la fonction $f$.
+		\begin{enumMet}
+		\item $f(x)=(2 x-5)\left(x^{2}-5 x+4\right)$
+		\item $f(x)=x e^{x^{2}}$
+		\item $f(x)=\dfrac{x^{2}}{x^{3}+1}$
+	\end{enumMet}
+	
+	\grasInMet{Solution : }
+	
+	\begin{enumMet}
+		\item $f(x)=(2 x-5)\left(x^{2}-5 x+4\right)$
+		
+		$$
+		=\dfrac{1}{2} \times 2(2 x-5)\left(x^{2}-5 x+4\right) \text { du type } 2 u^{\prime} u
+		$$
+		
+		En effet: $u(x)=x^{2}-5 x+4 \rightarrow u^{\prime}(x)=2 x-5$.\\
+		Une primitive de $2 u^{\prime} u$ est de la forme $u^{2}$.\\
+		Soit: $F(x)=\dfrac{1}{2}\left(x^{2}-5 x+4\right)^{2}$
+		\item $f(x)=x e^{x^{2}}=\dfrac{1}{2} \times 2 x e^{x^{2}}$ du type $u^{\prime} e^{u}$
+		
+		En effet: $u(x)=x^{2} \rightarrow u^{\prime}(x)=2 x$.\\
+		Une primitive de $u^{\prime} e^{u}$ est de la forme $e^{u}$.\\
+		Soit: $F(x)=\dfrac{1}{2} e^{x^{2}}$
+		\item $f(x)=\dfrac{x^{2}}{x^{3}+1}=\dfrac{1}{3} \times \dfrac{3 x^{2}}{x^{3}+1}$ du type $\dfrac{u^{\prime}}{u}$
+		
+		En effet: $u(x)=x^{3}+1 \rightarrow u^{\prime}(x)=3 x^{2}$\\
+		Une primitive de $\dfrac{u^{\prime}}{u}$ est de la forme $\ln (u)$.\\
+		Soit : $F(x)=\dfrac{1}{3} \ln \left(x^{3}+1\right)$
+	\end{enumMet}	
+\end{bmethodet}
+
+\section{Équations différentielles}
+\subsection{Définition d'une équation différentielle}
+
+\begin{bdefi}
+	Une équation différentielle est une équation dont l'inconnue est une fonction et où interviennent des dérivées de cette fonction.
+\end{bdefi}	
+
+\begin{bexemple}
+	\begin{itemDef}
+		\item L'équation $f^{\prime}(x)=5$ est une équation différentielle.
+		
+		L'inconnue est la fonction $f$.\\
+		En considérant que $y$ est la fonction inconnue qui dépend de $x$, l'équation peut se noter : $y^{\prime}=5$
+		\item L'équation $y^{\prime}=2 x^{2}-3$ est également une équation différentielle.
+		L'inconnue est la fonction $y$ dont la dérivée est égale à $2 x^{2}-3$.
+	\end{itemDef}	
+\end{bexemple}
+
+\subsection{Équation différentielle du type $y^{\prime}=f$}
+
+\begin{bdefi}
+	Soit une fonction $f$ définie sur un intervalle $I$.\\
+	La fonction $g$ est une solution de l'équation différentielle $y^{\prime}=f$ si et seulement si $g^{\prime}(x)=f(x)$.
+\end{bdefi}
+
+\begin{bprop}
+	Dire que $F$ est une primitive de $f$, revient à dire que $F$ est une solution de l'équation différentielle $y^{\prime}=f$.\\
+	En effet, $F^{\prime}=f$.
+\end{bprop}
+
+\begin{bmethodet}{Vérifier qu'une fonction est solution d'une équation différentielle}
+	\grasInMet{Enoncé : }
+	
+	Prouver que la fonction $g$ définie sur $] 0 ;+\infty\left[\operatorname{par} g(x)=3 x^{2}+\ln x\right.$ est solution de l'équation différentielle $y^{\prime}=6 x+\dfrac{1}{x}$.
+	
+	\grasInMet{Solution : }
+	
+	$g^{\prime}(x)=3 \times 2 x+\dfrac{1}{x}=6 x+\dfrac{1}{x}$\\
+	Donc, $g$ est solution de l'équation différentielle $y^{\prime}=6 x+\dfrac{1}{x}$.
+\end{bmethodet}
+
+\subsection{Équations différentielles du type $y^{\prime}=a y$}
+
+\begin{bprop}
+	Les solutions de l'équation différentielle $y^{\prime}=a y, a \in \mathbb{R}$, sont les fonctions de la forme $x \longmapsto C e^{a x}$, où $C$ est une constante réelle quelconque.
+\end{bprop}
+
+\begin{bdemo}
+	\begin{itemDem}
+		\item Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=C e^{a x}$, où $C$ est un réel.
+	\end{itemDem}
+	
+	Alors, $f^{\prime}(x)=C \times a e^{a x}=a \times C e^{a x}=a f(x)$.\\
+	Donc $f^{\prime}(x)=a f(x)$.\\
+	$f$ est donc solution de l'équation différentielle $y^{\prime}=a y$.
+	
+	\begin{itemDem}
+		\item Réciproquement, soit $f$ une solution de l'équation différentielle $y^{\prime}=a y$.
+	\end{itemDem}
+	
+	Et soit $g$ la fonction définie sur $\mathbb{R}$ par $g(x)=e^{-a x} \times f(x)$.\\
+	$g$ est dérivable sur $\mathbb{R}$ et on a : $g^{\prime}(x)=-a e^{-a x} \times f(x)+e^{-a x} \times f^{\prime}(x)$.\\
+	Comme $f$ est solution de l'équation différentielle $y^{\prime}=a y$, on a : $f^{\prime}(x)=a f(x)$.\\
+	Ainsi : $g^{\prime}(x)=-e^{-a x} \times a f(x)+e^{-a x} \times f^{\prime}(x)$
+	
+	$$
+	=-e^{-a x} \times f^{\prime}(x)+e^{-a x} \times f^{\prime}(x)=0
+	$$
+	
+	La fonction $g$ est donc égale à une constante réelle $C$, soit :$e^{-a x} \times f(x)=C$.\\
+	Et donc : $f(x)=C \times \dfrac{1}{e^{-a x}}=C e^{a x}$.
+\end{bdemo}
+
+\begin{bmethodet}{Résoudre une équation différentielle du type $y^{\prime}=a y$}
+	\grasInMet{Enoncé : }
+	
+	On considère l'équation différentielle $3 y^{\prime}+5 y=0$.
+	
+	\begin{enumMet}
+		\item \begin{enumMet}
+			\item Déterminer la forme générale des fonctions solutions de l'équation.
+			\item Représenter à l'aide de la calculatrice ou d'un logiciel, quelques courbes des fonctions solutions.
+		\end{enumMet}
+		\item Déterminer l'unique solution $f$ telle que $f(1)=2$.
+	\end{enumMet}
+	
+	\grasInMet{Solution : }
+	
+	\begin{enumMet}
+		\item \begin{enumMet}
+			\item $3 y^{\prime}+5 y=0$
+			$$
+			\begin{aligned}
+				& 3 y^{\prime}=-5 y \\
+				& y^{\prime}=-\dfrac{5}{3} y
+			\end{aligned}
+			$$
+			
+			Les solutions sont les fonctions de la forme : $x \mapsto C e^{-\dfrac{5}{3} x}, C \in \mathbb{R}$.
+			\item Pour différentes valeurs de $C$, on obtient :\\
+			\includegraphics[scale=0.3]{2025_11_25_ebfa712102a855d8d569g-7}
+		\end{enumMet}
+		\item $f$ est solution de l'équation différentielle, donc de la forme : $f(x)=C e^{-\dfrac{5}{3} x}$
+		
+		Donc $f(1)=C e^{-\frac{5}{3} \times 1}=C e^{-\frac{5}{3}}$\\
+		Or, $f(1)=2$.\\
+		Donc: $C e^{-\frac{5}{3}}=2$
+		
+		$$
+		\begin{aligned}
+			& C e^{-\frac{5}{3}}=2 \\
+			& C=\dfrac{2}{e^{-\frac{5}{3}}} \\
+			& C=2 e^{\frac{5}{3}}
+		\end{aligned}
+		$$
+		
+		Et donc : $f(x)=2 e^{\frac{5}{3}} e^{-\frac{5}{3} x}=2 e^{\frac{5}{3}-\frac{5}{3} x}=2 e^{\frac{5}{3}(1-x)}$
+	\end{enumMet}
+	
+\end{bmethodet}
+
+\begin{bprop}
+	Si $f$ et $g$ sont deux solutions de l'équation différentielle $y^{\prime}=a y, a \in \mathbb{R}$, alors $f+g$ et $k f, k \in \mathbb{R}$, sont également solutions de l'équation différentielle.
+\end{bprop}
+
+\begin{bdemo}
+	\begin{itemDem}
+		\item $(f+g)^{\prime}=f^{\prime}+g^{\prime}=a f+a g=a(f+g)$\\
+		\item $(k f)^{\prime}=k f^{\prime}=k \times a f=a(k f)$\\
+	\end{itemDem}
+\end{bdemo}
+
+\subsection{Équations différentielles du type $y^{\prime}=a y+b$}
+
+\begin{bprop}
+La fonction $x \mapsto-\dfrac{b}{a}$ est solution de l'équation différentielle $y^{\prime}=a y+b(a \neq 0)$. Cette solution est appelée solution particulière constante.
+\end{bprop}
+
+\begin{bdemo}
+	On pose : $g(x)=-\dfrac{b}{a}$. Alors $g^{\prime}(x)=0$.\\
+	Or, $a g(x)+b=a \times\left(-\dfrac{b}{a}\right)+b=-b+b=0=g^{\prime}(x)$.\\
+	Donc : $g^{\prime}(x)=a g(x)+b$.\\
+	$g$ est donc solution de l'équation différentielle $y^{\prime}=a y+b$.
+\end{bdemo}
+
+\begin{bprop}
+	Les solutions de l'équation différentielle $y^{\prime}=a y+b(a \neq 0)$ sont les fonctions de la forme $x \longmapsto C e^{a x}-\dfrac{b}{a}$, où $C \in \mathbb{R}$.
+	
+	$C e^{a x}$ : Solutions de l'équation $y^{\prime}=a y$
+	
+	$-\dfrac{b}{a}$ : Solution particulière constante de l'équation $y^{\prime}=a y+b$
+\end{bprop}
+
+\begin{brmq}
+	L'équation $y^{\prime}=a y+b$ est appelée équation différentielle linéaire du premier ordre à coefficients constants.
+\end{brmq}
+\begin{bmethodet}{Résoudre une équation différentielle du type $y^{\prime}=a y+b$}
+	\grasInMet{Enoncé : }
+	
+	On considère l'équation différentielle $(E): 2 y^{\prime}-y=3$.
+	\begin{enumMet}
+		\item Déterminer une solution particulière constante de l'équation différentielle ( $E$ ).\\
+		\item Déterminer la forme générale des solutions de l'équation différentielle $y^{\prime}=\dfrac{1}{2} y$.\\
+		\item En déduire la forme générale des solutions de l'équation différentielle ( $E$ ).\\
+		\item Déterminer l'unique solution $f$ de ( $E$ ) telle que $f(0)=-1$.
+	\end{enumMet}
+	
+	\grasInMet{Solution : }
+	
+	\begin{enumMet}
+		\item Modifions l'écriture de l'équation différentielle :
+		
+		$$
+		\begin{aligned}
+			& 2 y^{\prime}-y=3 \\
+			& 2 y^{\prime}=y+3 \\
+			& y^{\prime}=\dfrac{1}{2} y+\dfrac{3}{2}
+		\end{aligned}
+		$$
+		
+		Une solution particulière constante est la fonction : $x \longmapsto-3$.\\
+		En effet : $-\dfrac{b}{a}=-\dfrac{\frac{3}{2}}{\frac{1}{2}}=-3$.\\
+		\item Les solutions de l'équation différentielle $y^{\prime}=\dfrac{1}{2} y$ sont de la forme : $x \mapsto C e^{\frac{1}{2} x}, C \in \mathbb{R}$.\\
+		\item Les solutions de l'équation différentielle ( $E$ ) sont de la forme :
+		
+		$$
+		x \mapsto C e^{\frac{1}{2} x}-3, C \in \mathbb{R}
+		$$
+		
+		\item $f$ est solution de l'équation différentielle, donc de la forme : $f(x)=C e^{\frac{1}{2} x}-3, C \in \mathbb{R}$ Donc $f(0)=C e^{\frac{1}{2} \times 0}-3=C-3$\\
+		Or, $f(0)=-1$
+		$$
+		\begin{aligned}
+			\text{Donc: } C-3&=-1\\
+			C&=3-1 \\
+			C&=2
+		\end{aligned}
+		$$
+		
+		Et donc : $f(x)=2 e^{\frac{1}{2} x}-3$
+	\end{enumMet}
+\end{bmethodet}

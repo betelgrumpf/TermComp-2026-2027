@@ -1,0 +1,351 @@
+%\vspace*{-0.4cm}
+\chapter[Thème 2 $-$ Limites de fonctions]{Thème 2 : Modèles continus \\Limites de fonctions}
+\thispagestyle{fancy}
+
+\vspace*{-0.6cm}
+\section{Limite d'une fonction à l'infini}
+\subsection{Limite infinie en $\infty$}
+\section*{Définition :}
+\begin{bdefi}
+	On dit que la fonction $f$ admet pour limite $+\infty$ en $+\infty$, si $f(x)$ est aussi grand que l'on veut pourvu que $x$ soit suffisamment grand.
+\end{bdefi}
+\begin{brmq}
+	On a une définition analogue en $-\infty$.
+\end{brmq}
+
+\begin{bexemple}
+
+\begin{minipage}[c]{0.58\linewidth}
+La fonction définie par $f(x)=x^{2}$ a pour limite $+\infty$ lorsque $x$ tend vers $+\infty$.\\
+On a par exemple : $f(100)=100^{2}=10000$
+	
+\quad \quad \quad \quad \quad \quad \quad \quad$f(1000)=1000^{2}=1000000$
+
+Les valeurs de la fonction deviennent aussi grandes que l'on veut dès que $x$ est suffisamment grand.\\
+\end{minipage} \hfill
+\begin{minipage}[c]{0.38\linewidth}
+	\includegraphics[scale=0.25]{T05-Crs-Img01}	
+\end{minipage}	
+\end{bexemple}
+
+\begin{brmqs}
+	\begin{itemRem}
+		\item Une fonction qui tend vers $+\infty$ lorsque $x$ tend vers $+\infty$ n'est pas nécessairement croissante. Par exemple :
+		\begin{center}
+				\includegraphics[scale=0.2]{T05-Crs-Img02}
+		\end{center}
+		\item Il existe des fonctions qui ne possèdent pas de limite infinie. C'est le cas des fonctions sinusoïdales.
+		\begin{center}
+			\includegraphics[scale=0.2]{T05-Crs-Img03}
+		\end{center}
+		
+	\end{itemRem}
+\end{brmqs}
+
+
+\subsection{Limite finie en $\infty$}
+\begin{bdefi}
+	On dit que la fonction $f$ admet pour \grasInDef{limite L} en $+\infty$, si $f(x)$ est aussi proche de $L$ que l'on veut, pourvu que $x$ soit suffisamment grand et on note: $\lim _{x \rightarrow+\infty} f(x)=L$.
+\end{bdefi}
+\begin{brmq}
+	On a une définition analogue en $-\infty$.
+\end{brmq}
+
+\begin{bexemple}
+	
+	\begin{minipage}[c]{0.28\linewidth}
+		La fonction définie par $f(x)=2+\dfrac{1}{x}$ a pour limite 2 lorsque $x$ tend vers $+\infty$. On a par exemple :
+		
+		$$
+		\begin{aligned}
+			& f(100)=2+\frac{1}{100}=2,01 \\
+			& \begin{aligned}
+				f(10000) & =2+\frac{1}{10000} \\
+				& =2,0001
+			\end{aligned}
+		\end{aligned}
+		$$
+	\end{minipage} \hfill
+	\begin{minipage}[c]{0.68\linewidth}
+		\includegraphics[scale=0.3]{T05-Crs-Img04}
+	\end{minipage}
+	Les valeurs de la fonction se resserrent autour de 2 dès que $x$ est suffisamment grand. La courbe de la fonction "se rapproche" de la droite d'équation $y=2$ sans jamais la toucher.	
+\end{bexemple}
+
+\begin{bdefi}
+Si $\lim \limits_{x \rightarrow+\infty} f(x)=L$, la droite d'équation $y=L$ est appelée \grasInDef{asymptote horizontale} à la courbe de la fonction $f$ en $+\infty$.
+\begin{center}
+	\includegraphics[scale=0.25]{T05-Crs-Img05}
+\end{center}
+
+\end{bdefi}
+
+\begin{brmqs}
+	\begin{itemRem}
+		\item Lorsque $x$ tend vers $+\infty$, la courbe de la fonction "se rapproche" de son asymptote.
+		\item On a une définition analogue en $-\infty$.
+	\end{itemRem}
+\end{brmqs}
+
+
+
+\subsection{Limites des fonctions de référence}
+
+\begin{bprops}
+	\begin{itemProp}
+		\item $\lim \limits_{x \rightarrow+\infty} x^{2}=+\infty, \lim \limits_{x \rightarrow-\infty} x^{2}=+\infty$
+		\item $\lim \limits_{x \rightarrow+\infty} x^{3}=+\infty, \lim \limits_{x \rightarrow-\infty} x^{3}=-\infty$
+		\item $\lim \limits_{x \rightarrow+\infty} \sqrt{x}=+\infty$
+		\item $\lim \limits_{x \rightarrow+\infty} \dfrac{1}{x}=0, \lim \limits_{x \rightarrow-\infty} \dfrac{1}{x}=0$
+		\item $\lim \limits_{x \rightarrow+\infty} e^{x}=+\infty, \lim \limits_{x \rightarrow-\infty} e^{x}=0$
+	\end{itemProp}
+\end{bprops}
+\section*{Propriétés :}
+
+
+\section{Limite d'une fonction en un réel A}
+\subsection{Définition}
+\begin{bdefi}
+On dit que la fonction $f$ admet pour \grasInDef{limite $+\infty$ en A}, si $f(x)$ est aussi grand que l'on veut pourvu que $x$ soit suffisamment proche de $A$.
+\end{bdefi}
+
+\begin{bexemple}
+	
+	\begin{minipage}[c]{0.53\linewidth}
+		La fonction définie par $f(x)=\dfrac{1}{3-x}+1$ a pour limite $+\infty$ lorsque $x$ tend vers 3 .\\
+		On a par exemple :\\
+		$f(2,99)=\dfrac{1}{3-2,99}+1=101$\\
+		$f(2,9999)=\dfrac{1}{3-2,9999}+1=10001$
+		
+		Les valeurs de la fonction deviennent aussi grandes que l'on veut dès que $x$ est suffisamment proche de 3 .
+		
+		La courbe de la fonction "se rapproche" de la droite d'équation $x=3$ sans jamais la toucher.\\
+	\end{minipage} \hfill
+	\begin{minipage}[c]{0.45\linewidth}
+		\includegraphics[scale=0.25]{T05-Crs-Img06}
+	\end{minipage}	
+\end{bexemple}
+
+\begin{bdefi}
+	Si : $\lim _{x \rightarrow A} f(x)=+\infty$ ou $\lim _{x \rightarrow A} f(x)=-\infty$, la droite d'équation $x=A$ est appelée \grasInDef{asymptote verticale} à la courbe de la fonction $f$.
+	\begin{center}
+		\includegraphics[scale=0.28]{T05-Crs-Img07}
+	\end{center}
+	
+\end{bdefi}
+
+\subsection{Limite à gauche, limite à droite}
+
+\begin{bexemple}
+	
+	\begin{minipage}[c]{0.53\linewidth}
+		Considérons la fonction inverse définie sur $\mathbb{R}^{*}$ par $f(x)=\frac{1}{x}$.\\
+		La fonction $f$ admet des limites différentes en 0 selon que :\\
+		$x>0$ ou $x<0$.
+		
+		\begin{itemEx}
+			\item Si $x>0$ : Lorsque $x$ tend vers 0, $f(x)$ tend vers $+\infty$ et on note:\\
+			$\lim _{\substack{x \rightarrow 0 \\ x>0}} f(x)=+\infty$ ou $\lim _{x \rightarrow 0^{+}} f(x)=+\infty$.\\
+			On parle de limite à droite de 0
+			\item Si $x<0$ : Lorsque $x$ tend vers 0, $f(x)$ tend vers $-\infty$ et on note:\\
+			$\lim _{\substack{x \rightarrow 0 \\ x<0}} f(x)=-\infty$ ou $\lim _{x \rightarrow 0^{-}} f(x)=-\infty$.\\
+			On parle de limite à gauche de $\mathbf{0}$.\\
+			
+		\end{itemEx}
+	\end{minipage} \hfill
+	\begin{minipage}[c]{0.45\linewidth}
+		\includegraphics[scale=0.25]{T05-Crs-Img08}
+	\end{minipage}	
+\end{bexemple}
+
+\begin{bmethodet}{Déterminer graphiquement des limites d'une fonction}
+	\grasInMet{Enoncé:}
+	
+	On donne ci-dessous la représentation graphique de la fonction $f$.
+	\begin{enumMet}
+		\item Lire graphiquement les limites en $-\infty$, en $+\infty$, en -4 et en 5 .
+		\item Compléter alors le tableau de variations de $f$.
+		\begin{center}
+			\begin{tikzpicture}
+				\tkzTabInit{$x$ / 1 , $f(x)$ / 1.5}{$-\infty$, $-4$, $2$, 5, $+\infty$}
+				\tkzTabVar{}
+			\end{tikzpicture}
+		\end{center}
+		\begin{center}
+			\includegraphics[scale=0.25]{T05-Crs-Img09}
+		\end{center}
+	\end{enumMet}
+	\ \\
+	\grasInMet{Solution}
+	\begin{enumMet}
+		\item \begin{itemMet}
+			\item $\lim \limits_{x \rightarrow-\infty} f(x)=5 \quad \lim \limits_{x \rightarrow+\infty} f(x)=5$
+			
+			La courbe de $f$ admet une asymptote horizontale d'équation $y=5$ en $-\infty$ et $+\infty$.
+			\item $\lim \limits_{x \rightarrow-4} f(x)=+\infty$
+			
+			La courbe de $f$ admet une asymptote verticale d'équation $x=-4$.
+			\item $\lim \limits_{x \rightarrow 5^{-}} f(x)=+\infty$ et $\lim \limits_{x \rightarrow 5^{+}} f(x)=-\infty$
+			La courbe de $f$ admet une asymptote verticale d'équation $x=5$.
+		\end{itemMet}
+		\item \ \\
+		\begin{tikzpicture}
+			\tkzTabInit{$x$ / 1 , $f(x)$ / 2}{$-\infty$, $-4$, $2$, 5, $+\infty$}
+			\tkzTabVar{-/ $5$, +D+/ $+\infty$/ $+\infty$, -/$6$,+D-/ $+\infty$ /$-\infty$, +/ $5$}
+		\end{tikzpicture}
+		\begin{center}
+			\includegraphics[scale=0.25]{T05-Crs-Img10}
+		\end{center}
+	\end{enumMet}
+\end{bmethodet}
+
+\section{Opérations sur les limites}
+
+\subsection{Utiliser les propriétés des opérations sur les limites}
+
+$\alpha$ peut désigner $+\infty,-\infty$ ou un nombre réel.
+
+
+\subsection*{SOMME}
+\begin{center}
+	\begin{tabular}{|l|c|c|c|c|c|c|}
+		\hline
+		$\lim \limits_{x \rightarrow \alpha} f(x)=$ & $L$ & $L$ & $L$ & $+\infty$ & $-\infty$ & $+\infty$ \\
+		\hline
+		$\lim \limits_{x \rightarrow \alpha} g(x)=$ & $L^{\prime}$ & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & $-\infty$ \\
+		\hline
+		$\lim \limits_{x \rightarrow \alpha} f(x)+g(x)=$ & $L+L^{\prime}$ & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & F.I.* \\
+		\hline
+	\end{tabular}
+\end{center}
+
+	* Forme indéterminée: On ne peut pas prévoir la limite éventuelle.
+
+\subsection*{PRODUIT}
+
+\begin{center}
+	\begin{tabular}{|l|c|c|c|c|}
+		\hline
+		$\lim \limits_{x \rightarrow \alpha} f(x)=$ & $L$ & $L$ & $\infty$ & 0 \\
+		\hline
+		$\lim \limits_{x \rightarrow \alpha} g(x)=$ & $L^{\prime}$ & $\infty$ & $\infty$ & $\infty$ \\
+		\hline
+		$\lim \limits_{x \rightarrow \alpha} f(x) \times g(x)=$ & $L \times L^{\prime}$ & $\infty$ & $\infty$ & F.I. \\
+		\hline
+	\end{tabular}
+\end{center}
+
+On applique la règle des signes pour déterminer si le produit est $+\infty$ ou $-\infty$.
+
+\subsection*{QUOTIENT}
+
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		$\lim \limits_{x \rightarrow \alpha} f(x)=$ & $L$ & $L \neq 0$ & $L$ & $\infty$ & $\infty$ & 0 \\
+		\hline
+		$\lim \limits_{x \rightarrow \alpha} g(x)=$ & $L^{\prime} \neq 0$ & 0 & $\infty$ & $L$ & $\infty$ & 0 \\
+		\hline
+		$\lim \limits_{x \rightarrow \alpha} \dfrac{f(x)}{g(x)}=$ & $\dfrac{L}{L^{\prime}}$ & $\infty$ & 0 & $\infty$ & F.I. & F.I. \\
+		\hline
+	\end{tabular}
+\end{center}
+
+On applique la règle des signes pour déterminer si le quotient est $+\infty$ ou $-\infty$.
+
+\begin{bmethodet}{Calculer la limite d'une fonction à l'aide des formules d'opération}
+	\grasInMet{Enoncé:}
+	
+	Déterminer les limites suivantes :
+	\begin{enumMet}
+		\item $\lim \limits_{x \rightarrow-\infty}(x-5)\left(3+x^{2}\right)$
+		\item $\lim \limits_{x \rightarrow 3^{-}} \dfrac{1-2 x}{x-3}$
+	\end{enumMet}
+	\ \\
+	\grasInMet{Solution}
+	\begin{enumMet}
+		\item $\lim \limits_{x \rightarrow-\infty}(x-5)\left(3+x^{2}\right)=$ ?\\
+		$\left\{\begin{array}{l}\lim \limits_{x \rightarrow-\infty} x-5=-\infty \\ \lim \limits_{x \rightarrow-\infty} x^{2}=+\infty \text { donc } \lim \limits_{x \rightarrow-\infty} 3+x^{2}=+\infty\end{array}\right.$\\
+		Comme limite d'un produit : $\lim \limits_{x \rightarrow-\infty}(x-5)\left(3+x^{2}\right)=-\infty$
+		\item $\lim \limits_{x \rightarrow 3^{-}} \dfrac{1-2 x}{x-3}=$ ?\\
+		$\left\{\begin{array}{l}\lim \limits_{x \rightarrow 3^{-}} 1-2 x=1-2 \times 3=-5 \\ \lim \limits_{x \rightarrow 3^{-}} x-3=0^{-}\end{array}\right.$\\
+		Une limite de la forme \guillemets{$\dfrac{5}{0}$}  est égale à \guillemets{$\infty$}.\\
+		Donc, d'après la règle des signes, une limite de la forme \guillemets{$\dfrac{-5}{0^{-}}$} est égale à \guillemets{$+\infty$}.\\
+		D'où, comme limite d'un quotient: $\lim \limits_{x \rightarrow 3^{-}} \frac{1-2 x}{x-3}=+\infty$.
+	\end{enumMet}
+\end{bmethodet}
+
+\begin{bmethodet}{Déterminer une asymptote}
+	\grasInMet{Enoncé:}
+	
+	Soit $f$ la fonction définie sur $\mathbb{R} \backslash\{1\}$ par $f(x)=\dfrac{-2}{1-x}$.\\
+	Démontrer que la courbe représentative de la fonction $f$ admet des asymptotes dont on précisera la nature et les équations.
+	
+	\ \\
+	\grasInMet{Solution}
+	
+	\begin{itemMet}
+		\item $\lim \limits_{x \rightarrow+\infty} 1-x=-\infty$ donc comme limite d'un quotient, on a : $\lim \limits_{x \rightarrow+\infty} \frac{-2}{1-x}=0$.
+	\end{itemMet}
+	
+	On prouve de même que : $\lim \limits_{x \rightarrow-\infty} \dfrac{-2}{1-x}=0$.\\
+	On en déduit que la droite d'équation $y=0$ est asymptote horizontale à la courbe représentative de $f$ en $+\infty$ et en $-\infty$.
+	
+	\begin{itemMet}
+		\item $\lim \limits_{x \rightarrow 1^{-}} 1-x=0^{+}$donc comme limite d'un quotient, on a : $\lim \limits_{x \rightarrow 1^{-}} \dfrac{-2}{1-x}=-\infty$
+	\end{itemMet}
+	
+	Et $\lim \limits_{x \rightarrow 1^{+}} 1-x=0^{-}$donc comme limite d'un quotient, on a : $\lim \limits_{x \rightarrow 1^{+}} \dfrac{-2}{1-x}=+\infty$\\
+	On en déduit que la droite d'équation $x=1$ est asymptote verticale à la courbe représentative de $f$.
+	\begin{center}
+		\includegraphics[scale=0.3]{T05-Crs-Img11}
+	\end{center}
+	
+\end{bmethodet}
+
+\section{Calculs de limites par composition et comparaison}
+\subsection{Composition de limites}
+
+\begin{bmethodet}{Déterminer la limite d'une fonction composée}
+	\grasInMet{Enoncé:}
+	
+	Soit la fonction $f$ définie sur $\left[\dfrac{1}{2} ;+\infty\left[\operatorname{par}: f(x)=\sqrt{2-\frac{1}{x}}\right.\right.$\\
+	Calculer la limite de la fonction $f$ en $+\infty$.
+	
+	\ \\
+	\grasInMet{Solution}
+	
+	On a : $\lim \limits_{x \rightarrow+\infty} \frac{1}{x}=0$, donc $\lim \limits_{x \rightarrow+\infty} 2-\dfrac{1}{x}=2$\\
+	Donc, comme limite d'une fonction composée : $\lim \limits_{x \rightarrow+\infty} \sqrt{2-\dfrac{1}{x}}=\sqrt{2}$\\
+	En effet, si $x \rightarrow+\infty$, on a : $X=2-\frac{1}{x} \rightarrow 2$ et donc : $\lim \limits_{X \rightarrow 2} \sqrt{X}=\sqrt{2}$.
+\end{bmethodet}
+
+\subsection{Comparaison}
+
+\begin{bmethodet}{Calculer une limite par comparaison}
+	\grasInMet{Enoncé:}
+	
+	Calculer : $\lim \limits_{x \rightarrow+\infty} x+\sin x$
+	
+	\ \\
+	\grasInMet{Solution}
+	
+	\begin{itemMet}
+		\item $\lim \limits_{x \rightarrow+\infty} \sin x$ n'existe pas.
+	\end{itemMet}
+	
+	Donc sous la forme donnée, la limite cherchée est indéterminée.
+	
+	Levons l'indétermination :\\
+	$\bullet-1 \leq \sin x$, donc : $x-1 \leq x+\sin x$.
+	
+	\begin{itemMet}
+		\item Or $\lim \limits_{x \rightarrow+\infty} x-1=+\infty$, donc par comparaison :
+	\end{itemMet}
+	
+	$$
+	\lim \limits_{x \rightarrow+\infty} x+\sin x=+\infty
+	$$
+	
+	Par abus de langage, on pourrait dire que la fonction $x \longmapsto x-1$ pousse la fonction $x \longmapsto x+\sin x$ vers $+\infty$ pour des valeurs de $x$ suffisamment grandes.
+\end{bmethodet}

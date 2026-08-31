@@ -1,0 +1,237 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../term-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{Chapitre 02 - Continuité - Exercices}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Chapitre 02 - Continuité\\
+						Exercices obligatoires
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+	
+\exerciceDS{}
+
+On considère une fonction $f$ définie sur $[-5 ; 5]$ dont on donne la courbe représentative $C$ ci-dessous.
+
+\begin{center}
+	\includegraphics[scale=0.8]{Img-Exo-Obl-01}
+\end{center}
+
+
+Préciser si les affirmations suivantes sont vraies ou fausses.
+\begin{enumMet}
+	\item La fonction $f$ est discontinue en 3 .
+	\item La fonction $f$ est continue en 1 .
+	\item La fonction $f$ est continue sur l'intervalle $[-3 ; 3]$.
+	\item La fonction $f$ est continue sur l'intervalle $]-2 ; 3[$.
+	\item La fonction $f$ est continue sur l'intervalle $[-5 ; 2]$.
+\end{enumMet}
+
+
+
+\exerciceDS{}
+
+On considère la fonction $f: x \mapsto \begin{cases}6 x+8 & \text { si } x \leqslant-1 \\ -3 x+7 & \text { si }-1<x<2  \\ x-1 & \text { si } x \geqslant 2\end{cases}$
+
+La fonction $f$ est-elle continue en $-1$? et en $2$?
+
+%Continuité en -1 ?
+%- D'une part, $f(-1)=6 \times(-1)+8=2$
+%- D'autre part, $\lim _{x \rightarrow(-1)^{+}} f(x)=-3 \times(-1)+7=10$
+%
+%Ainsi, $f$ n'est pas continue en -1 .
+%
+%Continuité en 2 ?
+%- D'une part, $f(2)=2-1=1$.
+%- D'autre part, $\lim _{x \rightarrow 2^{-}}=-3 \times 2+7=1$
+%- Enfin, $\lim _{x \rightarrow 2^{+}}=2-1=1$
+%
+%La fonction $f$ est continue en 2 .
+
+\exerciceDS{}
+
+On considère la fonction $f: x \mapsto\left\{\begin{array}{ll}\dfrac{1}{2} x-3 & \text { si } x \leqslant-2 \\ x+1 & \text { sinon }\end{array}\right.$ définie sur $\mathbb{R}$.
+\begin{enumMet}
+	\item Montrer que la fonction $f$ n'est pas continue en -2 .
+	\item Tracer la courbe représentative de la fonction $f$ dans un repère orthonormé.
+\end{enumMet}
+
+
+%$f(-2)=\frac{1}{2} \times(-2)-3=-4$. Or, $\lim _{x \rightarrow(-2)^{+}}=-2+1=-1$. La fonction $f$ n'est pas continue en -2 .
+
+\exerciceDS{}
+
+Soit $a$ et $b$ deux réels. On considère la fonction $f: x \mapsto\left\{\begin{array}{ll}a x^2+b x+1 & \text { si } x<1 \\ x^2+a x+b & \text { si } x \geqslant 1\end{array}\right.$.
+
+Montrer que la fonction $f$ est continue sur $\mathbb{R}$.
+
+%$f$ est continue sur $]-\infty ; 1[$ et sur $] 1 ;+\infty[$. Il reste à déterminer si elle est continue en 1 .
+%- $f(1)=1^2+a \times 1+b=1+a+b$
+%- $\lim _{x \rightarrow 1^{-}} f(x)=a \times 1^2+b \times 1+1=a+b+1$
+%- $\lim _{x \rightarrow 1^{+}} f(x)=1+a+b$
+%
+%Ainsi, $f$ est continue en 1 . Finalement, $f$ est continue sur $\mathbb{R}$.
+
+\exerciceDS{}
+
+Pour tout réel $x$, on pose $f(x)=x^5-2 x-4$.
+\begin{enumMet}
+	\item Calculer $f(1)$ et $f(2)$
+	\item En déduire que l'équation $x^5=2 x+4$ possède au moins une solution sur $[1 ; 2]$.
+	\item Donner une solution de cette équation au centième près.
+\end{enumMet}
+
+%$f(1)=-5<0$ et $f(2)=24>0$.
+%La fonction $f$ étant continue sur $[1 ; 2]$, d'après le théorème des valeurs intermédiaires, il existe un réel $c \in[1 ; 2]$ tel que $f(c)=0$, soit $c^5-2 c-4=0$ ou encore $c^5=2 c+4$.
+%
+%En utilisant un algorithme de balayage, on trouve que $c \simeq 1.47$
+
+
+\exerciceDS{}
+
+On considère la fonction $f: x \mapsto e^x-3 x$, définie sur $\mathbb{R}$.
+\begin{enumMet}
+	\item Justifier que $f$ est continue et dérivable sur $\mathbb{R}$ et déterminer $f^{\prime}(x)$ pour tout réel $x$
+	\item Quel est le sens de variation de $f$ sur l'intervalle $[0 ; 1]$ ?
+	\item Que vaut $f(0)$ ? Quel est le signe de $f(1)$ ?
+	\item En déduire que l'équation $e^x=3 x$ admet exactement une solution sur $[0 ; 1]$.
+\end{enumMet}
+
+%$f$ est dérivable comme somme de fonctions dérivables (et est donc continue). Pour tout réel $x, f^{\prime}(x)=e^x-3$
+%Si $0 \leqslant x \leqslant 1$, alors, par croissance de la fonction exponentielle sur $\mathbb{R}, e^0 \leqslant e^x \leqslant e$ et donc $e^x-3 \leqslant e-3<0$. La fonction $f$ est strictement décroissante sur $[0 ; 1]$.
+%$f(0)=1$ et $f(1)=e-3<0$. Résoudre $e^x=3 x$ revient à résoudre $f(x)=0$. Or, $f$ est continue sur $[0 ; 1], f(0)>0$ et $f(1)<0$. D'après le théorème des valeurs intermédiaires, il existe un réel $c$ dans $[0,1]$ tel que $f(c)=0$. De plus, la fonction $f$ étant strictement décroissante sur cet intervalle, le réel $c$ est unique.
+
+\exerciceDS{}
+
+On considère la fonction $f: x \mapsto 2 x^3+9 x^2-60 x+3$, définie sur $\mathbb{R}$.
+\begin{enumMet}
+	\item Étudier les variations de la fonction $f$.
+	\item En déduire la nombre de solutions de l'équation $f(x)=0$ sur $\mathbb{R}$.
+\end{enumMet}
+
+%La fonction $f$ est dérivable sur $\mathbb{R}$. Pour tout réel $x, f^{\prime}(x)=6 x^2+18 x-60=6\left(x^2+3 x-10\right)$. Ainsi, $f^{\prime}(x)=0 \Leftrightarrow x=2$ ou $x=-5$. On a par ailleurs $f(2)=-65$ et $f(-5)=278$. En outre, $\lim _{x \rightarrow+\infty} f(x)=+\infty$ et $\lim _{x \rightarrow-\infty} f(x)=-\infty$. Le tableau de variations de $f$ est le suivant.
+%\begin{center}
+%	\includegraphics[scale=0.8]{Img-Exo-Obl-02}
+%\end{center}
+%
+%On peut en déduire le nombre de solutions de l'équation $f(x)=0$. Par exemple, sur $]-\infty ;-5[$
+%- La fonction $f$ est continue et strictement monotone.
+%- $f(-5)>0$ et $\lim _{x \rightarrow-\infty} f(x)=-\infty$.
+%- Ainsi, d'après le théorème des valeurs intermédiaires pour les fonctions strictement monotones, l'équation $f(x)=0$ possède une unique solution sur l'intervalle $]-\infty ;-5[$
+%
+%De la même manière, l'équation $f(x)=0$ admet une unique solution sur $]-5 ; 2[$ puis une unique solution sur $] 2 ;+\infty[$. Ainsi, l'équation $f(x)=0$ possède exactement 3 solutions sur $\mathbb{R}$.
+
+\exerciceDS{}
+
+Soit $g$ la fonction définie sur $[-3 ; 6]$ par :
+
+$$
+g(x)=\frac{1}{3} x^3-x-8
+$$
+
+\begin{enumMet}
+	\item Dresser le tableau de variations de la fonction $g$.
+	\item Montrer que l'équation $g(x)=0$ admet une solution unique $\alpha$ dans $[-3 ; 6]$. Déterminer un encadrement de $\alpha$ au millième près.
+	\item En déduire le tableau de signes de $g$ sur $[-3 ; 6]$.
+\end{enumMet}
+
+\exerciceDS{}
+
+
+Soit $f$ la fonction définie sur $[-2 ; 1]$ par:
+
+$$
+f(x)=\mathrm{e}^{3 x}-3 x+1
+$$
+
+\begin{enumMet}
+	\item Dresser le tableau de variations de la fonction $f$.
+	\item Déterminer le nombre de solutions de l'équation $f(x)=3$ sur l'intervalle $[-2 ; 1]$.
+	\item Donner une valeur approchée au centième de chacune des solutions de l'équation $f(x)=3$.
+\end{enumMet}
+
+
+
+\exerciceDS{}
+
+On injecte du glucose à un patient.
+On estime que la glycémie, en gramme par litre de sang, au bout de $t$ heures est modélisée par la fonction $f$ définie sur [ $0 ; 7$ ] par :
+
+$$
+f(t)=0,6 \mathrm{e}^{-0,8 t}+0,84
+$$
+
+\begin{enumMet}
+	\item Déterminer la glycémie au moment de l'injection.
+	\item Étudier le sens de variation de $f$. Interpréter.
+	\item À l'aide de la calculatrice, déterminer, à $0,1 \mathrm{~h}$ près, le temps au bout duquel :
+	\begin{enumMet}
+		\item la glycémie descend à 1,24 gramme par litre ;
+		\item la glycémie aura diminué de 0,5 gramme par litre.
+	\end{enumMet}
+\end{enumMet}
+
+
+\exerciceDS{}
+
+À la suite d'un accident industriel, un gaz se répand dans un local d'usine. On admet qu'au-delà de six minutes il n'y a quasiment plus de gaz dans l'air.
+On modélise l'évolution du taux de gaz dans l'air grâce à la fonction $f$ définie sur $[0 ; 6]$ par :
+
+$$
+f(x)=2 x \mathrm{e}^{-x}
+$$
+
+où $x$ est le nombre de minutes écoulées depuis l'accident et $f(x)$ le taux de gaz dans l'air exprimé en partie par million (ppm).
+On donne la courbe représentative $C$ de la fonction $f$ sur $[0 ; 6]$.
+
+\begin{center}
+	\includegraphics[scale=1.2]{Img-Exo-Obl-03}
+\end{center}
+
+\begin{enumMet}
+	\item Déterminer le tableau complet des variations de la fonction $f$ sur l'intervalle $[0 ; 6]$.
+	\item \begin{enumMet}
+		\item Montrer que l'équation $f(x)=0,65$ admet deux solutions $x_1$ et $x_2$ sur [ $0 ; 6$ ], avec $x_1<x_2$.
+		\item À l'aide de la calculatrice, donner une valeur approchée de $x_1$ et de $x_2$ à 0,1 minute près.
+	\end{enumMet}
+	\item On considère que le gaz a un effet irritant pour l'organisme si le taux dépasse $0,65 \mathrm{ppm}$ pendant plus d'une minute.
+	
+	Déterminer si le personnel de l'usine a été affecté ou non par la fuite de gaz, en explicitant la démarche.
+\end{enumMet}
+
+\end{document}
+

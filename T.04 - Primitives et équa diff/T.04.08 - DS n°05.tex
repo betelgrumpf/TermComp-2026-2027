@@ -1,0 +1,113 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../term-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{DS n$^{\circ}$05 $-$ Primitives et équations différentielles $-$ 15/01/2026}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						DS n$^{\circ}$05\\Primitives et équations différentielles
+					}
+				\end{center}
+			\end{minipage}
+		}
+		
+	\end{center}
+	\begin{center}\textbf{55 min - Calculatrice autorisée - Barème indicatif}\\
+		\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}
+	\end{center}
+	
+	\begin{center}
+		On veillera à ENCADRER ses résultats et soigner sa copie.\\
+		Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+	\end{center}
+	
+\vspace*{-0.5cm}
+\exerciceDS{ $-$ (5 points)}
+Déterminer une primitive de la fonction $f$.
+
+\begin{multicols}{3}
+	\begin{enumMet}
+		\item \ding{46} $f(x)=4 x^2+5 x-3$
+		\item $f(x)=2-3x-4 \mathrm{e}^x$
+		\item $f(x)=2 x-\dfrac{4}{x^2}$
+		\item $f(x)=\dfrac{4}{3 x-1}$
+		\item $f(x)=(6x+2) \mathrm{e}^{3x^2+2 x}$
+	\end{enumMet}
+\end{multicols}
+
+\vspace*{-0.5cm}
+\exerciceDS{$-$ (4,5 points)}
+
+Dans chaque cas, déterminer la primitive $F$ de la fonction $f$ vérifiant la condition proposée.
+%\begin{multicols}{2}
+	\begin{enumMet}
+		\item $f(x)=5 x-2\mathrm{e}^{-x}$, pour tout $x \in \mathbb{R}$ et $F(0)=4$.
+		\item $f(x)=8x \mathrm{e}^{2x^2}$, pour tout $x \in \mathbb{R}$ et $F(0)=5$.
+		\item $f(x)=\dfrac{10x-2}{5 x^2-2x+2}$ pour tout $x \in \mathbb{R}$ et $F(0)=\ln 6$.
+	\end{enumMet}
+%\end{multicols}
+
+
+\exerciceDS{ $-$ (3,5 points)}
+
+Déterminer les solutions des équations différentielles suivantes.
+\begin{multicols}{3}
+	\begin{enumMet}
+		\item \ding{46} $y'=2e^x$
+		\item $y^{\prime}=4 e^{2 x}$ et $y(0)=5$
+		\item $y'=3x+4$
+	\end{enumMet}
+\end{multicols}
+
+\exerciceDS{ $-$ (3 points)}
+
+Déterminer les fonctions $f$ solutions des équations différentielles suivantes.
+\begin{multicols}{3}
+	\begin{enumMet}
+		\item \ding{46} $y^{\prime}=5 y$
+		\item \ding{46} $y^{\prime}+2y=0$
+		\item $2y'+8 y=0$
+	\end{enumMet}
+\end{multicols}
+
+\exerciceDS{ $-$ (4,5 points)}
+
+Résoudre les équations différentielles suivantes.
+\begin{multicols}{3}
+	\begin{enumMet}
+		\item $y^{\prime}=5y$ et $y(0)=9$
+		\item $2y^{\prime}=5 y$ et $y(0)=7$
+		\item $y'=-4 y$ et $y(3)=1$
+	\end{enumMet}
+\end{multicols}
+	
+\end{document}
+

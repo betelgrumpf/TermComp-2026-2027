@@ -1,0 +1,84 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../term-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{DS n$^{\circ}$02 $-$ Dérivation $-$ Rattrapage $-$ 09/10/2025}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						DS n$^{\circ}$02\\ Dérivation $-$ Rattrapage
+					}
+				\end{center}
+			\end{minipage}
+		}
+		
+	\end{center}
+	\begin{center}\textbf{40 min - Calculatrice autorisée - Barème indicatif}\\
+%		\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}
+	\end{center}
+	
+	\begin{center}
+		On veillera à ENCADRER ses résultats et soigner sa copie.\\
+		Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+	\end{center}
+	
+\exerciceDS{ $-$ 4 points}
+
+\begin{enumMet}
+	\item Calculer $f^{\prime}(x)$ pour $f(x)=5 x^4-3 x^3-2x^2-1$ sur \R. 
+	\item Calculer $f^{\prime}(x)$ pour $f(x)=\dfrac{2x+3}{3x-5}$ pour $x \neq \dfrac{5}{3}$.
+	\item Calculer $f^{\prime}(x)$ pour $f(x)=30 \mathrm{e}^{-2 x+5}$ sur \R. 
+	\item Calculer $f^{\prime}(x)$ pour $f(x)=\sqrt{2x^2+5}$ sur \R.
+\end{enumMet}
+
+\exerciceDS{ $-$ 3 points}
+
+On considère la fonction $f: x \mapsto e^{-5 x^2+3 x-2}$, définie sur \R.
+\begin{enumMet}
+	\item Calculer $f^{\prime}(x)$ pour tout réel $x$.
+	\item Dresser le tableau de signes de la dérivée sur \R
+	\item En déduire le tableau de variations de $f$.
+\end{enumMet}
+
+
+\exerciceDS{ $-$ 3 points}
+
+Soit la fonction $f: x \mapsto\left(-x^2-x+11\right) e^x$ définie sur $\mathbb{R}$.
+
+\begin{enumMet}
+	\item Calculer $f^{\prime}(x)$ sur \R.
+	\item Dresser le tableau de signes de la dérivée sur \R.
+	\item En déduire le tableau de variations de $f$.
+\end{enumMet}
+
+
+
+\end{document}
+

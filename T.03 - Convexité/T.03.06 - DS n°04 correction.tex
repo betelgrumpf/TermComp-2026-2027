@@ -1,0 +1,417 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../term-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{\textcolor{red}{Correction $-$ DS n$^{\circ}$04 $-$ Convexité $-$ 20/11/2025}}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						\textcolor{red}{Correction $-$ DS n$^{\circ}$04\\Convexité}
+					}
+				\end{center}
+			\end{minipage}
+		}
+		
+	\end{center}
+%	\begin{center}\textbf{55 min - Calculatrice autorisée - Barème indicatif}\\
+%		\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}
+%	\end{center}
+%	
+%	\begin{center}
+%		On veillera à ENCADRER ses résultats et soigner sa copie.\\
+%		Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+%	\end{center}
+	
+	\exerciceDS{ $-$ (3 points)}
+	Soit $f$ la fonction dérivable sur $[-6 ; 6]$ dont la courbe représentative $C_{f}$ est donnée ci-dessous.
+	\begin{center}
+		\newrgbcolor{xdxdff}{0.49019607843137253 0.49019607843137253 1.}
+		\psset{xunit=0.8cm,yunit=0.8cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=3pt 2,arrowinset=0.25}
+		\begin{pspicture*}(-6.5,-1.5)(6.5,5.2)
+			\multips(0,-1)(0,1.0){7}{\psline[linestyle=dashed,linecap=1,dash=1.5pt 1.5pt,linewidth=0.4pt,linecolor=gray]{c-c}(-6.5,0)(6.5,0)}
+			\multips(-6,0)(1.0,0){14}{\psline[linestyle=dashed,linecap=1,dash=1.5pt 1.5pt,linewidth=0.4pt,linecolor=gray]{c-c}(0,-1.5)(0,5.2)}
+			\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1.,Dy=1.,ticksize=-2pt 0,subticks=2]{->}(0,0)(-6.5,-1.5)(6.5,5.2)
+			\psline[linewidth=2.pt,linecolor=blue](-5.999999980000023,1.7560975668649546)(-5.999999980000023,1.7560975668649546)
+			\psline[linewidth=2.pt,linecolor=blue](-5.999999980000023,1.7560975668649546)(-5.939999930096024,1.7739229076853824)
+			\psline[linewidth=2.pt,linecolor=blue](-5.939999930096024,1.7739229076853824)(-5.879999880192024,1.7920676358112113)
+			\psline[linewidth=2.pt,linecolor=blue](-5.879999880192024,1.7920676358112113)(-5.819999830288024,1.8105391498651233)
+			\psline[linewidth=2.pt,linecolor=blue](-5.819999830288024,1.8105391498651233)(-5.759999780384025,1.8293450256604713)
+			\psline[linewidth=2.pt,linecolor=blue](-5.759999780384025,1.8293450256604713)(-5.699999730480025,1.8484930182412944)
+			\psline[linewidth=2.pt,linecolor=blue](-5.699999730480025,1.8484930182412944)(-5.639999680576025,1.8679910636287052)
+			\psline[linewidth=2.pt,linecolor=blue](-5.639999680576025,1.8679910636287052)(-5.579999630672026,1.8878472802268202)
+			\psline[linewidth=2.pt,linecolor=blue](-5.579999630672026,1.8878472802268202)(-5.519999580768026,1.908069969836038)
+			\psline[linewidth=2.pt,linecolor=blue](-5.519999580768026,1.908069969836038)(-5.459999530864026,1.9286676182155427)
+			\psline[linewidth=2.pt,linecolor=blue](-5.459999530864026,1.9286676182155427)(-5.399999480960027,1.9496488951303685)
+			\psline[linewidth=2.pt,linecolor=blue](-5.399999480960027,1.9496488951303685)(-5.339999431056027,1.9710226538110966)
+			\psline[linewidth=2.pt,linecolor=blue](-5.339999431056027,1.9710226538110966)(-5.279999381152027,1.9927979297463039)
+			\psline[linewidth=2.pt,linecolor=blue](-5.279999381152027,1.9927979297463039)(-5.219999331248028,2.0149839387190354)
+			\psline[linewidth=2.pt,linecolor=blue](-5.219999331248028,2.0149839387190354)(-5.159999281344028,2.0375900739888686)
+			\psline[linewidth=2.pt,linecolor=blue](-5.159999281344028,2.0375900739888686)(-5.099999231440028,2.06062590251041)
+			\psline[linewidth=2.pt,linecolor=blue](-5.099999231440028,2.06062590251041)(-5.039999181536029,2.084101160067264)
+			\psline[linewidth=2.pt,linecolor=blue](-5.039999181536029,2.084101160067264)(-4.979999131632029,2.1080257451874935)
+			\psline[linewidth=2.pt,linecolor=blue](-4.979999131632029,2.1080257451874935)(-4.9199990817280295,2.1324097116923006)
+			\psline[linewidth=2.pt,linecolor=blue](-4.9199990817280295,2.1324097116923006)(-4.85999903182403,2.157263259713896)
+			\psline[linewidth=2.pt,linecolor=blue](-4.85999903182403,2.157263259713896)(-4.79999898192003,2.182596725001244)
+			\psline[linewidth=2.pt,linecolor=blue](-4.79999898192003,2.182596725001244)(-4.7399989320160305,2.2084205663133782)
+			\psline[linewidth=2.pt,linecolor=blue](-4.7399989320160305,2.2084205663133782)(-4.679998882112031,2.2347453506791264)
+			\psline[linewidth=2.pt,linecolor=blue](-4.679998882112031,2.2347453506791264)(-4.619998832208031,2.2615817362792763)
+			\psline[linewidth=2.pt,linecolor=blue](-4.619998832208031,2.2615817362792763)(-4.5599987823040316,2.288940452682176)
+			\psline[linewidth=2.pt,linecolor=blue](-4.5599987823040316,2.288940452682176)(-4.499998732400032,2.3168322781364457)
+			\psline[linewidth=2.pt,linecolor=blue](-4.499998732400032,2.3168322781364457)(-4.439998682496032,2.345268013594598)
+			\psline[linewidth=2.pt,linecolor=blue](-4.439998682496032,2.345268013594598)(-4.379998632592033,2.374258453108781)
+			\psline[linewidth=2.pt,linecolor=blue](-4.379998632592033,2.374258453108781)(-4.319998582688033,2.403814350204431)
+			\psline[linewidth=2.pt,linecolor=blue](-4.319998582688033,2.403814350204431)(-4.259998532784033,2.433946379799028)
+			\psline[linewidth=2.pt,linecolor=blue](-4.259998532784033,2.433946379799028)(-4.199998482880034,2.4646650951913736)
+			\psline[linewidth=2.pt,linecolor=blue](-4.199998482880034,2.4646650951913736)(-4.139998432976034,2.495980879601545)
+			\psline[linewidth=2.pt,linecolor=blue](-4.139998432976034,2.495980879601545)(-4.079998383072034,2.5279038916928376)
+			\psline[linewidth=2.pt,linecolor=blue](-4.079998383072034,2.5279038916928376)(-4.019998333168035,2.5604440044544376)
+			\psline[linewidth=2.pt,linecolor=blue](-4.019998333168035,2.5604440044544376)(-3.9599982832640346,2.593610736767162)
+			\psline[linewidth=2.pt,linecolor=blue](-3.9599982832640346,2.593610736767162)(-3.8999982333600345,2.6274131769143234)
+			\psline[linewidth=2.pt,linecolor=blue](-3.8999982333600345,2.6274131769143234)(-3.8399981834560344,2.661859897235659)
+			\psline[linewidth=2.pt,linecolor=blue](-3.8399981834560344,2.661859897235659)(-3.7799981335520343,2.696958859054314)
+			\psline[linewidth=2.pt,linecolor=blue](-3.7799981335520343,2.696958859054314)(-3.719998083648034,2.7327173069354487)
+			\psline[linewidth=2.pt,linecolor=blue](-3.719998083648034,2.7327173069354487)(-3.659998033744034,2.7691416512602935)
+			\psline[linewidth=2.pt,linecolor=blue](-3.659998033744034,2.7691416512602935)(-3.599997983840034,2.8062373380221164)
+			\psline[linewidth=2.pt,linecolor=blue](-3.599997983840034,2.8062373380221164)(-3.539997933936034,2.8440087046710976)
+			\psline[linewidth=2.pt,linecolor=blue](-3.539997933936034,2.8440087046710976)(-3.479997884032034,2.882458820754715)
+			\psline[linewidth=2.pt,linecolor=blue](-3.479997884032034,2.882458820754715)(-3.4199978341280337,2.9215893120200267)
+			\psline[linewidth=2.pt,linecolor=blue](-3.4199978341280337,2.9215893120200267)(-3.3599977842240336,2.9614001665659786)
+			\psline[linewidth=2.pt,linecolor=blue](-3.3599977842240336,2.9614001665659786)(-3.2999977343200335,3.0018895215596704)
+			\psline[linewidth=2.pt,linecolor=blue](-3.2999977343200335,3.0018895215596704)(-3.2399976844160334,3.0430534289629563)
+			\psline[linewidth=2.pt,linecolor=blue](-3.2399976844160334,3.0430534289629563)(-3.1799976345120333,3.0848855986582624)
+			\psline[linewidth=2.pt,linecolor=blue](-3.1799976345120333,3.0848855986582624)(-3.1199975846080332,3.127377117319024)
+			\psline[linewidth=2.pt,linecolor=blue](-3.1199975846080332,3.127377117319024)(-3.059997534704033,3.1705161413456406)
+			\psline[linewidth=2.pt,linecolor=blue](-3.059997534704033,3.1705161413456406)(-2.999997484800033,3.2142875621882707)
+			\psline[linewidth=2.pt,linecolor=blue](-2.999997484800033,3.2142875621882707)(-2.939997434896033,3.2586726424101773)
+			\psline[linewidth=2.pt,linecolor=blue](-2.939997434896033,3.2586726424101773)(-2.879997384992033,3.3036486209181537)
+			\psline[linewidth=2.pt,linecolor=blue](-2.879997384992033,3.3036486209181537)(-2.8199973350880327,3.3491882859095665)
+			\psline[linewidth=2.pt,linecolor=blue](-2.8199973350880327,3.3491882859095665)(-2.7599972851840326,3.3952595142703403)
+			\psline[linewidth=2.pt,linecolor=blue](-2.7599972851840326,3.3952595142703403)(-2.6999972352800325,3.4418247764178256)
+			\psline[linewidth=2.pt,linecolor=blue](-2.6999972352800325,3.4418247764178256)(-2.6399971853760325,3.4888406059321464)
+			\psline[linewidth=2.pt,linecolor=blue](-2.6399971853760325,3.4888406059321464)(-2.5799971354720324,3.536257033776148)
+			\psline[linewidth=2.pt,linecolor=blue](-2.5799971354720324,3.536257033776148)(-2.5199970855680323,3.5840169874863617)
+			\psline[linewidth=2.pt,linecolor=blue](-2.5199970855680323,3.5840169874863617)(-2.459997035664032,3.6320556564461084)
+			\psline[linewidth=2.pt,linecolor=blue](-2.459997035664032,3.6320556564461084)(-2.399996985760032,3.680299825249036)
+			\psline[linewidth=2.pt,linecolor=blue](-2.399996985760032,3.680299825249036)(-2.339996935856032,3.728667178250327)
+			\psline[linewidth=2.pt,linecolor=blue](-2.339996935856032,3.728667178250327)(-2.279996885952032,3.7770655797070853)
+			\psline[linewidth=2.pt,linecolor=blue](-2.279996885952032,3.7770655797070853)(-2.2199968360480318,3.825392335452014)
+			\psline[linewidth=2.pt,linecolor=blue](-2.2199968360480318,3.825392335452014)(-2.1599967861440317,3.8735334438466027)
+			\psline[linewidth=2.pt,linecolor=blue](-2.1599967861440317,3.8735334438466027)(-2.0999967362400316,3.9213628458389196)
+			\psline[linewidth=2.pt,linecolor=blue](-2.0999967362400316,3.9213628458389196)(-2.0399966863360315,3.968741686318123)
+			\psline[linewidth=2.pt,linecolor=blue](-2.0399966863360315,3.968741686318123)(-1.9799966364320314,4.015517601615367)
+			\psline[linewidth=2.pt,linecolor=blue](-1.9799966364320314,4.015517601615367)(-1.9199965865280313,4.061524050938846)
+			\psline[linewidth=2.pt,linecolor=blue](-1.9199965865280313,4.061524050938846)(-1.8599965366240312,4.106579712722673)
+			\psline[linewidth=2.pt,linecolor=blue](-1.8599965366240312,4.106579712722673)(-1.799996486720031,4.150487970267419)
+			\psline[linewidth=2.pt,linecolor=blue](-1.799996486720031,4.150487970267419)(-1.739996436816031,4.193036514579894)
+			\psline[linewidth=2.pt,linecolor=blue](-1.739996436816031,4.193036514579894)(-1.679996386912031,4.233997095875223)
+			\psline[linewidth=2.pt,linecolor=blue](-1.679996386912031,4.233997095875223)(-1.6199963370080308,4.273125458641923)
+			\psline[linewidth=2.pt,linecolor=blue](-1.6199963370080308,4.273125458641923)(-1.5599962871040307,4.3101614983053125)
+			\psline[linewidth=2.pt,linecolor=blue](-1.5599962871040307,4.3101614983053125)(-1.4999962372000306,4.344829680126031)
+			\psline[linewidth=2.pt,linecolor=blue](-1.4999962372000306,4.344829680126031)(-1.4399961872960305,4.3768397627618665)
+			\psline[linewidth=2.pt,linecolor=blue](-1.4399961872960305,4.3768397627618665)(-1.3799961373920304,4.405887869582166)
+			\psline[linewidth=2.pt,linecolor=blue](-1.3799961373920304,4.405887869582166)(-1.3199960874880303,4.431657949996951)
+			\psline[linewidth=2.pt,linecolor=blue](-1.3199960874880303,4.431657949996951)(-1.2599960375840302,4.453823670365456)
+			\psline[linewidth=2.pt,linecolor=blue](-1.2599960375840302,4.453823670365456)(-1.1999959876800301,4.472050769093934)
+			\psline[linewidth=2.pt,linecolor=blue](-1.1999959876800301,4.472050769093934)(-1.13999593777603,4.485999902955915)
+			\psline[linewidth=2.pt,linecolor=blue](-1.13999593777603,4.485999902955915)(-1.07999588787203,4.495330001163771)
+			\psline[linewidth=2.pt,linecolor=blue](-1.07999588787203,4.495330001163771)(-1.0199958379680298,4.49970213008389)
+			\psline[linewidth=2.pt,linecolor=blue](-1.0199958379680298,4.49970213008389)(-0.9599957880640297,4.498783854665694)
+			\psline[linewidth=2.pt,linecolor=blue](-0.9599957880640297,4.498783854665694)(-0.8999957381600296,4.492254062795341)
+			\psline[linewidth=2.pt,linecolor=blue](-0.8999957381600296,4.492254062795341)(-0.8399956882560295,4.479808196288107)
+			\psline[linewidth=2.pt,linecolor=blue](-0.8399956882560295,4.479808196288107)(-0.7799956383520295,4.461163807789043)
+			\psline[linewidth=2.pt,linecolor=blue](-0.7799956383520295,4.461163807789043)(-0.7199955884480294,4.4360663374629405)
+			\psline[linewidth=2.pt,linecolor=blue](-0.7199955884480294,4.4360663374629405)(-0.6599955385440293,4.404294978335147)
+			\psline[linewidth=2.pt,linecolor=blue](-0.6599955385440293,4.404294978335147)(-0.5999954886400292,4.365668476080937)
+			\psline[linewidth=2.pt,linecolor=blue](-0.5999954886400292,4.365668476080937)(-0.5399954387360291,4.320050689737938)
+			\psline[linewidth=2.pt,linecolor=blue](-0.5399954387360291,4.320050689737938)(-0.47999538883202897,4.267355726099687)
+			\psline[linewidth=2.pt,linecolor=blue](-0.47999538883202897,4.267355726099687)(-0.41999533892802887,4.20755245423323)
+			\psline[linewidth=2.pt,linecolor=blue](-0.41999533892802887,4.20755245423323)(-0.3599952890240288,4.140668209191368)
+			\psline[linewidth=2.pt,linecolor=blue](-0.3599952890240288,4.140668209191368)(-0.2999952391200287,4.066791506658511)
+			\psline[linewidth=2.pt,linecolor=blue](-0.2999952391200287,4.066791506658511)(-0.23999518921602858,3.986073613452774)
+			\psline[linewidth=2.pt,linecolor=blue](-0.23999518921602858,3.986073613452774)(-0.17999513931202848,3.89872885221718)
+			\psline[linewidth=2.pt,linecolor=blue](-0.17999513931202848,3.89872885221718)(-0.11999508940802839,3.8050335611384503)
+			\psline[linewidth=2.pt,linecolor=blue](-0.11999508940802839,3.8050335611384503)(-0.05999503950402829,3.7053236791658524)
+			\psline[linewidth=2.pt,linecolor=blue](-0.05999503950402829,3.7053236791658524)(0.0,3.599990981261976)
+			\psline[linewidth=2.pt,linecolor=blue](0.0,3.599990981261976)(0.0600050603039719,3.489478043456021)
+			\psline[linewidth=2.pt,linecolor=blue](0.0600050603039719,3.489478043456021)(0.120005110207972,3.374272070370223)
+			\psline[linewidth=2.pt,linecolor=blue](0.120005110207972,3.374272070370223)(0.1800051601119721,3.2548977649781996)
+			\psline[linewidth=2.pt,linecolor=blue](0.1800051601119721,3.2548977649781996)(0.2400052100159722,3.131909458531329)
+			\psline[linewidth=2.pt,linecolor=blue](0.2400052100159722,3.131909458531329)(0.3000052599199723,3.005882745425437)
+			\psline[linewidth=2.pt,linecolor=blue](0.3000052599199723,3.005882745425437)(0.3600053098239724,2.8774058817392465)
+			\psline[linewidth=2.pt,linecolor=blue](0.3600053098239724,2.8774058817392465)(0.4200053597279725,2.7470712067428416)
+			\psline[linewidth=2.pt,linecolor=blue](0.4200053597279725,2.7470712067428416)(0.4800054096319726,2.615466834366629)
+			\psline[linewidth=2.pt,linecolor=blue](0.4800054096319726,2.615466834366629)(0.5400054595359727,2.4831688378933907)
+			\psline[linewidth=2.pt,linecolor=blue](0.5400054595359727,2.4831688378933907)(0.6000055094399728,2.3507341181893042)
+			\psline[linewidth=2.pt,linecolor=blue](0.6000055094399728,2.3507341181893042)(0.6600055593439729,2.2186941063207706)
+			\psline[linewidth=2.pt,linecolor=blue](0.6600055593439729,2.2186941063207706)(0.720005609247973,2.087549408325614)
+			\psline[linewidth=2.pt,linecolor=blue](0.720005609247973,2.087549408325614)(0.7800056591519731,1.957765456079032)
+			\psline[linewidth=2.pt,linecolor=blue](0.7800056591519731,1.957765456079032)(0.8400057090559732,1.8297691861905327)
+			\psline[linewidth=2.pt,linecolor=blue](0.8400057090559732,1.8297691861905327)(0.9000057589599733,1.7039467308044565)
+			\psline[linewidth=2.pt,linecolor=blue](0.9000057589599733,1.7039467308044565)(0.9600058088639734,1.5806420716090444)
+			\psline[linewidth=2.pt,linecolor=blue](0.9600058088639734,1.5806420716090444)(1.0200058587679735,1.4601565822482176)
+			\psline[linewidth=2.pt,linecolor=blue](1.0200058587679735,1.4601565822482176)(1.0800059086719735,1.3427493650680773)
+			\psline[linewidth=2.pt,linecolor=blue](1.0800059086719735,1.3427493650680773)(1.1400059585759736,1.2286382756114569)
+			\psline[linewidth=2.pt,linecolor=blue](1.1400059585759736,1.2286382756114569)(1.2000060084799737,1.1180015219975872)
+			\psline[linewidth=2.pt,linecolor=blue](1.2000060084799737,1.1180015219975872)(1.2600060583839738,1.010979725507111)
+			\psline[linewidth=2.pt,linecolor=blue](1.2600060583839738,1.010979725507111)(1.320006108287974,0.907678332383465)
+			\psline[linewidth=2.pt,linecolor=blue](1.320006108287974,0.907678332383465)(1.380006158191974,0.8081702740407197)
+			\psline[linewidth=2.pt,linecolor=blue](1.380006158191974,0.8081702740407197)(1.4400062080959741,0.7124987825318934)
+			\psline[linewidth=2.pt,linecolor=blue](1.4400062080959741,0.7124987825318934)(1.5000062579999742,0.6206802793550907)
+			\psline[linewidth=2.pt,linecolor=blue](1.5000062579999742,0.6206802793550907)(1.5600063079039743,0.5327072676512333)
+			\psline[linewidth=2.pt,linecolor=blue](1.5600063079039743,0.5327072676512333)(1.6200063578079744,0.4485511699112003)
+			\psline[linewidth=2.pt,linecolor=blue](1.6200063578079744,0.4485511699112003)(1.6800064077119745,0.36816506494369716)
+			\psline[linewidth=2.pt,linecolor=blue](1.6800064077119745,0.36816506494369716)(1.7400064576159746,0.2914862886812253)
+			\psline[linewidth=2.pt,linecolor=blue](1.7400064576159746,0.2914862886812253)(1.8000065075199747,0.2184388731708481)
+			\psline[linewidth=2.pt,linecolor=blue](1.8000065075199747,0.2184388731708481)(1.8600065574239748,0.14893580666872766)
+			\psline[linewidth=2.pt,linecolor=blue](1.8600065574239748,0.14893580666872766)(1.920006607327975,0.0828811050807763)
+			\psline[linewidth=2.pt,linecolor=blue](1.920006607327975,0.0828811050807763)(1.980006657231975,0.020171691082499516)
+			\psline[linewidth=2.pt,linecolor=blue](1.980006657231975,0.020171691082499516)(2.040006707135975,-0.039300917825257825)
+			\psline[linewidth=2.pt,linecolor=blue](2.040006707135975,-0.039300917825257825)(2.100006757039975,-0.09564910721307932)
+			\psline[linewidth=2.pt,linecolor=blue](2.100006757039975,-0.09564910721307932)(2.1600068069439753,-0.1489878415569347)
+			\psline[linewidth=2.pt,linecolor=blue](2.1600068069439753,-0.1489878415569347)(2.2200068568479754,-0.199433507915466)
+			\psline[linewidth=2.pt,linecolor=blue](2.2200068568479754,-0.199433507915466)(2.2800069067519755,-0.24710291597719145)
+			\psline[linewidth=2.pt,linecolor=blue](2.2800069067519755,-0.24710291597719145)(2.3400069566559756,-0.29211244220293414)
+			\psline[linewidth=2.pt,linecolor=blue](2.3400069566559756,-0.29211244220293414)(2.4000070065599757,-0.3345773054545316)
+			\psline[linewidth=2.pt,linecolor=blue](2.4000070065599757,-0.3345773054545316)(2.4600070564639758,-0.37461096153386425)
+			\psline[linewidth=2.pt,linecolor=blue](2.4600070564639758,-0.37461096153386425)(2.520007106367976,-0.4123246043693549)
+			\psline[linewidth=2.pt,linecolor=blue](2.520007106367976,-0.4123246043693549)(2.580007156271976,-0.4478267621058897)
+			\psline[linewidth=2.pt,linecolor=blue](2.580007156271976,-0.4478267621058897)(2.640007206175976,-0.48122297701626016)
+			\psline[linewidth=2.pt,linecolor=blue](2.640007206175976,-0.48122297701626016)(2.700007256079976,-0.512615558906716)
+			\psline[linewidth=2.pt,linecolor=blue](2.700007256079976,-0.512615558906716)(2.7600073059839763,-0.5421034024950567)
+			\psline[linewidth=2.pt,linecolor=blue](2.7600073059839763,-0.5421034024950567)(2.8200073558879764,-0.5697818600647223)
+			\psline[linewidth=2.pt,linecolor=blue](2.8200073558879764,-0.5697818600647223)(2.8800074057919764,-0.5957426615179978)
+			\psline[linewidth=2.pt,linecolor=blue](2.8800074057919764,-0.5957426615179978)(2.9400074556959765,-0.6200738747475327)
+			\psline[linewidth=2.pt,linecolor=blue](2.9400074556959765,-0.6200738747475327)(3.0000075055999766,-0.6428599000048624)
+			\psline[linewidth=2.pt,linecolor=blue](3.0000075055999766,-0.6428599000048624)(3.0600075555039767,-0.6641814926588955)
+			\psline[linewidth=2.pt,linecolor=blue](3.0600075555039767,-0.6641814926588955)(3.120007605407977,-0.6841158094009975)
+			\psline[linewidth=2.pt,linecolor=blue](3.120007605407977,-0.6841158094009975)(3.180007655311977,-0.7027364735637525)
+			\psline[linewidth=2.pt,linecolor=blue](3.180007655311977,-0.7027364735637525)(3.240007705215977,-0.7201136557770601)
+			\psline[linewidth=2.pt,linecolor=blue](3.240007705215977,-0.7201136557770601)(3.300007755119977,-0.7363141666887645)
+			\psline[linewidth=2.pt,linecolor=blue](3.300007755119977,-0.7363141666887645)(3.3600078050239772,-0.7514015589294853)
+			\psline[linewidth=2.pt,linecolor=blue](3.3600078050239772,-0.7514015589294853)(3.4200078549279773,-0.7654362359053736)
+			\psline[linewidth=2.pt,linecolor=blue](3.4200078549279773,-0.7654362359053736)(3.4800079048319774,-0.7784755653613064)
+			\psline[linewidth=2.pt,linecolor=blue](3.4800079048319774,-0.7784755653613064)(3.5400079547359775,-0.7905739959739737)
+			\psline[linewidth=2.pt,linecolor=blue](3.5400079547359775,-0.7905739959739737)(3.6000080046399776,-0.8017831755128995)
+			\psline[linewidth=2.pt,linecolor=blue](3.6000080046399776,-0.8017831755128995)(3.6600080545439777,-0.8121520693511783)
+			\psline[linewidth=2.pt,linecolor=blue](3.6600080545439777,-0.8121520693511783)(3.720008104447978,-0.8217270783200169)
+			\psline[linewidth=2.pt,linecolor=blue](3.720008104447978,-0.8217270783200169)(3.780008154351978,-0.8305521550852393)
+			\psline[linewidth=2.pt,linecolor=blue](3.780008154351978,-0.8305521550852393)(3.840008204255978,-0.8386689183828746)
+			\psline[linewidth=2.pt,linecolor=blue](3.840008204255978,-0.8386689183828746)(3.900008254159978,-0.8461167645875163)
+			\psline[linewidth=2.pt,linecolor=blue](3.900008254159978,-0.8461167645875163)(3.960008304063978,-0.852932976204054)
+			\psline[linewidth=2.pt,linecolor=blue](3.960008304063978,-0.852932976204054)(4.020008353967978,-0.8591528269728739)
+			\psline[linewidth=2.pt,linecolor=blue](4.020008353967978,-0.8591528269728739)(4.080008403871979,-0.8648096833629533)
+			\psline[linewidth=2.pt,linecolor=blue](4.080008403871979,-0.8648096833629533)(4.1400084537759785,-0.8699351022983096)
+			\psline[linewidth=2.pt,linecolor=blue](4.1400084537759785,-0.8699351022983096)(4.200008503679978,-0.8745589250227523)
+			\psline[linewidth=2.pt,linecolor=blue](4.200008503679978,-0.8745589250227523)(4.260008553583978,-0.8787093670573682)
+			\psline[linewidth=2.pt,linecolor=blue](4.260008553583978,-0.8787093670573682)(4.320008603487977,-0.882413104246005)
+			\psline[linewidth=2.pt,linecolor=blue](4.320008603487977,-0.882413104246005)(4.380008653391977,-0.8856953549173989)
+			\psline[linewidth=2.pt,linecolor=blue](4.380008653391977,-0.8856953549173989)(4.440008703295977,-0.8885799582196049)
+			\psline[linewidth=2.pt,linecolor=blue](4.440008703295977,-0.8885799582196049)(4.500008753199976,-0.8910894487039304)
+			\psline[linewidth=2.pt,linecolor=blue](4.500008753199976,-0.8910894487039304)(4.560008803103976,-0.893245127252474)
+			\psline[linewidth=2.pt,linecolor=blue](4.560008803103976,-0.893245127252474)(4.620008853007976,-0.8950671284563338)
+			\psline[linewidth=2.pt,linecolor=blue](4.620008853007976,-0.8950671284563338)(4.680008902911975,-0.8965744845611819)
+			\psline[linewidth=2.pt,linecolor=blue](4.680008902911975,-0.8965744845611819)(4.740008952815975,-0.897785186103742)
+			\psline[linewidth=2.pt,linecolor=blue](4.740008952815975,-0.897785186103742)(4.800009002719975,-0.898716239367218)
+			\psline[linewidth=2.pt,linecolor=blue](4.800009002719975,-0.898716239367218)(4.860009052623974,-0.8993837207862748)
+			\psline[linewidth=2.pt,linecolor=blue](4.860009052623974,-0.8993837207862748)(4.920009102527974,-0.8998028284331484)
+			\psline[linewidth=2.pt,linecolor=blue](4.920009102527974,-0.8998028284331484)(4.980009152431974,-0.8999879307161104)
+			\psline[linewidth=2.pt,linecolor=blue](4.980009152431974,-0.8999879307161104)(5.040009202335973,-0.8999526124201112)
+			\psline[linewidth=2.pt,linecolor=blue](5.040009202335973,-0.8999526124201112)(5.100009252239973,-0.8997097182171719)
+			\psline[linewidth=2.pt,linecolor=blue](5.100009252239973,-0.8997097182171719)(5.160009302143973,-0.8992713937711714)
+			\psline[linewidth=2.pt,linecolor=blue](5.160009302143973,-0.8992713937711714)(5.220009352047972,-0.8986491245582308)
+			\psline[linewidth=2.pt,linecolor=blue](5.220009352047972,-0.8986491245582308)(5.280009401951972,-0.8978537725200801)
+			\psline[linewidth=2.pt,linecolor=blue](5.280009401951972,-0.8978537725200801)(5.3400094518559715,-0.8968956106636655)
+			\psline[linewidth=2.pt,linecolor=blue](5.3400094518559715,-0.8968956106636655)(5.400009501759971,-0.8957843557159596)
+			\psline[linewidth=2.pt,linecolor=blue](5.400009501759971,-0.8957843557159596)(5.460009551663971,-0.8945291989385145)
+			\psline[linewidth=2.pt,linecolor=blue](5.460009551663971,-0.8945291989385145)(5.5200096015679705,-0.8931388352018163)
+			\psline[linewidth=2.pt,linecolor=blue](5.5200096015679705,-0.8931388352018163)(5.58000965147197,-0.8916214904150125)
+			\psline[linewidth=2.pt,linecolor=blue](5.58000965147197,-0.8916214904150125)(5.64000970137597,-0.8899849474021332)
+			\psline[linewidth=2.pt,linecolor=blue](5.64000970137597,-0.8899849474021332)(5.7000097512799694,-0.8882365703115401)
+			\psline[linewidth=2.pt,linecolor=blue](5.7000097512799694,-0.8882365703115401)(5.760009801183969,-0.8863833276410445)
+			\psline[linewidth=2.pt,linecolor=blue](5.760009801183969,-0.8863833276410445)(5.820009851087969,-0.8844318139569537)
+			\psline[linewidth=2.pt,linecolor=blue](5.820009851087969,-0.8844318139569537)(5.880009900991968,-0.8823882703812485)
+			\psline[linewidth=2.pt,linecolor=blue](5.880009900991968,-0.8823882703812485)(5.940009950895968,-0.8802586039171886)
+			\begin{scriptsize}
+				\psdots[dotstyle=*,linecolor=xdxdff](5.991268318368156,-0.8783752246286491)
+				\psdots[dotstyle=*,linecolor=xdxdff](-6.,1.7560975609756098)
+			\end{scriptsize}
+		\end{pspicture*}
+	\end{center}
+%	\includegraphics[scale=0.2]{2025_11_06_3b44234b8b55fbc3078dg-1(1)}
+	
+	\begin{enumMet}
+		\item Étudier la convexité de $f$ sur $[-6 ; 6]$.
+		\begin{corrBox}
+			La fonction est concave sur $[-6 ; 1]$ puis convexe sur $[1 ; 6]$.
+		\end{corrBox}
+		\item Déterminer les éventuels points d'inflexion de $C_{f}$.
+		\begin{corrBox}
+			Le point d'inflexion a pour coordonnées $(1\ ;\ 1,5)$		
+		\end{corrBox}
+	\end{enumMet}
+	
+	\exerciceDS{ $-$ (5 points)}
+	Soit $f$ la fonction définie sur $\mathbb{R}$ par:
+	
+	$$
+	f(x)=3x^{4}-2 x^{3}-4 x^{2}
+	$$
+	
+%	\begin{multicols}{2}
+		\begin{enumMet}
+			\item Calculer $f^{\prime \prime}(x)$ et étudier son signe.
+			\begin{corrBox}
+				$f'(x)=12x^3-6x^2-8x$
+				
+				$f''(x)=36x^2-12x-8=4(9x^2-3x-2)$
+				
+				$\Delta=9+4\times 9\times 2=81$
+				
+				$x_1=-\dfrac{1}{3}$ et $x_2=\dfrac{2}{3}$
+				
+				\begin{tikzpicture}
+					\tkzTabInit{$x$ / 1 , $f''(x)$ / 1}{$-\infty$, $-\dfrac{1}{3}$,$\dfrac{2}{3}$, $+\infty$}
+					\tkzTabLine{, +, z, -, z,+,}
+				\end{tikzpicture}
+			\end{corrBox}
+			\item Étudier la convexité de $f$ sur $\mathbb{R}$.
+			\begin{corrBox}
+				\begin{tikzpicture}
+					\tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$-\infty$, $-\dfrac{1}{3}$,$\dfrac{2}{3}$, $+\infty$}
+					\tkzTabLine{, \text{convexe}, z, \text{concave}, z,\text{convexe},}
+				\end{tikzpicture}
+			\end{corrBox}
+			\item Donner les coordonnées du ou des points d'inflexion
+			\begin{corrBox}
+				$f\left(-\dfrac{1}{3}\right)= -\dfrac{1}{3}$ et $f\left(\dfrac{2}{3}\right)= -\dfrac{16}{9}$.
+				
+				Les 2 points d'inflexion ont comme coordonnées $\left(-\dfrac{1}{3}\ ;\ -\dfrac{1}{3}\right)$ et $\left(\dfrac{2}{3}\ ;\ -\dfrac{16}{9}\right)$
+			\end{corrBox}
+		\end{enumMet}
+%	\end{multicols}
+	
+	\exerciceDS{ $-$ (5 points)}
+	Soit $f$ la fonction définie sur \R par:
+	
+	$$
+	f(x)=\frac{5}{2x+6}
+	$$
+	
+%	\begin{multicols}{2}
+		\begin{enumMet}
+			\item Déterminer la valeur interdite de la fonction f
+			\begin{corrBox}
+				On résout l'équation $2x+6=0$
+				
+				$2x+6=0 \iff 2x=-6 \iff x=-3$		
+			\end{corrBox}
+			\item Étudier les variations de $f'$. 
+			\begin{corrBox}
+				$f'(x)=\dfrac{-10}{(2x+6)^2}$
+				
+				$f''(x)=\dfrac{10\times (8x+24)}{(2x+6)^4}$
+				
+				\begin{tikzpicture}
+					\tkzTab{$x$ / 1 , $f''(x)$ / 1, $f'(x)$ / 1.5}{$-\infty$, $-3$, $+\infty$}
+					{, -, d, +, }
+					{+/ , -/, +/}
+				\end{tikzpicture}		
+			\end{corrBox}
+			\item En déduire la convexité de $f$.
+			
+			\begin{corrBox}
+				La fonction est concave sur $[-\infty ; -3]$ puis convexe sur $[-3 ; +\infty]$.
+			\end{corrBox}
+		\end{enumMet}
+%	\end{multicols}
+	
+	\newpage
+	\exerciceDS{ \ding{46} $-$ (5 points)}
+	Soient les fonctions $f$ et $g$ définies sur $\mathbb{R}$ par:
+	
+	$$
+	\begin{gathered}
+		f(x)=3 x^{2}-5 x-3 \\
+		\text { et } g(x)=-2x^{2}+2x+4
+	\end{gathered}
+	$$
+	
+	\begin{enumMet}
+		\item \ding{46} On a obtenu à la calculatrice les courbes représentatives de $f$ et $g$ ci-contre. Après les avoir repérées, conjecturer si $f$, puis $g$, est convexe ou concave sur $\mathbb{R}$.
+		\begin{center}
+			\includegraphics[scale=0.85]{Img-DS-01}
+		\end{center}
+		\begin{corrBox}
+			La fonction $f$ est fonction polynome de degré 2 avec $a>0$. Sa courbe représentative est donc une parabole \guillemets{tournée vers le haut}. Il s'agit donc de la courbe rouge.		
+			
+			La fonction $g$ est fonction polynome de degré 2 avec $a<0$. Sa courbe représentative est donc une parabole \guillemets{tournée vers le bas}. Il s'agit donc de la courbe bleue.
+			
+			$f$ semble donc convexe et $g$ concave.		
+		\end{corrBox}
+		\item \begin{enumMet}
+			\item \ding{46} Calculer $f^{\prime}(x)$, puis $f^{\prime \prime}(x)$.
+			\begin{corrBox}
+				$f'(x)=6x-5$ et $f''(x)=6$
+				
+				$g'(x)=-4x+2$ et $g''(x)=-4$ 		
+			\end{corrBox}
+			\item \ding{46} Calculer $g^{\prime}(x)$, puis $g^{\prime \prime}(x)$.
+			\begin{corrBox}
+				$f''(x)>0$ pour tout $x \in \R$ donc $f'$ est croissante sur \R donc $f$ est convexe sur \R. 		
+				
+				$g''(x)<0$ pour tout $x \in \R$ donc $g'$ est décroissante sur \R donc $g$ est concave sur \R. 		
+			\end{corrBox}
+		\end{enumMet}
+		\item \ding{46} Démontrer les conjectures émises.
+	\end{enumMet}
+	
+	\exerciceDS{ $-$ (3 points)}
+	On considère une fonction $f$ définie sur $\mathbb{R}$.\\
+	Dans chacun des cas suivants, déterminer si la fonction $f$ est convexe ou concave sur $\mathbb{R}$.
+	
+%	\begin{multicols}{2}
+		\begin{enumMet}
+			\item $f(x)=-2x^{4}-3 x^2+5x$
+			\begin{corrBox}
+				$f'(x)=-8x^3-6x+5$ et $f''(x)=-24x^2-6<0$ pour tout $x \in \R$.
+				
+				$f$ est donc concave sur \R.		
+			\end{corrBox}
+			\item $f(x)=2 \mathrm{e}^{-3 x}+4x^2$
+			\begin{corrBox}
+				$f'(x)=2\times (-3)e^{-3x}+8x$ et $f''(x)=-6\times (-3)e^{-3x}+8=18e^{-3x}+8>0$ pour tout $x \in \R$.
+				
+				$f$ est donc convexe sur \R.		
+			\end{corrBox}
+		\end{enumMet}
+%	\end{multicols}
+	
+\end{document}
+

@@ -1,0 +1,142 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../term-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{\textcolor{red}{Correction $-$ DS n$^{\circ}$02 $-$ Dérivation $-$ Rattrapage $-$ 09/10/2025}}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\textcolor{red}{\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Correction $-$ DS n$^{\circ}$02\\ Dérivation $-$ Rattrapage}
+					}
+				\end{center}
+			\end{minipage}
+		}
+		
+	\end{center}
+	\begin{center}\textbf{40 min - Calculatrice autorisée - Barème indicatif}\\
+%		\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}
+	\end{center}
+	
+	\begin{center}
+		On veillera à ENCADRER ses résultats et soigner sa copie.\\
+		Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+	\end{center}
+	
+\exerciceDS{ $-$ 4 points}
+
+\begin{enumMet}
+	\item Calculer $f^{\prime}(x)$ pour $f(x)=5 x^4-3 x^3-2x^2-1$ sur \R. 
+	\begin{corrBox}
+		$f'(x)=20x^3-9x^2-4x$		
+	\end{corrBox}
+	\item Calculer $f^{\prime}(x)$ pour $f(x)=\dfrac{2x+3}{3x-5}$ pour $x \neq \dfrac{5}{3}$.
+	\begin{corrBox}
+		$f$ est du type $\dfrac{u}{v}$ avec $u(x)=2x+3$ et $v(x)=3x-5$ d'ou $u'(x)=2$ et $v'(x)=3$
+		
+		$f^{\prime}(x)=\dfrac{u'(x)v(x)-v'(x)u(x)}{v^2(x)}=\dfrac{2(3x-5)-3(2x+3)}{(3x-5)^2}=\dfrac{-19}{(3x-5)^2}$		
+	\end{corrBox}
+	\item Calculer $f^{\prime}(x)$ pour $f(x)=30 \mathrm{e}^{-2 x+5}$ sur \R. 
+	\begin{corrBox}
+		$f^{\prime}(x)=30\times (-2)\mathrm{e}^{-2x+5}=-60\mathrm{e}^{-2x+5}$		
+	\end{corrBox}
+	\item Calculer $f^{\prime}(x)$ pour $f(x)=\sqrt{2x^2+5}$ sur \R.
+	\begin{corrBox}
+		$f$ est du type $f(u(x))$ avec $u(x)=2x^2+5$ et $f(X)=\sqrt{X}$ d'ou $u'(x)=4x$ et $f'(X)=\dfrac{1}{2\sqrt{X}}$ 
+		
+		$f^{\prime}(x)=\dfrac{4x}{2\sqrt{2x^2+5}}=\dfrac{2x}{\sqrt{2x^2+5}}$		
+	\end{corrBox}
+\end{enumMet}
+
+\exerciceDS{ $-$ 3 points}
+
+On considère la fonction $f: x \mapsto e^{-5 x^2+3 x-2}$, définie sur \R.
+\begin{enumMet}
+	\item Calculer $f^{\prime}(x)$ pour tout réel $x$.
+	\begin{corrBox}
+		$f$ est du type $f(u(x))$ avec $u(x)=-5 x^2+3 x-2$ et $f(X)=e^{X}$ d'ou $u'(x)=-10x+3$ et $f'(X)=e^{X}$ 
+		
+		$f^{\prime}(x)=(-10x+3)e^{-5 x^2+3 x-2}$		
+	\end{corrBox}
+	\item Dresser le tableau de signes de la dérivée sur \R
+	\begin{corrBox}
+		\begin{tikzpicture}
+			\tkzTabInit{$x$ / 1 , $f'(x)$ / 1}{$-\infty$, $\dfrac{3}{10}$, $+\infty$}
+			\tkzTabLine{, +, z, -, }
+		\end{tikzpicture}
+	\end{corrBox}
+	\item En déduire le tableau de variations de $f$.
+	\begin{corrBox}
+		\begin{tikzpicture}
+			\tkzTab{$x$ / 1 , $f'(x)$ / 1, $f(x)$ / 1.5}{$-\infty$, $\dfrac{3}{10}$, $+\infty$}
+			{, +, z, -, }
+			{-/, +/ $f(\dfrac{3}{10})$, -/}
+		\end{tikzpicture}
+	\end{corrBox}
+\end{enumMet}
+
+
+\exerciceDS{ $-$ 3 points}
+
+Soit la fonction $f: x \mapsto\left(-x^2-x+11\right) e^x$ définie sur $\mathbb{R}$.
+
+\begin{enumMet}
+	\item Calculer $f^{\prime}(x)$ sur \R.
+	\begin{corrBox}
+		$f$ est du type $u\times v$ avec $u(x)=-x^2-x+11$ et $\mathrm{e}^{x}$ d'ou $u'(x)=-2x-1$ et $v'(x)=\mathrm{e}^{x}$
+		
+		$f^{\prime}(x)=u'(x)v(x)+v'(x)u(x)=(-2x-1)\mathrm{e}^{x}+(-x^2-x+11)\mathrm{e}^{x}=(-x^2-3x+10)\mathrm{e}^{x}$		
+	\end{corrBox}
+	\item Dresser le tableau de signes de la dérivée sur \R.
+		\begin{corrBox}
+		On étudie le signe de $-x^2-x+2$
+		
+		$\Delta=b^2-4ac=(-3)^2+4\times 10=49$ d'ou
+		
+		$x_1=\dfrac{-b-\sqrt{\Delta}}{2a}=\dfrac{3-7}{-2}=2$ et $x_2=\dfrac{-b+\sqrt{\Delta}}{2a}=\dfrac{3+7}{-2}=-5$ 
+		
+		\begin{tikzpicture}
+			\tkzTabInit{$x$ / 1 , $f'(x)$ / 1}{$-\infty$, $-5$,$2$, $+\infty$}
+			\tkzTabLine{, -, z, +,z,- }
+		\end{tikzpicture}		
+	\end{corrBox}
+	\item En déduire le tableau de variations de $f$.
+	\begin{corrBox}
+		\begin{tikzpicture}
+			\tkzTab{$x$ / 1 , $f'(x)$ / 1, $f(x)$ / 1.5}{$-\infty$, $-5$,$2$, $+\infty$}
+			{, -, z, +,z,- }
+			{+/, -/ $f(-4)$, +/$f(3)$, -/}
+		\end{tikzpicture}
+	\end{corrBox}
+\end{enumMet}
+
+
+
+\end{document}
+

@@ -1,0 +1,246 @@
+\chapter[Thème 1 $-$ Dérivation]{Thème 1 : Modèles définis par une fonction \\Dérivation}
+\thispagestyle{fancy}
+
+\section{Rappels sur la dérivation}
+
+\subsection{Tangente à une courbe}
+
+Soit une fonction $f$ définie sur un intervalle I et dérivable en un nombre réel $a$ appartenant à I.
+
+$L$ est le nombre dérivé de $f$ en $a$.
+
+A est un point d'abscisse $a$ appartenant à la courbe représentative $C_f$ de $f$.
+
+
+
+    \begin{bdefi}
+        La \grasInDef{Tangente} à la courbe $C_f$ au point A est la droite passant par A de coefficient directeur le nombre dérivé $L$.
+    \end{bdefi}
+    
+    \begin{bprop}
+    	Une équation de la tangente à la courbe de la fonction $f$ au point d'abscisse $a$ est : $y=f^{\prime}(a)(x-a)+f(a)$.
+    \end{bprop}
+    
+    \begin{bmethodet}{Déterminer l'équation d'une tangente}
+    	\grasInMet{Enoncé :}
+    	
+    	On considère la fonction trinôme $f$ définie sur $\mathbb{R}$ par $f(x)=x^2+3 x-1$.
+    	On veut déterminer une équation de la tangente à la courbe représentative de $f$ au point A de la courbe d'abscisse 2.
+    	
+    	\grasInMet{Réponse :}
+    	$$
+    	f^{\prime}(x)=2 x+3 \text { donc } f^{\prime}(2)=2 \times 2+3=7
+    	$$
+    	
+    	
+    	Or, $f(2)=2^2+3 \times 2-1=9$
+    	Donc son équation est de la forme : $y=f^{\prime}(2)(x-2)+f(2)$, soit :
+    	
+    	$$
+    	y=7(x-2)+9 \text { soit encore } y=7 x-5
+    	$$
+    	
+    	Une équation de tangente à la courbe représentative de $f$ au point A de la courbe d'abscisse 2 est $y=7 x-5$.
+    \end{bmethodet}
+    
+    \subsection{formule de dérivation}
+    
+    \begin{minipage}[c]{0.48\linewidth}
+    	\begin{center}
+    		\renewcommand{\arraystretch}{2}
+    		\begin{tabular}{|Xc|Xc|}
+    			\hline Fonction & Dérivée \\
+    			\hline $a, a \in \mathbb{R}$ & 0 \\
+    			\hline $a x$, $a \in \mathbb{R}$ & $a$ \\
+    			\hline $x^2$ & $2 x$ \\
+    			\hline $x^n$, $n \geqslant 1$ entier & $n x^{n-1}$ \\
+    			\hline $\dfrac{1}{x}$ & $-\dfrac{1}{x^2}$ \\
+    			\hline $\dfrac{1}{x^n}$; $n \geqslant 1$ entier & $-\dfrac{n}{x^{n+1}}$ \\
+    			\hline $\sqrt{x}$ & $\dfrac{1}{2 \sqrt{x}}$ \\
+    			\hline $e^x$ & $e^x$ \\
+    			\hline $e^{k x}$, $k \in \mathbb{R}$ & $k e^{k x}$ \\
+    			\hline
+    		\end{tabular}
+    	\end{center}
+    	
+    \end{minipage} \hfill
+    \begin{minipage}[c]{0.48\linewidth}
+    	\begin{center}
+    		\renewcommand{\arraystretch}{2}
+    		\begin{tabular}{|c|c|}
+    			\hline Fonction & Dérivée \\
+    			\hline$u+v$ & $u^{\prime}+v^{\prime}$ \\
+    			\hline$k u$, $k \in \mathbb{R}$ & $k u^{\prime}$ \\
+    			\hline$u v$ & $u^{\prime} v+u v^{\prime}$ \\
+    			\hline$\dfrac{1}{u}$ & $-\dfrac{u^{\prime}}{u^2}$ \\
+    			\hline$\dfrac{u}{v}$ & $\dfrac{u^{\prime} v-u v^{\prime}}{v^2}$ \\
+    			\hline
+    		\end{tabular}
+    	\end{center}
+    \end{minipage}
+    
+    \begin{bmethodet}{Déterminer la fonction dérivée}
+    	\grasInMet{Enoncé :}
+    	
+    	Déterminer la fonction dérivée des fonctions suivantes:
+    	\begin{multicols}{2}
+    		\begin{enumMet}
+    			\item $f(x)=\left(2 x^2-5 x\right)(3 x-2)$
+    			\item $g(x)=\dfrac{6 x-5}{x^3-2 x^2-1}$
+    		\end{enumMet}
+    	\end{multicols}
+    	\grasInMet{Réponse :}
+    	
+    	\begin{enumMet}
+    		\item $f(x)=\left(2 x^2-5 x\right)(3 x-2)$
+    		
+    		$f(x)=u(x) v(x)$ avec :
+    		$$
+    		\begin{aligned}
+    			& u(x)=2 x^2-5 x \rightarrow u^{\prime}(x)=4 x-5 \\
+    			& v(x)=3 x-2 \rightarrow v^{\prime}(x)=3 \\
+    			& \begin{aligned}
+    				\text { Donc }: & f^{\prime}(x)=u^{\prime}(x) v(x)+u(x) v^{\prime}(x)=(4 x-5)(3 x-2)+\left(2 x^2-5 x\right) \times 3 \\
+    				& =12 x^2-8 x-15 x+10+6 x^2-15 x \\
+    				& =18 x^2-38 x+10
+    			\end{aligned}
+    		\end{aligned}
+    		$$
+    		\item $g(x)=\dfrac{6 x-5}{x^3-2 x^2-1}$
+    		
+    		$$
+    		\begin{aligned}
+    			& g(x)=\frac{u(x)}{v(x)} \text { avec } u(x)=6 x-5 \rightarrow u^{\prime}(x)=6 \\
+    			& \qquad v(x)=x^3-2 x^2-1 \rightarrow v^{\prime}(x)=3 x^2-4 x
+    		\end{aligned}
+    		$$
+    		
+    		
+    		
+    		Donc :
+    		$$
+    		\begin{aligned}
+    			g^{\prime}(x) & =\frac{u^{\prime}(x) v(x)-u(x) v^{\prime}(x)}{v(x)^2} \\
+    			& =\frac{6\left(x^3-2 x^2-1\right)-(6 x-5)\left(3 x^2-4 x\right)}{\left(x^3-2 x^2-1\right)^2} \\
+    			& =\frac{6 x^3-12 x^2-6-18 x^3+24 x^2+15 x^2-20 x}{\left(x^3-2 x^2-1\right)^2}\\
+    			& =\frac{-12 x^3+27 x^2-20 x-6}{\left(x^3-2 x^2-1\right)^2}
+    		\end{aligned}
+    		$$
+    	\end{enumMet}
+    \end{bmethodet}
+    
+    \subsection{Application à l'étude des variations d'une fonction}
+    
+    \begin{bthm}
+    	Soit une fonction $f$ définie et dérivable sur un intervalle $I$.
+    	\begin{itemProp}
+    		\item Si $f^{\prime}(x) \leq 0$, alors $f$ est décroissante sur $I$.
+	    	\item Si $f^{\prime}(x) \geq 0$, alors $f$ est croissante sur $I$.
+    	\end{itemProp}
+    \end{bthm}
+    
+    \begin{bmethodet}{Déterminer les variations d'une fonction}
+    	\grasInMet{Enoncé :}
+    	
+    	Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=x^2-4 x$.
+    	
+    	Déterminer les variations de la fonction $f$.
+    	
+    	\grasInMet{Réponse :}
+    	
+    	Pour tout $x$ réel, on a : $f^{\prime}(x)=2 x-4$.
+    	Résolvons l'inéquation: $f^{\prime}(x) \leq 0$
+    	
+    	$$
+    	\begin{aligned}
+    		& 2 x-4 \leqslant 0 \\
+    		& 2 x \leqslant 4 \\
+    		& x \leqslant 2
+    	\end{aligned}
+    	$$
+    	
+    	
+    	La fonction $f$ est donc décroissante sur l'intervalle ] $-\infty ; 2$ ].
+    	
+    	De même, on obtient que la fonction $f$ est croissante sur l'intervalle $[2 ;+\infty[$.
+    \end{bmethodet}
+    
+    \section{Dérivée d'une fonction composée}
+    
+    \begin{center}
+    	\renewcommand{\arraystretch}{2}
+    	\begin{tabular}{|Xc|Xc|}
+    		\hline Fonction & Dérivée \\
+    		\hline$f(a x+b)$ & $a f^{\prime}(a x+b)$ \\
+    		\hline$u^2$ & $2 u^{\prime} u$ \\
+    		\hline$e^u$ & $u^{\prime} e^u$ \\
+    		\hline
+    	\end{tabular}
+    \end{center}
+    
+    \begin{bmethodet}{Déterminer la dérivée d'une fonction composée	}
+    	\grasInMet{Enoncé :}
+    	
+    	Soit $f$ la fonction définie sur $\mathbb{R}$ par $f(x)=x e^{-\frac{x}{2}}$.
+    	\begin{multicols}{2}
+    		\begin{enumMet}
+    			\item $f(x)=\left(2 x^2+3 x-3\right)^2$
+    			\item $g(x)=2 e^{\frac{1}{x}}$
+    		\end{enumMet}
+    	\end{multicols}
+    	
+    	\grasInMet{Réponse :}
+    	
+    	\begin{enumMet}
+    		\item On pose: $f(x)=(u(x))^2$ avec $u(x)=2 x^2+3 x-3 \rightarrow u^{\prime}(x)=4 x+3$
+    		
+    		Donc : $f^{\prime}(x)=2 u^{\prime}(x) u(x)$
+    		
+    		\phantom{Donc : $f^{\prime}(x)\ $}$=2(4 x+3)\left(2 x^2+3 x-3\right)$
+    		
+    		\item On pose: $g(x)=2 e^{u(x)}$ avec $u(x)=\dfrac{1}{x} \rightarrow u^{\prime}(x)=-\dfrac{1}{x^2}$
+    		
+    		Donc :
+    		
+    		$$
+    		\begin{aligned}
+    			g^{\prime}(x)&=2 u^{\prime}(x) e^{u(x)}
+    			& =2 \times\left(-\frac{1}{x^2}\right) e^{\frac{1}{x}} \\
+    			& =-\frac{2}{x^2} e^{\frac{1}{x}}
+    		\end{aligned}
+    		$$
+    	\end{enumMet}
+    \end{bmethodet}
+    
+    \begin{bmethodet}{Étudier une fonction composée}
+    	\grasInMet{Enoncé :}
+    	
+    	Soit $f$ la fonction définie sur $\mathbb{R}$ par $f(x)=x e^{-\frac{x}{2}}$.
+   		\begin{enumMet}
+   			\item Calculer la dérivée de la fonction $f$.
+   			\item En déduire les variations de la fonction $f$.
+   		\end{enumMet}
+    	
+    	\grasInMet{Réponse :}
+    	
+    	\begin{enumMet}
+    		\item On a :
+    		
+    		$$
+    		f^{\prime}(x)=e^{-\frac{x}{2}}+x \times\left(-\dfrac{1}{2}\right) e^{-\frac{x}{2}}=\left(1-\dfrac{x}{2}\right) e^{-\frac{x}{2}}
+    		$$
+    		
+    		
+    		En effet : $\left(e^{-\frac{x}{2}}\right)^{\prime}=\left(-\dfrac{1}{2}\right) e^{-\frac{x}{2}}$
+    		
+    		\item Comme $e^{-\frac{x}{2}}>0, f^{\prime}(x)$ est du signe de $1-\dfrac{x}{2}$.
+    		
+    		$f^{\prime}$ est donc positive sur l'intervalle $\left.]-\infty ; 2\right]$ et négative sur l'intervalle $[2 ;+\infty[$.
+    		
+    		$f$ est donc croissante sur l'intervalle $]-\infty ; 2]$ et décroissante sur l'intervalle $[2 ;+\infty[$.
+    	\end{enumMet}
+    \end{bmethodet}
+    
+    
+
+

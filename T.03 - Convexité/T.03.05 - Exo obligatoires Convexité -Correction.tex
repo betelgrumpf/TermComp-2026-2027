@@ -1,0 +1,421 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../term-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{Chapitre 03 - Convexité - Exercices}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						Chapitre 03 - Convexité\\
+						Exercices obligatoires
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+	
+\exerciceDS{}
+Soit $f$ la fonction dérivable sur [-1;7] dont la courbe représentative $C_{f}$ est donnée ci-dessous.\\
+\includegraphics[scale=0.2]{2025_11_06_3b44234b8b55fbc3078dg-1}
+
+\begin{enumMet}
+	\item Étudier la convexité de $f$ sur $[-1 ; 7]$.
+	\begin{corrBox}
+		\begin{itemMet}
+			\item Sur $[-1; 2,5]$ : la courbe est \textbf{concave} (tournée vers le bas)
+			\item Sur $[2,5; 7]$ : la courbe est \textbf{convexe} (tournée vers le haut)
+		\end{itemMet}
+	\end{corrBox}
+	\item $C_{f}$ admet-elle un point d'inflexion ?
+	\begin{corrBox}
+		$C_f$ admet un \textbf{point d'inflexion en $x \approx 2,5$}, car la convexité change en ce point.				
+	\end{corrBox}
+\end{enumMet}
+
+\exerciceDS{}
+Soit $g$ la fonction dérivable sur $[-2 ; 6]$ dont la courbe représentative $C_{g}$ est donnée ci-dessous.\\
+\includegraphics[scale=0.2]{2025_11_06_3b44234b8b55fbc3078dg-1(1)}
+
+\begin{enumMet}
+	\item Étudier la convexité de $g$ sur $[-2 ; 6]$.
+	\begin{corrBox}
+		D'après la courbe représentative :
+		\begin{itemMet}
+			\item Sur $[-2; 1]$ : la courbe est \textbf{convexe}
+			\item Sur $[1; 4]$ : la courbe est \textbf{concave}
+			\item Sur $[4; 6]$ : la courbe est \textbf{convexe}
+		\end{itemMet}
+	\end{corrBox}
+	\item Déterminer les éventuels points d'inflexion de $C_{g}$.
+	\begin{corrBox}
+		$C_g$ admet \textbf{deux points d'inflexion} : en $x = 1$ et en $x = 4$.				
+	\end{corrBox}
+\end{enumMet}
+
+\exerciceDS{}
+Dans chaque cas, préciser si la fonction $f$, représentée par la courbe $C_{f}$, est convexe ou concave.
+\begin{multicols}{2}
+	\begin{enumMet}
+		\item \ \\
+		\includegraphics[scale=0.3]{2025_11_06_3b44234b8b55fbc3078dg-2(2)}
+		
+		\begin{corrBox}
+			La courbe est \textbf{convexe} (tournée vers le haut).		
+		\end{corrBox}
+		\item \ \\
+		\includegraphics[scale=0.3]{2025_11_06_3b44234b8b55fbc3078dg-2(1)}
+		
+		\begin{corrBox}
+				La courbe est \textbf{concave} (tournée vers le bas).
+		\end{corrBox}
+	\end{enumMet}
+\end{multicols}
+
+\exerciceDS{}
+
+Soit une fonction $f$ définie sur [1;8] par sa courbe représentative $C$.\\
+Pour chaque affirmation, déterminer la bonne réponse.
+\begin{center}
+	\includegraphics[scale=0.25]{2025_11_06_3b44234b8b55fbc3078dg-2}
+\end{center}
+
+
+\begin{multicols}{3}
+	\begin{enumMet}
+	\item $f$ est convexe sur :
+	\begin{enumMet}
+		\item $[1 ; 8]$
+		\item $[1 ; 5]$\\
+		\item $[5 ; 8]$
+	\end{enumMet}
+	
+	\item $f$ est concave sur :
+	\begin{enumMet}
+		\item $[1 ; 8]$
+		\item $[1 ; 5]$\\
+		\item $[5 ; 8]$
+	\end{enumMet}
+	\item $C_{f}$ admet un point d'inflexion en :
+	\begin{enumMet}
+		\item $2,5$
+		\item $5$
+		\item $8$ 
+	\end{enumMet}
+\end{enumMet}
+\end{multicols}
+
+\begin{corrBox}
+	
+\textbf{1)} $f$ est convexe sur : \textbf{c) $[5; 8]$}
+
+\textbf{2)} $f$ est concave sur : \textbf{b) $[1; 5]$}
+
+\textbf{3)} $C_f$ admet un point d'inflexion en : \textbf{b) 5}
+
+\end{corrBox}
+
+\exerciceDS{}
+Soit $f$ la fonction définie sur $\mathbb{R}$ par:
+
+$$
+f(x)=x^{4}-3 x^{3}-6 x^{2}
+$$
+
+%\begin{multicols}{2}
+	\begin{enumMet}
+	\item Calculer $f^{\prime \prime}(x)$ et étudier son signe.
+	\begin{corrBox}
+		\begin{align*}
+			f'(x) &= 4x^3 - 9x^2 - 12x \\
+			f''(x) &= 12x^2 - 18x - 12
+		\end{align*}
+		
+		Étudions le signe de $f''(x) = 12x^2 - 18x - 12 = 6(2x^2 - 3x - 2)$
+		
+		Résolvons $2x^2 - 3x - 2 = 0$ :
+		$$\Delta = 9 + 16 = 25 \quad \Rightarrow \quad x_1 = \frac{3-5}{4} = -\frac{1}{2} \text{ et } x_2 = \frac{3+5}{4} = 2$$
+		
+		Tableau de signes :
+		\begin{center}
+			\begin{tikzpicture}
+				\tkzTabInit{$x$ / 1 , $f''{x}$ / 1}{$-\infty$, $-\dfrac{1}{2}$, $2$,$+\infty$}
+				\tkzTabLine{, +, z, -,z,+, }
+			\end{tikzpicture}
+		\end{center}		
+	\end{corrBox}
+	\item Étudier la convexité de $f$ sur $\mathbb{R}$.
+	\begin{corrBox}
+		\begin{itemMet}
+			\item $f$ est \textbf{convexe} sur $\left]-\infty; -\dfrac{1}{2}\right]$ et sur $[2; +\infty[$
+			\item $f$ est \textbf{concave} sur $\left[-\dfrac{1}{2}; 2\right]$
+			\item Points d'inflexion en $x = -\dfrac{1}{2}$ et $x = 2$
+		\end{itemMet}		
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+
+\exerciceDS{}
+Soit $f$ la fonction définie sur $[1 ; 5]$ par:
+
+$$
+f(x)=\frac{3}{x+2}
+$$
+
+%\begin{multicols}{2}
+	\begin{enumMet}
+	\item Étudier les variations de $f$.
+	\begin{corrBox}
+		$$f'(x) = \frac{-3}{(x+2)^2}$$
+		
+		Sur $[1; 5]$, on a $x+2 > 0$, donc $(x+2)^2 > 0$, ainsi $f'(x) < 0$.
+		
+		La fonction $f$ est \textbf{strictement décroissante} sur $[1; 5]$.
+		
+	\end{corrBox}
+	\item Étudier la convexité de $f$.
+	\begin{corrBox}
+		\textbf{2) Convexité de $f$}
+		
+		$$f''(x) = \frac{6}{(x+2)^3}$$
+		
+		Sur $[1; 5]$, on a $x+2 > 0$, donc $(x+2)^3 > 0$, ainsi $f''(x) > 0$.
+		
+		La fonction $f$ est \textbf{convexe} sur $[1; 5]$.				
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\exerciceDS{ $-$ Vrai ou Faux}
+Soit $f$ une fonction dérivable sur $[0 ; 15]$ pour laquelle on connaît le tableau de variations de la dérivée $f^{\prime}$.
+
+\begin{center}
+	\begin{tikzpicture}
+		\tkzTabInit{$x$ / 1 , $f'(x)$ / 1.5}{$0$, $5$, $15$}
+		\tkzTabVar{+/ $30$, -/ $-5$, +/ $20$}
+	\end{tikzpicture}
+\end{center}
+
+
+Préciser si les affirmations suivantes sont vraies ou fausses.
+
+\begin{enumMet}
+	\item La fonction $f$ est convexe sur $[-5 ; 20]$.
+	\item La fonction $f$ est concave sur $[0 ; 5]$.
+	\item La courbe $C_{f}$ admet un point d'inflexion en 5 .
+	\item La courbe $C_{f}$ admet une unique tangente parallèle à l'axe des abscisses.
+	\item La fonction $f^{\prime \prime}$ est positive sur $[5 ; 15]$.
+\end{enumMet}
+
+\exerciceDS{}
+Soient les fonctions $f$ et $g$ définies sur $\mathbb{R}$ par:
+
+$$
+\begin{gathered}
+	f(x)=0,5 x^{2}+2 x-1 \\
+	\text { et } g(x)=-0,5 x^{2}-x+3,5
+\end{gathered}
+$$
+
+\begin{enumMet}
+	\item On a obtenu à la calculatrice les courbes représentatives de $f$ et $g$ ci-contre. Après les avoir repérées, conjecturer si $f$, puis $g$, est convexe ou concave sur $\mathbb{R}$.
+	\begin{center}
+		\includegraphics[scale=0.25]{2025_11_06_3b44234b8b55fbc3078dg-4}
+	\end{center}
+	
+	\item \begin{enumMet}
+		\item Calculer $f^{\prime}(x)$, puis $f^{\prime \prime}(x)$.
+		\item Calculer $g^{\prime}(x)$, puis $g^{\prime \prime}(x)$.
+	\end{enumMet}
+	\item Démontrer les conjectures émises.
+\end{enumMet}
+
+\exerciceDS{}
+On considère une fonction $f$ définie sur $\mathbb{R}$.\\
+Dans chacun des cas suivants, déterminer si la fonction $f$ est convexe ou concave sur $\mathbb{R}$.
+
+\begin{multicols}{2}
+	\begin{enumMet}
+	\item $f(x)=x^{4}-3 x+2$
+	\item $f(x)=10 \mathrm{e}^{-0,5 x}+2$
+	\item $f(x)=-2 x^{2}+3$
+	\item $f(x)=-5 e^{3 x}+4$
+\end{enumMet}
+\end{multicols}
+
+\exerciceDS{}
+On considère une fonction $f$ définie sur $\mathbb{R}$, de courbe représentative $C$.\\
+Dans chaque cas, déterminer les points d'inflexion éventuels de la courbe $C$ (on vérifiera en traçant la courbe $C$ à la calculatrice).
+
+\begin{multicols}{3}
+	\begin{enumMet}
+	\item $f(x)=x^{3}-3 x+5$
+	\item $f(x)=\mathrm{e}^{x}-\frac{1}{2} x^{2}$
+	\item $f(x)=(x-1)^{3}+2$
+	\item $f(x)=\dfrac{1}{x^{2}+1}$
+	\item $f(x)=\mathrm{e}^{-x^{2}}$
+	\item $f(x)=x \mathrm{e}^{-x}$
+\end{enumMet}
+\end{multicols}
+
+
+
+\section*{Exercice 6}
+
+
+
+\section*{Exercice 7 -- Vrai ou Faux}
+
+\textbf{1) FAUX.} La fonction $f$ n'est pas définie sur $[-5; 20]$ mais sur $[0; 15]$.
+
+\textbf{2) VRAI.} Sur $[0; 5]$, $f'$ est décroissante, donc $f''(x) \leq 0$, donc $f$ est concave.
+
+\textbf{3) VRAI.} En $x = 5$, $f'$ passe d'une phase décroissante à croissante, donc $f''$ change de signe : il y a un point d'inflexion.
+
+\textbf{4) FAUX.} $f'(x) = 0$ a deux solutions (en $x = 0$ et entre 5 et 15), donc il y a deux tangentes horizontales.
+
+\textbf{5) VRAI.} Sur $[5; 15]$, $f'$ est croissante, donc $f''(x) \geq 0$, donc $f''$ est positive.
+
+\section*{Exercice 8}
+
+Soit $f(x) = 0,5x^2 + 2x - 1$ et $g(x) = -0,5x^2 - x + 3,5$
+
+\textbf{1) Conjecture}
+
+\begin{itemize}
+	\item $f$ semble \textbf{convexe} sur $\mathbb{R}$ (parabole tournée vers le haut)
+	\item $g$ semble \textbf{concave} sur $\mathbb{R}$ (parabole tournée vers le bas)
+\end{itemize}
+
+\textbf{2) Calculs des dérivées}
+
+a) $f'(x) = x + 2$ \quad et \quad $f''(x) = 1$
+
+b) $g'(x) = -x - 1$ \quad et \quad $g''(x) = -1$
+
+\textbf{3) Démonstration}
+
+\begin{itemize}
+	\item $f''(x) = 1 > 0$ pour tout $x \in \mathbb{R}$, donc \textbf{$f$ est convexe sur $\mathbb{R}$}.
+	\item $g''(x) = -1 < 0$ pour tout $x \in \mathbb{R}$, donc \textbf{$g$ est concave sur $\mathbb{R}$}.
+\end{itemize}
+
+\section*{Exercice 9}
+
+\textbf{1)} $f(x) = x^4 - 3x + 2$
+
+$f'(x) = 4x^3 - 3$ \quad ; \quad $f''(x) = 12x^2 \geq 0$ pour tout $x \in \mathbb{R}$
+
+$\Rightarrow$ \textbf{$f$ est convexe sur $\mathbb{R}$}
+
+\textbf{2)} $f(x) = 10e^{-0,5x} + 2$
+
+$f'(x) = -5e^{-0,5x}$ \quad ; \quad $f''(x) = 2,5e^{-0,5x} > 0$ pour tout $x \in \mathbb{R}$
+
+$\Rightarrow$ \textbf{$f$ est convexe sur $\mathbb{R}$}
+
+\textbf{3)} $f(x) = -2x^2 + 3$
+
+$f'(x) = -4x$ \quad ; \quad $f''(x) = -4 < 0$ pour tout $x \in \mathbb{R}$
+
+$\Rightarrow$ \textbf{$f$ est concave sur $\mathbb{R}$}
+
+\textbf{4)} $f(x) = -5e^{3x} + 4$
+
+$f'(x) = -15e^{3x}$ \quad ; \quad $f''(x) = -45e^{3x} < 0$ pour tout $x \in \mathbb{R}$
+
+$\Rightarrow$ \textbf{$f$ est concave sur $\mathbb{R}$}
+
+\section*{Exercice 10}
+
+Les points d'inflexion sont les points où $f''(x) = 0$ avec changement de signe.
+
+\textbf{1)} $f(x) = x^3 - 3x + 5$
+
+$f'(x) = 3x^2 - 3$ \quad ; \quad $f''(x) = 6x$
+
+$f''(x) = 0 \Leftrightarrow x = 0$ (changement de signe de $-$ à $+$)
+
+$\Rightarrow$ \textbf{Point d'inflexion : $(0; 5)$}
+
+\textbf{2)} $f(x) = e^x - \dfrac{1}{2}x^2$
+
+$f'(x) = e^x - x$ \quad ; \quad $f''(x) = e^x - 1$
+
+$f''(x) = 0 \Leftrightarrow e^x = 1 \Leftrightarrow x = 0$ (changement de signe)
+
+$f(0) = 1$
+
+$\Rightarrow$ \textbf{Point d'inflexion : $(0; 1)$}
+
+\textbf{3)} $f(x) = (x-1)^3 + 2$
+
+$f'(x) = 3(x-1)^2$ \quad ; \quad $f''(x) = 6(x-1)$
+
+$f''(x) = 0 \Leftrightarrow x = 1$ (changement de signe de $-$ à $+$)
+
+$f(1) = 2$
+
+$\Rightarrow$ \textbf{Point d'inflexion : $(1; 2)$}
+
+\textbf{4)} $f(x) = \dfrac{1}{x^2+1}$
+
+$f'(x) = \dfrac{-2x}{(x^2+1)^2}$ \quad ; \quad $f''(x) = \dfrac{-2(x^2+1)^2 + 8x^2(x^2+1)}{(x^2+1)^4} = \dfrac{6x^2-2}{(x^2+1)^3}$
+
+$f''(x) = 0 \Leftrightarrow 6x^2 = 2 \Leftrightarrow x = \pm\dfrac{1}{\sqrt{3}}$
+
+$f\left(\dfrac{1}{\sqrt{3}}\right) = \dfrac{3}{4}$
+
+$\Rightarrow$ \textbf{Points d'inflexion : $\left(-\dfrac{1}{\sqrt{3}}; \dfrac{3}{4}\right)$ et $\left(\dfrac{1}{\sqrt{3}}; \dfrac{3}{4}\right)$}
+
+\textbf{5)} $f(x) = e^{-x^2}$
+
+$f'(x) = -2xe^{-x^2}$ \quad ; \quad $f''(x) = -2e^{-x^2} + 4x^2e^{-x^2} = e^{-x^2}(4x^2-2)$
+
+$f''(x) = 0 \Leftrightarrow 4x^2 = 2 \Leftrightarrow x = \pm\dfrac{1}{\sqrt{2}}$
+
+$f\left(\dfrac{1}{\sqrt{2}}\right) = e^{-1/2}$
+
+$\Rightarrow$ \textbf{Points d'inflexion : $\left(-\dfrac{1}{\sqrt{2}}; e^{-1/2}\right)$ et $\left(\dfrac{1}{\sqrt{2}}; e^{-1/2}\right)$}
+
+\textbf{6)} $f(x) = xe^{-x}$
+
+$f'(x) = e^{-x} - xe^{-x} = e^{-x}(1-x)$ \quad ; \quad $f''(x) = -e^{-x}(1-x) - e^{-x} = e^{-x}(x-2)$
+
+$f''(x) = 0 \Leftrightarrow x = 2$ (changement de signe de $-$ à $+$)
+
+$f(2) = 2e^{-2}$
+
+$\Rightarrow$ \textbf{Point d'inflexion : $(2; 2e^{-2})$}
+
+\end{document}
+

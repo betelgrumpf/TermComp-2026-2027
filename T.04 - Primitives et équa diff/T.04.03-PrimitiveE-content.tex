@@ -1,0 +1,289 @@
+%\vspace*{-0.4cm}
+\chapter[Thème 2 $-$ Primitives et équa diff]{Thème 2 : Modèles continus \\Primitives et équations différentielles}
+\thispagestyle{fancy}
+
+\vspace*{-0.6cm}
+\section{Primitive d'une fonction}
+\subsection{Définition et propriétés}
+
+\begin{bexemple}
+	On considère les fonctions $f$ et $F$ définies par : $f(x)=2 x+3$ et $F(x)=x^{2}+3 x-1$\\
+	Si on dérive $F$, on constate que : $F^{\prime}(x)=2 x+3=f(x)$.\\
+	Lorsque $F^{\prime}=f$, on dit que $F$ est une primitive de $f$.
+\end{bexemple}
+
+\begin{bdefi}
+	$f$ est une fonction continue sur un intervalle $I$.\\
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+\end{bdefi}	
+
+\begin{brmq}
+	Dans ces conditions, dire que \guillemets{$F$ est une primitive de $f$} revient à dire que  \guillemets{$f$ est la dérivée de $F$}.
+\end{brmq}
+
+\begin{bmethodet}{Vérifier qu'une fonction est une primitive d'une autre fonction}
+	\grasInMet{Enoncé : }
+	
+	Dans chaque cas, dire si $F$ est une primitive de $f$.
+		\begin{enumMet}
+		\item $F(x)=\dfrac{x^{2}}{2}$ et $f(x)=x$.
+		\item $F(x)=x e^{x}$ et $f(x)=e^{x}(x+1)$
+		\item $F(x)=\dfrac{\ln (x)}{x}$ et $f(x)=\dfrac{-\ln (x)}{x^{2}}$.
+	\end{enumMet}
+\end{bmethodet}
+
+\begin{bprop}
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+	
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+\end{bprop}
+
+\begin{bdemo}
+\end{bdemo}
+
+\begin{bprop}
+	$f$ est une fonction continue sur un intervalle $I$.\\
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+	
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+\end{bprop}
+
+
+\begin{bdemo}
+\end{bdemo}
+
+\begin{bexemple}
+	On a vu dans la méthode précédente que $F$ est une primitive de $f$ avec :\\
+	$F(x)=\dfrac{x^{2}}{2}$ et $f(x)=x$.\\
+	Donc, la fonction $G$ définie par $G(x)=\dfrac{x^{2}}{2}+5$ est également une primitive de $f$.\\
+	En effet : $G^{\prime}(x)=\dfrac{2 x}{2}+0=x=f(x)$.
+\end{bexemple}
+
+\begin{bprop}
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+	
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+\end{bprop}
+
+\begin{brmq}
+	Bien que l'existence étant assurée, la forme explicite d'une primitive n'est pas toujours connue. Par exemple, la fonction $x \mapsto e^{-x^{2}}$ ne possède pas de primitive sous forme explicite.
+\end{brmq}
+
+\begin{bmethodet}{Recherche d'une primitive particulière}
+	\grasInMet{Enoncé : }
+	
+	Soit la fonction $f$ définie sur $\mathbb{R}^{*}$ par $f(x)=\dfrac{e^{2 x}(2 x-1)}{x^{2}}$.
+	\begin{enumMet}
+		\item Démontrer que la fonction $F$ définie sur $\mathbb{R}^{*}$ par $F(x)=\dfrac{e^{2 x}}{x}$ est une primitive de $f$.\\
+		\item Déterminer la primitive $G$ de la fonction $f$ qui s' annule en $x=1$.
+	\end{enumMet}
+	
+\end{bmethodet}
+
+\subsection{Primitives des fonctions usuelles}
+
+\begin{center}
+	\renewcommand{\arraystretch}{2}
+	\begin{tabular}{|Xc|Xc|}
+		\hline
+		Fonction $\boldsymbol{f}$ & Une primitive $\boldsymbol{F}$ \\
+		\hline
+		$a, a \in \mathbb{R}$ & \\
+		\hline
+		\begin{tabular}{c}
+			$x^{n}$ \\
+			avec $n \in \mathbb{N}^{*}$ \\
+		\end{tabular} &  \\
+		\hline
+		$\dfrac{1}{x^{2}}$ &  \\
+		\hline
+		$\dfrac{1}{x}$ &  \\
+		$\operatorname{Avec} x>0$ &  \\
+		\hline
+		$\dfrac{1}{\sqrt{x}}$ &  \\
+		\hline
+		$e^{x}$ &  \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsection{Linéarité des primitives}
+
+\begin{bprop}
+	Si $F$ est une primitive de $f$ et $G$ est une primitive de $g$ alors :
+	\begin{itemProp}
+		\item \phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.8cm]
+		\item \phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.8cm]
+	\end{itemProp}
+\end{bprop}
+
+\begin{bdemo}
+	\begin{itemDem}
+		\item \phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+		\item \phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+	\end{itemDem}
+\end{bdemo}
+
+\begin{bmethodet}{Déterminer une primitive (1)}
+	\grasInMet{Enoncé : }
+	
+	Dans chaque cas, déterminer une primitive $F$ de la fonction $f$.
+	\begin{multicols}{2}
+		\begin{enumMet}
+		\item $f(x)=x^{3}-2$
+		\item $f(x)=3 x^{2}-\dfrac{3}{x^{2}}$
+		\item $f(x)=\dfrac{3}{x}$ sur $] 0 ;+\infty[$
+		\item $f(x)=\dfrac{2}{\sqrt{x}}$
+	\end{enumMet}
+	\end{multicols}
+\end{bmethodet}
+
+\subsection{Primitives de fonctions composées}
+$u$ est une fonction dérivable sur un intervalle $I$.
+
+\begin{center}
+	\renewcommand{\arraystretch}{1.7}
+	\begin{tabular}{|Xc|Xc|}
+		\hline
+		Fonction & Une primitive \\
+		\hline
+		$2 u^{\prime} u$ & \\
+		\hline
+		$u^{\prime} e^{u}$ & \\
+		\hline
+		$\dfrac{u^{\prime}}{u}$ & \\
+		avec $u>0$ &  \\
+		\hline
+	\end{tabular}
+\end{center}
+
+
+\begin{bmethodet}{Déterminer une primitive (2)}
+	\grasInMet{Enoncé : }
+	
+	Dans chaque cas, déterminer une primitive $F$ de la fonction $f$.
+		\begin{enumMet}
+		\item $f(x)=(2 x-5)\left(x^{2}-5 x+4\right)$
+		\item $f(x)=x e^{x^{2}}$
+		\item $f(x)=\dfrac{x^{2}}{x^{3}+1}$
+	\end{enumMet}
+\end{bmethodet}
+
+\section{Équations différentielles}
+\subsection{Définition d'une équation différentielle}
+
+\begin{bdefi}
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+	
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+\end{bdefi}	
+
+\begin{bexemple}
+	\begin{itemDef}
+		\item L'équation $f^{\prime}(x)=5$ est une équation différentielle.
+		
+		L'inconnue est la fonction $f$.\\
+		En considérant que $y$ est la fonction inconnue qui dépend de $x$, l'équation peut se noter : $y^{\prime}=5$
+		\item L'équation $y^{\prime}=2 x^{2}-3$ est également une équation différentielle.
+		L'inconnue est la fonction $y$ dont la dérivée est égale à $2 x^{2}-3$.
+	\end{itemDef}	
+\end{bexemple}
+
+\subsection{Équation différentielle du type $y^{\prime}=f$}
+
+\begin{bdefi}
+	Soit une fonction $f$ définie sur un intervalle $I$.\\
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+	
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+\end{bdefi}
+
+\begin{bprop}
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+	
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+	
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+\end{bprop}
+
+\begin{bmethodet}{Vérifier qu'une fonction est solution d'une équation différentielle}
+	\grasInMet{Enoncé : }
+	
+	Prouver que la fonction $g$ définie sur $] 0 ;+\infty\left[\operatorname{par} g(x)=3 x^{2}+\ln x\right.$ est solution de l'équation différentielle $y^{\prime}=6 x+\dfrac{1}{x}$.
+\end{bmethodet}
+
+\subsection{Équations différentielles du type $y^{\prime}=a y$}
+
+\begin{bprop}
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+	
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+\end{bprop}
+
+\begin{bdemo}
+\end{bdemo}
+
+\begin{bmethodet}{Résoudre une équation différentielle du type $y^{\prime}=a y$}
+	\grasInMet{Enoncé : }
+	
+	On considère l'équation différentielle $3 y^{\prime}+5 y=0$.
+	
+	\begin{enumMet}
+		\item \begin{enumMet}
+			\item Déterminer la forme générale des fonctions solutions de l'équation.
+			\item Représenter à l'aide de la calculatrice ou d'un logiciel, quelques courbes des fonctions solutions.
+		\end{enumMet}
+		\item Déterminer l'unique solution $f$ telle que $f(1)=2$.
+	\end{enumMet}
+	
+\end{bmethodet}
+
+\begin{bprop}
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+	
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+\end{bprop}
+
+\begin{bdemo}
+	\begin{itemDem}
+		\item \phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+		\item \phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+	\end{itemDem}
+\end{bdemo}
+
+\subsection{Équations différentielles du type $y^{\prime}=a y+b$}
+
+\begin{bprop}
+\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+
+\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+\end{bprop}
+
+\begin{bdemo}
+\end{bdemo}
+
+\begin{bprop}
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+	
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+	
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+	
+	\phantom{$\dfrac{1}{2}$}\pointilles[\textwidth-0.5cm]
+\end{bprop}
+
+\begin{brmq}
+	L'équation $y^{\prime}=a y+b$ est appelée équation différentielle linéaire du premier ordre à coefficients constants.
+\end{brmq}
+\begin{bmethodet}{Résoudre une équation différentielle du type $y^{\prime}=a y+b$}
+	\grasInMet{Enoncé : }
+	
+	On considère l'équation différentielle $(E): 2 y^{\prime}-y=3$.
+	\begin{enumMet}
+		\item Déterminer une solution particulière constante de l'équation différentielle ( $E$ ).\\
+		\item Déterminer la forme générale des solutions de l'équation différentielle $y^{\prime}=\dfrac{1}{2} y$.\\
+		\item En déduire la forme générale des solutions de l'équation différentielle ( $E$ ).\\
+		\item Déterminer l'unique solution $f$ de ( $E$ ) telle que $f(0)=-1$.
+	\end{enumMet}
+	
+\end{bmethodet}

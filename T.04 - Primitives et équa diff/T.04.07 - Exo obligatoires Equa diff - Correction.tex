@@ -1,0 +1,255 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../term-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{\textcolor{red}{Correction - Chapitre 04 - Equations différentielles - Exercices}}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		
+		
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						\textcolor{red}{Correction - Chapitre 04 - Equations différentielles\\
+						Exercices obligatoires}
+					}
+				\end{center}
+			\end{minipage}
+		}
+	\end{center}
+	
+\vspace*{-0.5cm}
+\exerciceDS{}
+
+Déterminer les solutions des équations différentielles suivantes.
+%\begin{multicols}{3}
+	\begin{enumMet}
+	\item $y'=2e^x$
+	\begin{corrBox}
+		Les solutions de l'équation sont les primitives de $2e^x$ donc : $f(x)=2e^x+C$ avec C une constante réelle.
+	\end{corrBox}
+	\item $y'=\dfrac{1}{t^2}$
+	\begin{corrBox}
+		Les solutions de l'équation sont les primitives de $\dfrac{1}{t^2}$ donc : $f(x)=-\dfrac{1}{t}+C$ avec C une constante réelle.
+	\end{corrBox}
+	\item $y^{\prime}=3 e^{6 x}$ et $y(0)=4$
+	\begin{corrBox}
+		Les solutions de l'équation sont les primitives de $3 e^{6 x}$ donc : $f(x)=\dfrac{3}{6}e^{6x}+C=\dfrac{1}{2}e^{6x}+C$ avec C une constante réelle.
+		
+		De plus $y(0)=4$ donc $\dfrac{1}{2}e^{6\times 0}+C=4$ d'ou $C=3,5$.
+		
+		La solution de l'équation différentielle est donc $f(x)=\dfrac{1}{2}e^{6x}+3,5$
+	\end{corrBox}
+	\item $y'=e^{-x}$
+	\begin{corrBox}
+		Les solutions de l'équation sont les primitives de $e^{-x}$ donc : $f(x)=-e^{-x}+C$ avec C une constante réelle.
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\exerciceDS{}
+
+Déterminer les fonctions $f$ solutions des équations différentielles suivantes.
+%\begin{multicols}{3}
+	\begin{enumMet}
+	\item $y^{\prime}=-3 y$
+	\begin{corrBox}
+		L'équation est du type $y'=ay$ avec $a=-3$. 
+		
+		Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{-3x}$ avec C une constante réelle.		
+	\end{corrBox}
+	\item $y^{\prime}=y$
+	\begin{corrBox}
+		L'équation est du type $y'=ay$ avec $a=1$. 
+		
+		Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{x}$ avec C une constante réelle.		
+	\end{corrBox}
+	\item $y'=-\dfrac{1}{2} y$
+	\begin{corrBox}
+		L'équation est du type $y'=ay$ avec $a=-\dfrac{1}{2}$. 
+		
+		Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{-\frac{1}{2}x}$ avec C une constante réelle.		
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\exerciceDS{ $-$ Équation différentielle $y^{\prime}=a y$ et conditions initiales}
+
+Résoudre les équations différentielles suivantes.
+%\begin{multicols}{3}
+	\begin{enumMet}
+	\item $y^{\prime}=y$ et $y(0)=5$
+	\begin{corrBox}
+		L'équation est du type $y'=ay$ avec $a=1$. 
+		
+		Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{x}$ avec C une constante réelle.	
+		
+		De plus $y(0)=5$ donc $Ce^{0}=5$ d'ou $C=5$.
+		
+		La solution de l'équation différentielle est donc $f(x)=5e^{x}$	
+	\end{corrBox}
+	\item $y^{\prime}=2 y$ et $y(0)=4$
+	\begin{corrBox}
+		L'équation est du type $y'=ay$ avec $a=2$. 
+		
+		Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{2x}$ avec C une constante réelle.	
+		
+		De plus $y(0)=4$ donc $Ce^{2\times 0}=4$ d'ou $C=4$.
+		
+		La solution de l'équation différentielle est donc $f(x)=4e^{2x}$	
+	\end{corrBox}
+	\item $y'=-3 y$ et $y(2)=1$
+	\begin{corrBox}
+		L'équation est du type $y'=ay$ avec $a=-3$. 
+		
+		Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{-3x}$ avec C une constante réelle.	
+		
+		De plus $y(2)=1$ donc $Ce^{-3\times 2}=1$ d'ou $C=\dfrac{1}{e^{-6}}=e^6$.
+		
+		La solution de l'équation différentielle est donc $f(x)=e^6\times e^{-3x}=e^{6-3x}$	
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\exerciceDS{}
+
+On considère l'équation différentielle : $(E): y^{\prime}+2 y=6 x+1$
+
+\begin{enumMet}
+	\item Montrer que la fonction $f$ définie sur $\mathbb{R}$ par: $f(x)=3 x-1 \text { est solution de }(E)$
+	\item Montrer que la fonction $g$ définie sur $\mathbb{R}$ par: $g(x)=2 \mathrm{e}^{-2 x}+3 x-1 \text { est solution de }(E)$
+\end{enumMet}
+
+\exerciceDS{}
+
+Résoudre les équations différentielles proposées.
+
+%\begin{multicols}{3}
+	\begin{enumMet}
+	\item $y^{\prime}=5 y$
+	\begin{corrBox}
+		L'équation est du type $y'=ay$ avec $a=5$. 
+		
+		Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{5x}$ avec C une constante réelle.		
+	\end{corrBox}
+	\item $y^{\prime}=-0,75 y$
+	\begin{corrBox}
+		L'équation est du type $y'=ay$ avec $a=-0,75$. 
+		
+		Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{-0,75x}$ avec C une constante réelle.		
+	\end{corrBox}
+	\item $3 y^{\prime}=2 y$
+	\begin{corrBox}
+		$y'=\dfrac{2}{3}y$
+		
+		L'équation est du type $y'=ay$ avec $a=\dfrac{2}{3}$. 
+		
+		Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{\frac{2}{3}x}$ avec C une constante réelle.		
+	\end{corrBox}
+	\item $y=-2 y^{\prime}$
+	\begin{corrBox}
+		$y'=-\dfrac{1}{2}y$
+		
+		L'équation est du type $y'=ay$ avec $a=-\dfrac{1}{2}$. 
+		
+		Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{-\frac{1}{2}x}$ avec C une constante réelle.		
+	\end{corrBox}
+	\item $4 y^{\prime}-3 y=0$
+	\begin{corrBox}
+		$4 y^{\prime}-3 y=0 \iff 4y'=3y \iff y'=\dfrac{3}{4}y$
+		
+		L'équation est du type $y'=ay$ avec $a=\dfrac{3}{4}$. 
+		
+		Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{\frac{3}{4}x}$ avec C une constante réelle.		
+	\end{corrBox}
+	\item $-5 y^{\prime}+6 y=0$
+	\begin{corrBox}
+		$-5 y^{\prime}+6 y=0 \iff 5y'=6y \iff y'=\dfrac{6}{5}y$
+		
+		L'équation est du type $y'=ay$ avec $a=\dfrac{6}{5}$. 
+		
+		Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{\frac{6}{5}x}$ avec C une constante réelle.		
+	\end{corrBox}
+	\item $2 y^{\prime}-3 y=y^{\prime}+y$
+	\begin{corrBox}
+		$2 y^{\prime}-3 y=y^{\prime}+y \iff 2y'-y'=y+3y\iff y'=4y$
+		
+		L'équation est du type $y'=ay$ avec $a=4$. 
+		
+		Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{4x}$ avec C une constante réelle.		
+	\end{corrBox}
+	\item $2\left(y^{\prime}+2 y\right)=3 y^{\prime}+5 y$
+	\begin{corrBox}
+		$2\left(y^{\prime}+2 y\right)=3 y^{\prime}+5 y \iff 2y'+4y=3y'+5y\iff 2y'-3y'=5y-4y\iff -y'=y \iff y'=-y$
+		
+		L'équation est du type $y'=ay$ avec $a=-1$. 
+		
+		Les solutions de l'équation sont donc les fonctions $f(x)=Ce^{-x}$ avec C une constante réelle.		
+	\end{corrBox}
+\end{enumMet}
+%\end{multicols}
+
+\exerciceDS{}
+
+Dans chaque cas, déterminer la fonction $f$ solution de l'équation différentielle ( $E$ ) vérifiant la condition indiquée.
+\begin{multicols}{2}
+	\begin{enumMet}
+	\item $(E): y^{\prime}+2 y=3$ et $f(0)=-3$
+	\item $(E): y^{\prime}-5 y+10=0$ et $f(1)=0$
+	\item (E): $2 y^{\prime}+y=-3$ et $f(0)=2$
+\end{enumMet}
+\end{multicols}
+
+\newpage
+
+\exerciceDS{ $-$ D'une courbe solution à l'équation différentielle}
+
+\begin{minipage}[c]{0.48\linewidth}
+	La courbe $C$ ci-contre représente une fonction $f$ solution de l'équation différentielle $y^{\prime}=a y$, $a$ étant un nombre réel.
+	\begin{enumMet}
+		\item  Déterminer graphiquement la valeur de $a$.
+		%	\begin{corrBox}
+			%		Graphiquement on a $f(0)=4,5$. La tangente au point $(0: 4,5)$ a pour pente- $\frac{4,5}{5}=-0,9$. Donc $f^{\prime}(0)=-0,9$.
+			%		Comme $f^{\prime}(0)=a f(0)$ on en déduit que $-0,9=a \times 4,5$ soit $a=-0,2$.
+			%	\end{corrBox}
+		\item En déduire la valeur de $f^{\prime}(4)$.
+		%	\begin{corrBox}
+			%		L'équation différentielle devient donc $y^{\prime}=-0,2 y$.
+			%		En particulier $f^{\prime}(4)=-0,2 \times f(4) \approx-0,2 \times 2=-0,4$.		
+			%	\end{corrBox}
+	\end{enumMet}
+\end{minipage} \hfill
+\begin{minipage}[c]{0.48\linewidth}
+	%	\includegraphics*[keyvals]{Img-EqDiff-Exo-01}
+	\includegraphics[scale=0.35]{Img-EqDiff-Exo-01}
+\end{minipage}
+
+
+
+\end{document}
+

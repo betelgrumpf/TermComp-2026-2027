@@ -1,0 +1,307 @@
+\documentclass[10pt]{article}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=cyan,}
+\urlstyle{same}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+
+\title{CONTINUITÉ DES FONCTIONS \\
+ Tout le cours en vidéo : https://youtu.be/9SSEUoyHh2s }
+
+\author{}
+\date{}
+
+
+\begin{document}
+\maketitle
+\section*{Partie 1 : Notion de continuité}
+\begin{center}
+\includegraphics[max width=\textwidth]{2025_09_11_e214764a9a76ec9e3edeg-1}
+\end{center}
+
+Le mathématicien allemand Karl Weierstrass (1815 ; 1897) apporte les premières définitions rigoureuses au concept de limite et de continuité d'une fonction.
+
+\begin{enumerate}
+  \item Définition
+\end{enumerate}
+
+Définition intuitive:\\
+Une fonction est continue sur un intervalle, si sa courbe représentative peut se tracer sans lever le crayon.
+
+Méthode: Reconnaître graphiquement une fonction continue
+
+\begin{itemize}
+  \item Vidéo \href{https://youtu.be/XpjKserte6o}{https://youtu.be/XpjKserte6o}
+\end{itemize}
+
+Étudier graphiquement la continuité des fonctions \(f\) et \(g\) définies et représentées ci-dessous sur l'intervalle [-2;2].\\
+\includegraphics[max width=\textwidth, center]{2025_09_11_e214764a9a76ec9e3edeg-1(2)}\\
+\includegraphics[max width=\textwidth, center]{2025_09_11_e214764a9a76ec9e3edeg-1(1)}
+
+\section*{Correction}
+\begin{itemize}
+  \item La courbe de la fonction \(f\) peut se tracer sans lever le crayon, elle semble donc continue sur l'intervalle [-2 ; 2].
+  \item La courbe de la fonction \(g\) ne peut pas se tracer sans lever le crayon, elle n'est donc pas continue sur l'intervalle [-2; 2].\\
+Cependant, elle semble continue sur \([-2 ; 1]\) et sur \(] 1 ; 2]\).\\
+Propriétés: Soit une fonction \(f\) définie sur un intervalle \(I\) contenant un réel \(a\).
+  \item \(f\) est continue en \(a\) si : \(\lim _{x \rightarrow a} f(x)=f(a)\).
+  \item \(f\) est continue sur \(I\) si \(f\) est continue en tout point de \(I\).
+\end{itemize}
+
+Théorème : Si une fonction est dérivable sur un intervalle \(I\), alors elle est continue sur cet intervalle.
+
+\section*{Exemples et contre-exemples:}
+\includegraphics[max width=\textwidth, center]{2025_09_11_e214764a9a76ec9e3edeg-2}\\
+\includegraphics[max width=\textwidth, center]{2025_09_11_e214764a9a76ec9e3edeg-2(1)}\\
+\includegraphics[max width=\textwidth, center]{2025_09_11_e214764a9a76ec9e3edeg-2(2)}\\
+\includegraphics[max width=\textwidth, center]{2025_09_11_e214764a9a76ec9e3edeg-2(3)}
+
+\section*{2) Cas des fonctions de référence}
+Les fonctions suivantes sont continues sur l'intervalle donné.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Fonction & Intervalle \\
+\hline
+\(|x|\) & \(\mathbb{R}\) \\
+\hline
+\(x^{n}(n \in \mathbb{N})\) & \(\mathbb{R}\) \\
+\hline
+Polynôme & \(\mathbb{R}\) \\
+\hline
+\(e^{x}\) & \(\mathbb{R}\) \\
+\hline
+\(\sqrt{x}\) & \([0 ;+\infty[\) \\
+\hline
+\(\frac{1}{x}\) & \(]-\infty ; 0[\) et \(] 0 ;+\infty[\) \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{3) Opérations sur les fonctions continues:}
+\section*{Propriétés:}
+\(f\) et \(g\) sont deux fonctions continues sur un intervalle \(I\).
+
+\begin{itemize}
+  \item \(f+g, f \times g, f^{2}\) et \(e^{f}\) sont continues sur \(I\).
+  \item Si \(g\) ne s'annule pas sur \(I\), alors \(\frac{f}{g}\) est continue sur \(I\).
+\end{itemize}
+
+Remarque: Dans la pratique, les flèches obliques d'un tableau de variations traduisent la continuité et la stricte monotonie de la fonction sur l'intervalle considéré.
+
+\section*{Yvan Monka - Académie de Strasbourg - www.maths-et-tiques.fr}
+\section*{Méthode: Étudier la continuité d'une fonction définie par morceaux}
+\section*{Vidéo https://youtu.be/03WMLyc7rLE}
+On considère la fonction \(f\) définie sur \(\mathbb{R}\) par \(f(x)=\left\{\begin{array}{l}-x+2, \text { pour } x<3 \\ x-4, \text { pour } 3 \leq x<5 \\ -2 x+13, \text { pour } x \geq 5\end{array}\right.\)\\
+La fonction \(f\) est-elle continue sur \(\mathbb{R}\) ?
+
+\section*{Correction}
+Les fonctions \(x \mapsto-x+2, x \mapsto x-4\) et \(x \mapsto-2 x+13\) sont des fonctions polynômes donc continues sur \(\mathbb{R}\).\\
+Ainsi la fonction \(f\) est continue sur \(]-\infty ; 3[\), sur \([3 ; 5[\) et sur \([5 ;+\infty[\).\\
+Étudions alors la continuité de \(f\) en 3 et en 5 :
+
+\begin{itemize}
+  \item \(\lim _{x \rightarrow 3^{-}} f(x)=\lim _{x \rightarrow 3^{-}}-x+2=-3+2=-1\)\\
+\(\lim _{x \rightarrow 3^{+}} f(x)=\lim _{x \rightarrow 3^{+}} x-4=3-4=-1\)\\
+Donc : \(\lim _{x \rightarrow 3^{-}} f(x)=\lim _{x \rightarrow 3^{+}} f(x)=f(3)\)\\
+Et donc la fonction \(f\) est continue en 3 .
+  \item \(\lim _{x \rightarrow 5^{-}} f(x)=\lim _{x \rightarrow 5^{-}} x-4=5-4=1\)\\
+\(\lim _{x \rightarrow 5^{+}} f(x)=\lim _{x \rightarrow 5^{+}}-2 x+13=-2 \times 5+13=3\)\\
+La limite de \(f\) en 5 n'existe pas. On parle de limite à gauche de 5 et de limite à droite de 5 .\\
+La fonction \(f\) n'est donc pas continue en 5 .\\
+La fonction \(f\) est continue sur ] \(-\infty ; 5\) [ et sur [5; \(+\infty\) [.
+\end{itemize}
+
+En représentant la fonction \(f\), on peut observer graphiquement le résultat précédent.\\
+\includegraphics[max width=\textwidth, center]{2025_09_11_e214764a9a76ec9e3edeg-3}
+
+\section*{Partie 2 : Théorème des valeurs intermédiaires}
+Exemple:\\
+On donne le tableau de variations de la fonction \(f\).
+
+\begin{center}
+\begin{tabular}{|l|cccc|}
+\hline
+\(x\) & -4 & -3 & -1 & 1 \\
+\hline
+\(f\) &  & 3 &  & 19 \\
+ & -1 &  & -1 &  \\
+\hline
+\end{tabular}
+\end{center}
+
+Il est possible de lire dans le tableau, le nombre de solutions éventuelles pour des équations du type \(f(x)=k\) :
+
+\begin{itemize}
+  \item L'équation \(f(x)=18\) possède 1 solution comprise dans l'intervalle \(]-1 ; 1[\).
+  \item L'équation \(f(x)=0\) possède 3 solutions chacune comprise dans un des intervalles ]-4 ; \(-3[]-,3 ;-1[\) et \(]-1 ; 1[\).
+  \item L'équation \(f(x)=-3\) ne possède pas de solution.
+  \item L'équation \(f(x)=3\) possède 2 solutions : I'une égale à -3 , l'autre comprise dans l'intervalle ]-1 ; 1[.
+\end{itemize}
+
+\section*{Théorème des valeurs intermédiaires :}
+\begin{itemize}
+  \item On considère la fonction \(f\) continue sur l'intervalle \([a ; b]\).
+\end{itemize}
+
+Pour tout réel \(k\) compris entre \(f(a)\) et \(f(b)\), l'équation \(f(x)=k\) admet au moins une solution comprise entre \(a\) et \(b\).\\
+\includegraphics[max width=\textwidth, center]{2025_09_11_e214764a9a76ec9e3edeg-4(1)}
+
+\begin{itemize}
+  \item Dans le cas où la fonction \(f\) est strictement monotone sur l'intervalle \([a ; b]\), alors la solution est unique.\\
+\includegraphics[max width=\textwidth, center]{2025_09_11_e214764a9a76ec9e3edeg-4}
+\end{itemize}
+
+\section*{Dans la pratique:}
+Pour démontrer que l'équation \(f(x)=0\) admet une unique solution sur l'intervalle \([a ; b]\), on démontre que :
+
+\begin{enumerate}
+  \item \(f\) est continue sur \([a ; b]\),
+  \item \(f\) change de signe sur \([a ; b]\),
+  \item \(f\) est strictement monotone sur \([a ; b]\),
+\end{enumerate}
+
+Les conditions 1 et 2 nous assurent que des solutions existent.\\
+Avec la condition 3 en plus, nous savons que la solution est unique.
+
+\section*{Méthode: Appliquer le théorème des valeurs intermédiaires (1)}
+\section*{Vidéo https://youtu.be/fkd7c3IAc3Y}
+On considère la fonction \(f\) définie sur \(\mathbb{R}\) par \(f(x)=x^{3}-x^{2}-1\).
+
+\begin{enumerate}
+  \item Démontrer que l'équation \(f(x)=0\) admet une unique solution \(\alpha\) sur l'intervalle [ \(1 ; 2\) ].
+  \item À l'aide de la calculatrice, donner un encadrement au centième de la solution \(\alpha\).
+\end{enumerate}
+
+\section*{Correction}
+\begin{enumerate}
+  \item 
+  \begin{itemize}
+    \item La fonction \(f\) est continue sur l'intervalle [ 1 ; 2 ], car une fonction polynôme est continue sur \(\mathbb{R}\).
+  \end{itemize}
+\end{enumerate}
+
+\begin{itemize}
+  \item \(f(1)=1^{3}-1^{2}-1=-1<0\)\\
+\(f(2)=2^{3}-2^{2}-1=3>0\)\\
+Donc la fonction \(f\) change de signe sur l'intervalle [ \(1 ; 2\) ].
+  \item \(f^{\prime}(x)=3 x^{2}-2 x=x(3 x-2)\)
+\end{itemize}
+
+Donc, pour tout \(x\) de \([1 ; 2], f^{\prime}(x)>0\).\\
+La fonction \(f\) est donc strictement croissante sur l'intervalle [ 1 ; 2].
+
+D'après le théorème des valeurs intermédiaires, l'équation \(f(x)=0\) admet alors une unique solution sur l'intervalle [ \(1 ; 2\) ].\\
+2) A l'aide de la calculatrice, il est possible d'effectuer des\\
+\includegraphics[max width=\textwidth]{2025_09_11_e214764a9a76ec9e3edeg-5} « balayages » successifs en augmentant la précision.
+
+Vidéo TI \href{https://youtu.be/MEkhOfxPakk}{https://youtu.be/MEkhOfxPakk}\\
+Vidéo Casio \href{https://youtu.be/XEZ5D19FpDQ}{https://youtu.be/XEZ5D19FpDQ}\\
+Vidéo HP \href{https://youtu.be/93mBoNOpEWg}{https://youtu.be/93mBoNOpEWg}
+
+\begin{itemize}
+  \item La solution est comprise entre 1,4 et 1,5.
+\end{itemize}
+
+En effet : \(f(1,4) \approx-0,216<0\)
+
+\[
+f(1,5) \approx 0,125>0
+\]
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{1}{|c|}{X} & \multicolumn{1}{c|}{\(\mathrm{Y}_{1}\)} \\
+\hline
+1 & -1 \\
+\hline
+1.1 & -0.879 \\
+\hline
+1.2 & -0.712 \\
+\hline
+1.3 & -0.493 \\
+\hline
+1.4 & -0.216 \\
+\hline
+1.5 & 0.125 \\
+\hline
+1.6 & 0.536 \\
+\hline
+1.7 & 1.023 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+  \item La solution est comprise entre 1,46 et 1,47.
+\end{itemize}
+
+En effet : \(f(1,46) \approx-0,019<0\)
+
+\[
+f(1,47) \approx 0,0156>0
+\]
+
+On en déduit que : \(1,46<\alpha<1,47\).
+
+\begin{center}
+\begin{tabular}{l|c|}
+\hline
+\(X\) & \(Y_{1}\) \\
+\hline
+1.39 & -0.246 \\
+\hline
+1.4 & -0.216 \\
+\hline
+1.41 & -0.185 \\
+\hline
+1.42 & -0.153 \\
+\hline
+1.43 & -0.121 \\
+\hline
+1.44 & -0.088 \\
+\hline
+1.45 & -0.054 \\
+\hline
+1.46 & -0.019 \\
+\hline
+1.47 & 0.0156 \\
+\hline
+1.48 & 0.0514 \\
+\hline
+1.49 & 0.0878 \\
+\hline
+\end{tabular}
+\end{center}
+
+Méthode : Appliquer le théorème des valeurs intermédiaires (2)
+
+\section*{Vidéo https://youtu.be/UmGQf7gkvLg}
+On considère la fonction \(f\) définie sur \(\mathbb{R}\) par \(f(x)=x^{3}-4 x^{2}+6\).\\
+Démontrer que l'équation \(f(x)=2\) admet au moins une solution sur \([-1 ; 4]\).
+
+\section*{Correction}
+\begin{itemize}
+  \item \(f\) est continue sur \([-1 ; 4]\) car une fonction polynôme est continue sur \(\mathbb{R}\).
+  \item \(f(-1)=(-1)^{3}-4(-1)^{2}+6=1\)\\
+\(f(4)=4^{3}-4 \times 4^{2}+6=6\)\\
+Donc 2 est compris entre \(\boldsymbol{f}(-1)\) et \(\boldsymbol{f}(\mathbf{4})\).\\
+D'après le théorème des valeurs intermédiaires, on en déduit que l'équation \(f(x)=2\) admet au moins une solution sur l'intervalle \([-1 ; 4]\).
+\end{itemize}
+
+Remarque: Ici, on n'a pas la stricte monotonie de \(f\), donc on n'a pas l'unicité de la solution.
+
+
+\end{document}

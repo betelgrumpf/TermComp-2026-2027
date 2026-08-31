@@ -1,0 +1,176 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../term-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{DS n$^{\circ}$01 $-$ Dérivation $-$ 24/09/2025}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+	
+	\begin{center}
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						DS n$^{\circ}$01\\ Dérivation
+					}
+				\end{center}
+			\end{minipage}
+		}
+		
+	\end{center}
+	\begin{center}\textbf{50 min - Calculatrice autorisée - Barème indicatif}\\
+		\textbf{Les élèves avec un tier-temps ne traitent pas les questions avec  le symbole \ding{46}}
+	\end{center}
+	
+	\begin{center}
+		On veillera à ENCADRER ses résultats et soigner sa copie.\\
+		Les résultats doivent être justifiés par des calculs (au moins 1 étape intermédiaire).
+	\end{center}
+	
+\exerciceDS{ $-$ 5 points}
+
+\begin{enumMet}
+	\item Calculer $f^{\prime}(x)$ pour $f(x)=2 x^3-\dfrac{3}{2} x^2+x-1$ sur $\mathbb{R}$. 
+	\item Calculer $f^{\prime}(x)$ pour $f(x)=\dfrac{x+1}{x-4}$ pour $x \neq 4$.
+	\item Calculer $f^{\prime}(t)$ pour $f(t)=40 \mathrm{e}^{-0,5 t+2}$ sur $\mathbb{R}$. 
+	\item Calculer $f^{\prime}(t)$ pour $f(t)=(2 t-1) \mathrm{e}^{-t}$ sur $\mathbb{R}$.
+	\item Calculer $f^{\prime}(t)$ pour $f(t)=\left(2 t^2-3 t+1\right)^2$ sur $\mathbb{R}$.
+	\item Calculer $f^{\prime}(x)$ pour $f(x)=\sqrt{4-x^2}$ sur [-2; 2].
+\end{enumMet}
+
+\exerciceDS{ $-$ 4 points}
+
+Le circuit électrique ci-contre est formé d'un générateur de force électromotrice $E=12,0 \mathrm{~V}$ (Volts), et de résistance interne $\mathrm{r}=5,0 \Omega$ et d'une résistance variable $R$, en Ohms ( $\Omega$ ).
+
+La puissance absorbée par la résistance $R$ est $\dfrac{144 R}{(R+5)^2}$, en Watts.
+
+\begin{enumMet}
+	\item Soit $P(R)=\dfrac{144 R}{(R+5)^2}$. 
+	\begin{enumMet}
+		\item Calculer $P'(R)$, la dérivée de $P(R)$ sur $[0 ;+\infty[$.
+		\item Dresser le tableau de signes de $P'(R)$ sur $[0 ;+\infty[$.
+		\item En déduire le tableau de variation de $P$ sur $[0 ;+\infty[$.
+	\end{enumMet}
+%$P$ est dérivable sur [0, + o[ comme fonction rationnelle $\qquad$
+%On a. $P(R)=\frac{u(R)}{v(R)^2}$ avec $u(R)=144 R$ et $v(R)=R+5$
+%Donc $P^{\prime}(R)=\frac{u^{\prime}(R) v(R)^2-u(R) 2 v^{\prime}(R) v(R)}{v(R)^4}=\frac{144(R+5)^2-144 R \times 2(R+5)}{(R+5)^4}=\frac{144(R+5)(R+5-2 R)}{(R+5)^4}=\frac{144(5-R)}{(R+5)^3}$
+%Comme $R+5>0, P^{\prime}(R)$ est du signe de $5-R$.
+%Sur $[0: 5] .5-R \geqslant 0$ donc $P$ est croissante et sur $[5:-\infty[, 5-P \leq 0$ donc $P$ est décroissante
+	\item En déduire la valeur de $R$ pour laquelle la puissance est maximale et préciser cette puissance.
+
+%La puissance est maximale quand $R=5$ et vaut alors. $144 \times \frac{5}{10^2} \mathrm{~W}=7.2 \mathrm{~W}$. $\qquad$
+\end{enumMet}
+
+\exerciceDS{ $-$ 4 points}
+
+Une personne a consommé de l'alcool au cours d'un repas. Le taux d'alcoolémie dans son organisme, en grammes par litre de sang, est donné par $A(t)=5 t e^{-t}$ avec $0 \leqslant t \leqslant 6$, où $t$ est le temps écoulé depuis la fin du repas, en heures.
+\begin{enumMet}
+	\item Déterminer $A^{\prime}(t)$.
+	\item Dresser le tableau de signes de la dérivée sur \R
+	\item en déduire le tableau de variation de la fonction $A(t)$ sur $[0;6]$
+	\item préciser le maximum de la fonction et au bout de combien de temps est-il atteint?
+\end{enumMet}
+
+\newpage
+
+\exerciceDS{ $-$ 4 points}
+
+On considère la fonction $f: x \mapsto e^{3 x^2+2 x-1}$, définie sur $\mathbb{R}$
+\begin{enumMet}
+	\item Calculer $f^{\prime}(x)$ pour tout réel $x$.
+	\item Dresser le tableau de signes de la dérivée sur \R
+	\item En déduire le tableau de variations de $f$.
+	\item Déterminer l'équation de la tangente à la courbe de $f$ au point d'abscisse $\mathbf{- 1}$.
+	\begin{bprop}
+		Une équation de la tangente à la courbe de la fonction $f$ au point d'abscisse $a$ est : 
+		
+		$y=f^{\prime}(a)(x-a)+f(a)$.
+	\end{bprop}
+\end{enumMet}
+%- Afficher/Masquer la solution
+%1. Pour tout réel $x, f(x)=e^{u(x)}$ avec $u(x)=3 x^2+2 x-1$. $u$ est dérivable sur $\mathbb{R}, f$ l'est donc aussi et $f^{\prime}=u^{\prime} e^u$. Ainsi, pour tout réel $x$,
+%
+%$$
+%f^{\prime}(x)=(6 x+2) e^{3 x^2+2 x-1}
+%$$
+%
+%2. Pour tout réel $x, e^{3 x^2+2 x-1}>0, f^{\prime}(x)$ est donc du signe de $6 x+2$.
+%
+%\begin{tabular}{|c|ccccc|}
+%	\hline$x$ & $-\infty$ & & $-\frac{1}{3}$ & & $+\infty$ \\
+%	\hline$f^{\prime}(x)$ & & - & 0 & + & \\
+%	\hline$f$ & & & & & \\
+%	\hline
+%\end{tabular}
+%3. La tangente à la courbe de $f$ à l'abscisse -1 a pour équation
+%
+%$$
+%y=f^{\prime}(-1)(x+1)+f(-1)=-4(x+1)+1=-4 x-3
+%$$
+
+
+\exerciceDS{ $-$ \ding{46} $-$ 4 points}
+
+Soit la fonction $f: x \mapsto\left(-x^2+x+1\right) e^x$ définie sur $\mathbb{R}$.
+
+\begin{enumMet}
+	\item \ding{46} Calculer $f^{\prime}(x)$ sur \R.
+	\item \ding{46} Dresser le tableau de signes de la dérivée sur \R.
+	\item \ding{46} En déduire le tableau de variations de $f$.
+\end{enumMet}
+
+%- Afficher/Masquer la solution
+%
+%Pour tout réel $x$, on pose $u(x)=-x^2+x+1$ et $v(x)=e^x$
+%- $u$ est dérivable sur $\mathbb{R}$ et pour tout réel $x, u^{\prime}(x)=-2 x+1$
+%- $v$ est dérivable sur $\mathbb{R}$ et pour tout réel $x, v^{\prime}(x)=e^x$
+%
+%Ainsi, puisque $f=u v, f$ est dérivable sur $\mathbb{R}$ et $f^{\prime}=u^{\prime} v+u v^{\prime}$. Pour tout réel $x$, on a donc
+%
+%$$
+%f^{\prime}(x)=(-2 x+1) e^x+\left(-x^2+x+1\right) e^x=\left(-x^2-x+2\right) e^x
+%$$
+%
+%
+%Pour tout réel $x, e^x>0$. Il ne reste donc qu'à étudier le signe de $-x^2-x+2$. Il s'agit d'un polynôme du second degré. Son discriminant vaut $\Delta=(-1)^2 * 4 \times(-1) \times 2=9>0$. Le polynôme $-x^2-x+2$ admet donc deux racines réelles distinctes
+%
+%$$
+%x_1=\frac{-(-1)-\sqrt{9}}{2 \times(-1)}=1 \quad \text { et } \quad x_2=\frac{-(-1)+\sqrt{9}}{2 \times(-1)}=-2
+%$$
+%
+%
+%Notez que ces racines plutôt évidentes auraient également pu être trouvées de tête.
+%On peut alors construire le tableau de signes de $f^{\prime}$ et en déduire le tableau de variations de $f$.
+%
+%\begin{tabular}{|l|l|}
+%	\hline $x$ & $-\infty$ \\
+%	\hline $f^{\prime}(x)$ & - \\
+%	\hline $f$ & \\
+%	\hline
+%\end{tabular}
+	
+
+\end{document}
+
