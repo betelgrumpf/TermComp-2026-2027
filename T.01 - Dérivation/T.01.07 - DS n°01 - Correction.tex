@@ -20,7 +20,7 @@
 	\vskip 0cm
 }
 
-\rhead{\textcolor{red}{Correction - DS n$^{\circ}$01 $-$ Dérivation $-$ 24/09/2025}}
+\rhead{\textcolor{red}{Correction - DS n$^{\circ}$01 $-$ Dérivation $-$ 18/09/2026}}
 
 \newcommand{\va}[1]{\lvert \ #1 \ \rvert}
 \newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
@@ -87,47 +87,47 @@
 	\end{corrBox}
 \end{enumMet}
 
-\vspace*{-0.5cm}
-\exerciceDS{ $-$ 4 points}
-
-Le circuit électrique ci-contre est formé d'un générateur de force électromotrice $E=12,0 \mathrm{~V}$ (Volts), et de résistance interne $\mathrm{r}=5,0 \Omega$ et d'une résistance variable $R$, en Ohms ( $\Omega$ ).
-
-La puissance absorbée par la résistance $R$ est $\dfrac{144 R}{(R+5)^2}$, en Watts.
-
-\begin{enumMet}
-	\item Soit $P(R)=\dfrac{144 R}{(R+5)^2}$. 
-	\begin{enumMet}
-		\item Calculer $P'(R)$, la dérivée de $P(R)$ sur $[0 ;+\infty[$.
-		\begin{corrBox}
-			$P$ est du type $\dfrac{u}{v}$ avec $u(R)=144R$ et $v(R)=(R+5)^2$ d'ou $u'(x)=144$ et $v'(x)=2(R+5)$
-			
-			$P^{\prime}(R)=\dfrac{u'(R)v(R)-v'(R)u(R)}{v^2(R)}=\dfrac{144(R+5)^2-144R\times 2(R+5)}{(R+5)^4}$
-			
-			$P'(R)=\dfrac{144R^2+1440R+3600-288R^2-1440R}{(R+5)^4}=\dfrac{3600-144R^2}{(R+5)^4}=\dfrac{144(25-R^2)}{(R+5)^4}$
-			
-			$P'(R)=\dfrac{144(5-R)(5+R)}{(R+5)^4}=\dfrac{144(5-R)}{(R+5)^3}$		
-		\end{corrBox}
-		\item Dresser le tableau de signes de $P'(R)$ sur $[0 ;+\infty[$.
-		\begin{corrBox}
-			\begin{tikzpicture}
-				\tkzTabInit{$x$ / 1 , $P'(R)$ / 1}{$0$, $5$, $+\infty$}
-				\tkzTabLine{, +, z, -, }
-			\end{tikzpicture}
-		\end{corrBox}
-		\item En déduire le tableau de variation de $P$ sur $[0 ;+\infty[$.
-		\begin{corrBox}
-			\begin{tikzpicture}
-				\tkzTab{$x$ / 1 , $P'(R)$ / 1, $P(R)$ / 1.5}{$0$, $5$, $+\infty$}
-				{, +, z, -, }
-				{-/ 0, +/ $P(5)=7{,}2$, -/ 0}
-			\end{tikzpicture}		
-		\end{corrBox}
-	\end{enumMet}
-	\item En déduire la valeur de $R$ pour laquelle la puissance est maximale et préciser cette puissance.
-	\begin{corrBox}
-		La puissance est maximale quand R=5 et alors P=7,2W		
-	\end{corrBox}
-\end{enumMet}
+%\vspace*{-0.5cm}
+%\exerciceDS{ $-$ 4 points}
+%
+%Le circuit électrique ci-contre est formé d'un générateur de force électromotrice $E=12,0 \mathrm{~V}$ (Volts), et de résistance interne $\mathrm{r}=5,0 \Omega$ et d'une résistance variable $R$, en Ohms ( $\Omega$ ).
+%
+%La puissance absorbée par la résistance $R$ est $\dfrac{144 R}{(R+5)^2}$, en Watts.
+%
+%\begin{enumMet}
+%	\item Soit $P(R)=\dfrac{144 R}{(R+5)^2}$. 
+%	\begin{enumMet}
+%		\item Calculer $P'(R)$, la dérivée de $P(R)$ sur $[0 ;+\infty[$.
+%		\begin{corrBox}
+%			$P$ est du type $\dfrac{u}{v}$ avec $u(R)=144R$ et $v(R)=(R+5)^2$ d'ou $u'(x)=144$ et $v'(x)=2(R+5)$
+%			
+%			$P^{\prime}(R)=\dfrac{u'(R)v(R)-v'(R)u(R)}{v^2(R)}=\dfrac{144(R+5)^2-144R\times 2(R+5)}{(R+5)^4}$
+%			
+%			$P'(R)=\dfrac{144R^2+1440R+3600-288R^2-1440R}{(R+5)^4}=\dfrac{3600-144R^2}{(R+5)^4}=\dfrac{144(25-R^2)}{(R+5)^4}$
+%			
+%			$P'(R)=\dfrac{144(5-R)(5+R)}{(R+5)^4}=\dfrac{144(5-R)}{(R+5)^3}$		
+%		\end{corrBox}
+%		\item Dresser le tableau de signes de $P'(R)$ sur $[0 ;+\infty[$.
+%		\begin{corrBox}
+%			\begin{tikzpicture}
+%				\tkzTabInit{$x$ / 1 , $P'(R)$ / 1}{$0$, $5$, $+\infty$}
+%				\tkzTabLine{, +, z, -, }
+%			\end{tikzpicture}
+%		\end{corrBox}
+%		\item En déduire le tableau de variation de $P$ sur $[0 ;+\infty[$.
+%		\begin{corrBox}
+%			\begin{tikzpicture}
+%				\tkzTab{$x$ / 1 , $P'(R)$ / 1, $P(R)$ / 1.5}{$0$, $5$, $+\infty$}
+%				{, +, z, -, }
+%				{-/ 0, +/ $P(5)=7{,}2$, -/ 0}
+%			\end{tikzpicture}		
+%		\end{corrBox}
+%	\end{enumMet}
+%	\item En déduire la valeur de $R$ pour laquelle la puissance est maximale et préciser cette puissance.
+%	\begin{corrBox}
+%		La puissance est maximale quand R=5 et alors P=7,2W		
+%	\end{corrBox}
+%\end{enumMet}
 
 \vspace*{-0.5cm}
 \exerciceDS{ $-$ 4 points}
@@ -185,7 +185,7 @@ On considère la fonction $f: x \mapsto e^{3 x^2+2 x-1}$, définie sur $\mathbb{
 		\begin{tikzpicture}
 			\tkzTab{$x$ / 1 , $f'(x)$ / 1, $f(x)$ / 1.5}{$-\infty$, $-\dfrac{1}{3}$, $+\infty$}
 			{, -, z, +, }
-			{+/, -/ $f(-\dfrac{1}{3})=1$, +/}
+			{+/, -/ $f\left(- \dfrac{1}{3} \right) = e^{-\frac{4}{3}} \approx 0{,}26$, +/}
 		\end{tikzpicture}
 	\end{corrBox}
 	
