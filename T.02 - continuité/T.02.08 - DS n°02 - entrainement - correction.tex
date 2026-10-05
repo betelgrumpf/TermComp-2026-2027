@@ -1,0 +1,176 @@
+\documentclass[11pt,a4paper]{article}  % Déclare la classe du document.
+
+\newcommand{\chaptermark}[2]{\og #2 \fg{} (#1)} % ligne uniquement pour éviter une erreur en cas d'article
+\include{../term-preambule}
+
+\usepackage{epic}   % extension et simplification de  l'environnement picture
+\usepackage{graphicx}    % permet d'inclure des graphique externe dans un document
+\usepackage{arydshln}   %permet d'avoir des lignes en pointillés
+
+\newcommand{\lignes}[1]{
+	\setlength{\unitlength}{1mm}
+	\vskip 0,4cm\noindent
+	\multido{\i=0+1}{#1}{%
+		\noindent
+		\begin{picture}(150,5)
+			\linethickness{0,005mm}
+			\put(-5,0){\dashline{1}(175,5)(5,5)}
+		\end{picture}\vskip 0,001cm
+	}
+	\vskip 0cm
+}
+
+\rhead{\textcolor{red}{Correction $-$ Entraînement DS n$^{\circ}$02 $-$ Continuité}}
+
+\newcommand{\va}[1]{\lvert \ #1 \ \rvert}
+\newcommand{\vaf}[1]{\left\lvert \ #1\  \right\rvert}
+
+\begin{document}
+	\graphicspath{{images/}}
+
+	\begin{center}
+		\fbox{
+			\begin{minipage}[]{15cm}
+				\begin{center}
+					\LARGE{\rule{0.5cm}{0pt}\rule[-0.25cm]{0pt}{0.9cm}
+						\textcolor{red}{Correction $-$ Entraînement DS n$^{\circ}$02\\Continuité}
+					}
+				\end{center}
+			\end{minipage}
+		}
+
+	\end{center}
+
+\exerciceDS{ $-$ (3 points)}
+
+On considère la fonction $f: x \mapsto \begin{cases}x^2-1 & \text { si } x \leqslant 1 \\ 3x-3 & \text { si } 1<x<3  \\ x+2 & \text { si } x \geqslant 3\end{cases}$
+
+La fonction $f$ est-elle continue en $1$ ? et en $3$ ?
+
+\begin{corrBox}
+	Sur chacun des intervalles $]-\infty\ ;\ 1[$, $]1\ ;\ 3[$ et $]3\ ;\ +\infty[$, $f$ est une fonction polynôme donc continue. Étudions alors la continuité de \(f\) en $1$ et en $3$ :
+
+	\begin{itemMet}
+		\item \(\lim \limits_{x \rightarrow 1^{-}} f(x)=\lim \limits_{x \rightarrow 1^{-}}x^2-1=1^2-1=0\) \quad et \quad $f(1)=0$\\
+		\(\lim \limits_{x \rightarrow 1^{+}} f(x)=\lim \limits_{x \rightarrow 1^{+}} 3x-3=3\times 1-3=0\)\\
+		Donc : \(\lim \limits_{x \rightarrow 1^{-}} f(x)=\lim \limits_{x \rightarrow 1^{+}} f(x)=f(1)\)\\
+		La fonction \(f\) est continue en $1$.
+		\item \(\lim \limits_{x \rightarrow 3^{-}} f(x)=\lim \limits_{x \rightarrow 3^{-}} 3x-3=3\times 3-3=6\)\\
+		\(\lim \limits_{x \rightarrow 3^{+}} f(x)=\lim \limits_{x \rightarrow 3^{+}}x+2=3+2=5\neq\lim \limits_{x \rightarrow 3^{-}} f(x)\)\\
+		La fonction \(f\) n'est donc pas continue en $3$.
+	\end{itemMet}
+\end{corrBox}
+
+\exerciceDS{ \ding{46} $-$ (4 points)}
+
+Pour tout réel $x$, on pose $f(x)=x^4-4x-2$.
+\begin{enumMet}
+	\item \ding{46} Calculer $f(0)$ et $f(2)$.
+	\begin{corrBox}
+		$f(0)=0^4-4\times 0-2=-2$ et $f(2)=2^4-4\times 2-2=16-8-2=6$
+	\end{corrBox}
+	\item \ding{46} En déduire que l'équation $x^4=4x+2$ possède au moins une solution sur $[0\ ;\ 2]$.
+	\begin{corrBox}
+		$x^4=4x+2 \iff x^4-4x-2=0 \iff f(x)=0$.
+
+		La fonction $f$ est continue sur $[0\ ;\ 2]$ (fonction polynôme), $f(0)=-2<0$ et $f(2)=6>0$ : $0$ est compris entre $f(0)$ et $f(2)$. D'après le théorème des valeurs intermédiaires, il existe un réel $c \in[0\ ;\ 2]$ tel que $f(c)=0$, soit $c^4-4c-2=0$ ou encore $c^4=4c+2$.
+	\end{corrBox}
+	\item \ding{46} Donner une solution de cette équation au centième près.
+	\begin{corrBox}
+		En utilisant un algorithme de balayage (ou la table de la calculatrice avec un pas de $0{,}01$) :
+
+		$f(1{,}72)\approx -0{,}128<0$ et $f(1{,}73)\approx 0{,}038>0$, donc $1{,}72<c<1{,}73$ et $c \approx 1{,}73$.
+	\end{corrBox}
+\end{enumMet}
+
+\exerciceDS{ $-$ (8 points)}
+
+On considère la fonction $f: x \mapsto 3e^x-10x$, définie sur $\mathbb{R}$.
+\begin{enumMet}
+	\item Justifier que $f$ est continue et dérivable sur $\mathbb{R}$ et déterminer $f^{\prime}(x)$ pour tout réel $x$.
+	\begin{corrBox}
+		$f$ est dérivable sur $\mathbb{R}$ comme somme de fonctions dérivables sur $\mathbb{R}$ (et est donc continue sur $\mathbb{R}$). Pour tout réel $x$, $f^{\prime}(x)=3e^x-10$.
+	\end{corrBox}
+	\item Quel est le sens de variation de $f$ sur l'intervalle $[0\ ;\ 1]$ ?
+	\begin{corrBox}
+		Si $0 \leqslant x \leqslant 1$, alors, par croissance de la fonction exponentielle sur $\mathbb{R}$, $e^0 \leqslant e^x \leqslant e^1$, donc $3e^x-10 \leqslant 3e-10\approx -1{,}85<0$.
+
+		Ainsi $f'(x)<0$ sur $[0\ ;\ 1]$ donc $f$ est strictement décroissante sur $[0\ ;\ 1]$.
+	\end{corrBox}
+	\item Que vaut $f(0)$ ? Quel est le signe de $f(1)$ ?
+	\begin{corrBox}
+		$f(0)=3e^0-10\times 0=3>0$ et $f(1)=3e-10\approx -1{,}85<0$
+	\end{corrBox}
+	\item En déduire que l'équation $3e^x=10x$ admet exactement une solution sur $[0\ ;\ 1]$.
+	\begin{corrBox}
+		Résoudre $3e^x=10x$ revient à résoudre $f(x)=0$.
+
+		Or, $f$ est continue et strictement décroissante sur $[0\ ;\ 1]$, $f(0)=3>0$ et $f(1)<0$. D'après le théorème des valeurs intermédiaires (corollaire pour les fonctions strictement monotones), il existe un unique réel $c$ dans $[0\ ;\ 1]$ tel que $f(c)=0$.
+	\end{corrBox}
+	\item Donner une valeur approchée de cette solution au centième près.
+	\begin{corrBox}
+		En utilisant un algorithme de balayage (ou la table de la calculatrice avec un pas de $0{,}01$) :
+
+		\begin{center}
+			\begin{tabular}{|c|c|c|c|}
+				\hline
+				$x$ & $0{,}48$ & $0{,}49$ & $0{,}50$ \\ \hline
+				$f(x)$ & $\approx 0{,}048$ & $\approx -0{,}003$ & $\approx -0{,}054$ \\ \hline
+			\end{tabular}
+		\end{center}
+
+		$f(0{,}48)>0$ et $f(0{,}49)<0$, donc $0{,}48<c<0{,}49$ et $c \approx 0{,}49$.
+	\end{corrBox}
+\end{enumMet}
+
+\exerciceDS{ $-$ (6 points)}
+
+Soit $g$ la fonction définie sur $[0\ ;\ 6]$ par :
+
+$$
+g(x)=\frac{1}{3} x^3-3x^2+5x+4
+$$
+
+\begin{enumMet}
+	\item Dresser le tableau de variations de la fonction $g$ sur $[0\ ;\ 6]$.
+	\begin{corrBox}
+		$g'(x)=x^2-6x+5$\quad \quad \quad \quad $\Delta=(-6)^2-4\times 1\times 5=16$\quad \quad \quad \quad $x_1=\dfrac{6-4}{2}=1$\quad \quad \quad \quad $x_2=\dfrac{6+4}{2}=5$
+
+		$g(0)=4$ \quad ; \quad $g(1)=\dfrac{1}{3}-3+5+4=\dfrac{19}{3}$ \quad ; \quad $g(5)=\dfrac{125}{3}-75+25+4=-\dfrac{13}{3}$ \quad ; \quad $g(6)=72-108+30+4=-2$
+
+		\begin{center}
+		\begin{tikzpicture}
+			\tkzTab{$x$ / 1 , $g'(x)$ / 1, $g(x)$ / 1.5}{$0$, $1$, $5$, $6$}
+			{, +, z, -, z, +,}
+			{-/ $4$, +/ $\dfrac{19}{3}$, -/ $-\dfrac{13}{3}$, +/ $-2$}
+		\end{tikzpicture}
+		\end{center}
+	\end{corrBox}
+	\item Montrer que l'équation $g(x)=0$ admet une solution unique $\alpha$ dans $[0\ ;\ 6]$. Déterminer un encadrement de $\alpha$ au millième près.
+	\begin{corrBox}
+		$g$ est continue sur $[0\ ;\ 6]$ car une fonction polynôme est continue sur \R.
+
+		\begin{itemMet}
+			\item Sur $[0\ ;\ 1]$, la fonction est strictement croissante et $g(0)=4>0$, donc $g(x)\geqslant 4>0$. Il n'y a donc pas de solution à l'équation $g(x)=0$.
+			\item Sur $[1\ ;\ 5]$, la fonction est continue et strictement décroissante, $g(1)=\dfrac{19}{3}>0$ et $g(5)=-\dfrac{13}{3}<0$, donc d'après le TVI (corollaire), il existe une unique solution $\alpha$ à l'équation $g(x)=0$.
+			\item Sur $[5\ ;\ 6]$, la fonction est strictement croissante et $g(6)=-2<0$, donc $g(x)\leqslant -2<0$. Il n'y a donc pas de solution à l'équation $g(x)=0$.
+		\end{itemMet}
+
+		Finalement, l'équation $g(x)=0$ admet une unique solution $\alpha$ sur $[0\ ;\ 6]$.
+
+		À l'aide de la calculatrice : $g(3{,}251)\approx 0{,}001>0$ et $g(3{,}252)\approx -0{,}003<0$, donc $3{,}251<\alpha<3{,}252$.
+	\end{corrBox}
+	\item En déduire le tableau de signes de $g$ sur $[0\ ;\ 6]$.
+
+	\begin{corrBox}
+		\begin{center}
+		\begin{tikzpicture}
+			\tkzTabInit{$x$ / 1 , $g(x)$ / 1}{$0$, $\alpha$, $6$}
+			\tkzTabLine{, +, z, -, }
+		\end{tikzpicture}
+		\end{center}
+	\end{corrBox}
+\end{enumMet}
+
+
+\end{document}
